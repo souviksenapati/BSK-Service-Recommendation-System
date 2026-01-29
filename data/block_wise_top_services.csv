@@ -1,0 +1,2867 @@
+block_id,block_name,service_name,rank_in_block
+1,ALIPURDUAR I,Application for Income Certificates,1
+1,ALIPURDUAR I,Apply - Payment of WBSEDCL Electricity Bill,2
+1,ALIPURDUAR I,Caste Certificate,3
+1,ALIPURDUAR I,Apply - Submission of Form for Electoral Roll,4
+1,ALIPURDUAR I,Apply - Land Revenue (Khajna),5
+1,ALIPURDUAR I,Apply - GP Certificate,6
+2,ALIPURDUAR II,Apply - Payment of WBSEDCL Electricity Bill,1
+2,ALIPURDUAR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+2,ALIPURDUAR II,Application for Income Certificates,3
+2,ALIPURDUAR II,Search - Bangla Awas Yojana,4
+2,ALIPURDUAR II,Caste Certificate,5
+2,ALIPURDUAR II,Payment History - WBSEDCL,6
+3,FALAKATA,Apply - Payment of WBSEDCL Electricity Bill,1
+3,FALAKATA,Apply - Submission of Form for Electoral Roll,2
+3,FALAKATA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+3,FALAKATA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+3,FALAKATA,Search - Download of e-Ration Card,5
+3,FALAKATA,Application for Income Certificates,6
+4,KALCHINI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+4,KALCHINI,Search - Application Status of Digital Ration Card Application,2
+4,KALCHINI,Apply - Payment of WBSEDCL Electricity Bill,3
+4,KALCHINI,Apply - Verification of Electoral Roll Online,4
+4,KALCHINI,Apply - Submission of Form for Electoral Roll,5
+4,KALCHINI,Application for Income Certificates,6
+5,KUMARGRAM,Apply - Payment of WBSEDCL Electricity Bill,1
+5,KUMARGRAM,Application for Income Certificates,2
+5,KUMARGRAM,Caste Certificate,3
+5,KUMARGRAM,Apply - Ordinary Residencial Certificate,4
+5,KUMARGRAM,Apply - Land Revenue (Khajna),5
+5,KUMARGRAM,Search - Download of e-Ration Card,6
+6,MADARIHAT-BIRPARA,Apply - Payment of WBSEDCL Electricity Bill,1
+6,MADARIHAT-BIRPARA,Caste Certificate,2
+6,MADARIHAT-BIRPARA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+6,MADARIHAT-BIRPARA,Apply - Submission of Form for Electoral Roll,4
+6,MADARIHAT-BIRPARA,Application for Income Certificates,5
+6,MADARIHAT-BIRPARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+7,BANKURA I,Search - Application Status of Digital Ration Card Application,1
+7,BANKURA I,Apply - Payment of WBSEDCL Electricity Bill,2
+7,BANKURA I,Caste Certificate,3
+7,BANKURA I,Search - Download of e-Ration Card,4
+7,BANKURA I,Application for Income Certificates,5
+7,BANKURA I,Apply - OPD Registration,6
+8,BANKURA II,Application for Income Certificates,1
+8,BANKURA II,Apply - Payment of WBSEDCL Electricity Bill,2
+8,BANKURA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+8,BANKURA II,Apply - Local Residence (Domicile) Certificate,4
+8,BANKURA II,Search - Download of e-Ration Card,5
+8,BANKURA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+9,BARJORA,Search - Status of Application of Swasthya Sathi Card,1
+9,BARJORA,Apply - Payment of WBSEDCL Electricity Bill,2
+9,BARJORA,Application for Income Certificates,3
+9,BARJORA,Search - Application Status of Digital Ration Card Application,4
+9,BARJORA,Status of Application (Krishak Bandhu),5
+9,BARJORA,Caste Certificate,6
+10,CHHATNA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+10,CHHATNA,Apply - Payment of WBSEDCL Electricity Bill,2
+10,CHHATNA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+10,CHHATNA,Application for Income Certificates,4
+10,CHHATNA,Apply - GP Certificate,5
+10,CHHATNA,Search - Gram Panchayat Tax Payment,6
+11,GANGAJALGHATI,Apply - Payment of WBSEDCL Electricity Bill,1
+11,GANGAJALGHATI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+11,GANGAJALGHATI,Application for Income Certificates,3
+11,GANGAJALGHATI,Search - GRN Information,4
+11,GANGAJALGHATI,Caste Certificate,5
+11,GANGAJALGHATI,Search - Status of Application of Swasthya Sathi Card,6
+12,MEJIA,Application for Income Certificates,1
+12,MEJIA,Apply - Payment of WBSEDCL Electricity Bill,2
+12,MEJIA,Apply - ROR Application ,3
+12,MEJIA,Caste Certificate,4
+12,MEJIA,Search - GRN Information,5
+12,MEJIA,Search - Bangla Awas Yojana,6
+13,ONDA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+13,ONDA,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+13,ONDA,Application for Income Certificates,3
+13,ONDA,Apply - Payment of WBSEDCL Electricity Bill,4
+13,ONDA,Apply - GP Certificate,5
+13,ONDA,Search - Status of Application of Swasthya Sathi Card,6
+14,SALTORA,Application for Income Certificates,1
+14,SALTORA,Apply - Payment of WBSEDCL Electricity Bill,2
+14,SALTORA,Apply - ROR Application ,3
+14,SALTORA,Apply - GP Certificate,4
+14,SALTORA,Caste Certificate,5
+14,SALTORA,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+15,KHATRA,Caste Certificate,1
+15,KHATRA,Application for Income Certificates,2
+15,KHATRA,Apply - Payment of WBSEDCL Electricity Bill,3
+15,KHATRA,Apply - GP Certificate,4
+15,KHATRA,Payment - e-Payment Stamp Duty & Registration Fees,5
+15,KHATRA,Search - Gram Panchayat Tax Payment,6
+16,INDPUR,Search - Gram Panchayat Tax Payment,1
+16,INDPUR,Apply - Payment of WBSEDCL Electricity Bill,2
+16,INDPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+16,INDPUR,Application for Income Certificates,4
+16,INDPUR,Apply - GP Certificate,5
+16,INDPUR,Apply - ROR Application ,6
+17,HIRBANDH,Application for Income Certificates,1
+17,HIRBANDH,Apply - Payment of WBSEDCL Electricity Bill,2
+17,HIRBANDH,Caste Certificate,3
+17,HIRBANDH,Apply - GP Certificate,4
+17,HIRBANDH,Apply - ROR Application ,5
+17,HIRBANDH,Search - Download of e-Ration Card,6
+18,RANIBANDH,Application for Income Certificates,1
+18,RANIBANDH,Apply - GP Certificate,2
+18,RANIBANDH,Caste Certificate,3
+18,RANIBANDH,Apply - Payment of WBSEDCL Electricity Bill,4
+18,RANIBANDH,Search - GRN Information,5
+18,RANIBANDH,Apply - ROR Application ,6
+19,RAIPUR,Payment - e-Payment Stamp Duty & Registration Fees,1
+19,RAIPUR,Apply - Payment of WBSEDCL Electricity Bill,2
+19,RAIPUR,Application for Income Certificates,3
+19,RAIPUR,Caste Certificate,4
+19,RAIPUR,Apply for Birth & Death Certificate,5
+19,RAIPUR,Apply - ROR Application ,6
+20,SARENGA,Apply - Payment of WBSEDCL Electricity Bill,1
+20,SARENGA,Apply - ROR Application ,2
+20,SARENGA,Caste Certificate,3
+20,SARENGA,Application for Income Certificates,4
+20,SARENGA,Search - GRN Information,5
+20,SARENGA,Search - Download of e-Ration Card,6
+21,SIMLAPAL,Application for Income Certificates,1
+21,SIMLAPAL,Apply - Payment of WBSEDCL Electricity Bill,2
+21,SIMLAPAL,Search - Download of e-Ration Card,3
+21,SIMLAPAL,Search - Status of Application of Swasthya Sathi Card,4
+21,SIMLAPAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+21,SIMLAPAL,Apply for Birth & Death Certificate,6
+22,TALDANGRA,Apply - Payment of WBSEDCL Electricity Bill,1
+22,TALDANGRA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+22,TALDANGRA,Application for Income Certificates,3
+22,TALDANGRA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+22,TALDANGRA,Search - Download of e-Ration Card,5
+22,TALDANGRA,Search - GRN Information,6
+23,BISHNUPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+23,BISHNUPUR,Application for Income Certificates,2
+23,BISHNUPUR,Caste Certificate,3
+23,BISHNUPUR,Apply - GP Certificate,4
+23,BISHNUPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+23,BISHNUPUR,Search - Download of e-Ration Card,6
+24,INDAS,Apply - Payment of WBSEDCL Electricity Bill,1
+24,INDAS,Application for Income Certificates,2
+24,INDAS,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+24,INDAS,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+24,INDAS,Search - Application Status of Digital Ration Card Application,5
+24,INDAS,Search - Download of e-Ration Card,6
+25,JOYPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+25,JOYPUR,Application for Income Certificates,2
+25,JOYPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+25,JOYPUR,Caste Certificate,4
+25,JOYPUR,Apply - Plot Information,5
+25,JOYPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+26,PATRASAYER,Apply - Payment of WBSEDCL Electricity Bill,1
+26,PATRASAYER,Application for Income Certificates,2
+26,PATRASAYER,Caste Certificate,3
+26,PATRASAYER,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+26,PATRASAYER,Apply - New Digital Ration Card,5
+26,PATRASAYER,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+27,KOTULPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+27,KOTULPUR,Apply - OPD Registration,2
+27,KOTULPUR,Application for Income Certificates,3
+27,KOTULPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+27,KOTULPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+27,KOTULPUR,Apply - Plot Information,6
+28,SONAMUKHI,Apply - Payment of WBSEDCL Electricity Bill,1
+28,SONAMUKHI,Application for Income Certificates,2
+28,SONAMUKHI,Apply - GP Certificate,3
+28,SONAMUKHI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+28,SONAMUKHI,Caste Certificate,5
+28,SONAMUKHI,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+29,SURI-I,Apply - Payment of WBSEDCL Electricity Bill,1
+29,SURI-I,Payment - e-Payment Stamp Duty & Registration Fees,2
+29,SURI-I,Application for Income Certificates,3
+29,SURI-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+29,SURI-I,Search - Status of Application of Swasthya Sathi Card,5
+29,SURI-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+30,SURI-II,Caste Certificate,1
+30,SURI-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+30,SURI-II,Apply - Payment of WBSEDCL Electricity Bill,3
+30,SURI-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+30,SURI-II,Application for Income Certificates,5
+30,SURI-II,Search - Status of Application of Swasthya Sathi Card,6
+31,SAINTHIA,Search - Status of Application of Swasthya Sathi Card,1
+31,SAINTHIA,Caste Certificate,2
+31,SAINTHIA,Apply - Payment of WBSEDCL Electricity Bill,3
+31,SAINTHIA,Search - Download of e-Ration Card,4
+31,SAINTHIA,Search - Application Status of Digital Ration Card Application,5
+31,SAINTHIA,Status of Application (Krishak Bandhu),6
+32,RAJNAGAR,Apply - Payment of WBSEDCL Electricity Bill,1
+32,RAJNAGAR,Application for Income Certificates,2
+32,RAJNAGAR,Apply - GP Certificate,3
+32,RAJNAGAR,Caste Certificate,4
+32,RAJNAGAR,Search - Status of Application of Swasthya Sathi Card,5
+32,RAJNAGAR,eDistrict Dashboard,6
+33,KHOYRASOLE,Application for Income Certificates,1
+33,KHOYRASOLE,Search - Status of Application of Swasthya Sathi Card,2
+33,KHOYRASOLE,Caste Certificate,3
+33,KHOYRASOLE,Search - Download of e-Ration Card,4
+33,KHOYRASOLE,Apply - GP Certificate,5
+33,KHOYRASOLE,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+34,DUBRAJPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+34,DUBRAJPUR,Caste Certificate,2
+34,DUBRAJPUR,Search - Download of e-Ration Card,3
+34,DUBRAJPUR,Application for Income Certificates,4
+34,DUBRAJPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+34,DUBRAJPUR,Search - Status of Application of Swasthya Sathi Card,6
+35,MD. BAZAR,Status of Application (Krishak Bandhu),1
+35,MD. BAZAR,Search - Status of Application of Swasthya Sathi Card,2
+35,MD. BAZAR,Apply - Plot Information,3
+35,MD. BAZAR,Apply - Payment of WBSEDCL Electricity Bill,4
+35,MD. BAZAR,Search - Bangla Shasya Bima,5
+35,MD. BAZAR,Caste Certificate,6
+36,BOLPUR-SRINIKETAN,Apply - Payment of WBSEDCL Electricity Bill,1
+36,BOLPUR-SRINIKETAN,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+36,BOLPUR-SRINIKETAN,Application for Income Certificates,3
+36,BOLPUR-SRINIKETAN,Status of Application (Krishak Bandhu),4
+36,BOLPUR-SRINIKETAN,Search - Status of Application of Swasthya Sathi Card,5
+36,BOLPUR-SRINIKETAN,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+37,ILLAMBAZAR,Apply - Payment of WBSEDCL Electricity Bill,1
+37,ILLAMBAZAR,Application for Income Certificates,2
+37,ILLAMBAZAR,Apply - GP Certificate,3
+37,ILLAMBAZAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+37,ILLAMBAZAR,Status of Application (Krishak Bandhu),5
+37,ILLAMBAZAR,Apply - Krishak Bandhu Scheme,6
+38,NANOOR,Apply - Payment of WBSEDCL Electricity Bill,1
+38,NANOOR,Application for Income Certificates,2
+38,NANOOR,eDistrict Dashboard,3
+38,NANOOR,Search - Application Status of Digital Ration Card Application,4
+38,NANOOR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+38,NANOOR,Search - Download of e-Ration Card,6
+39,LABPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+39,LABPUR,Search - Download of e-Ration Card,2
+39,LABPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+39,LABPUR,Status of Application (Krishak Bandhu),4
+39,LABPUR,Search - Status of Application of Swasthya Sathi Card,5
+39,LABPUR,Caste Certificate,6
+40,RAMPURHAT-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+40,RAMPURHAT-I,Apply - Payment of WBSEDCL Electricity Bill,2
+40,RAMPURHAT-I,Application for Income Certificates,3
+40,RAMPURHAT-I,Search - Application Status of Digital Ration Card Application,4
+40,RAMPURHAT-I,Caste Certificate,5
+40,RAMPURHAT-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+41,RAMPURHAT-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+41,RAMPURHAT-II,Apply - Payment of WBSEDCL Electricity Bill,2
+41,RAMPURHAT-II,Search - Application Status of Digital Ration Card Application,3
+41,RAMPURHAT-II,Search - Status of Application of Swasthya Sathi Card,4
+41,RAMPURHAT-II,Search - Download of e-Ration Card,5
+41,RAMPURHAT-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+42,NALHATI-I,Apply - Payment of WBSEDCL Electricity Bill,1
+42,NALHATI-I,Application for Income Certificates,2
+42,NALHATI-I,Search - Application Status of Digital Ration Card Application,3
+42,NALHATI-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+42,NALHATI-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+42,NALHATI-I,Apply - GP Certificate,6
+43,NALHATI-II,Search - Status of Application of Swasthya Sathi Card,1
+43,NALHATI-II,Status of Application (Krishak Bandhu),2
+43,NALHATI-II,Search - Download of e-Ration Card,3
+43,NALHATI-II,Search - Application Status of Digital Ration Card Application,4
+43,NALHATI-II,Application for Income Certificates,5
+43,NALHATI-II,Apply - Payment of WBSEDCL Electricity Bill,6
+44,MAYURESWAR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+44,MAYURESWAR-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+44,MAYURESWAR-I,Apply - New Digital Ration Card,3
+44,MAYURESWAR-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+44,MAYURESWAR-I,Search - Status of Application of Swasthya Sathi Card,5
+44,MAYURESWAR-I,Apply - GP Certificate,6
+45,MAYURESWAR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+45,MAYURESWAR-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+45,MAYURESWAR-II,Application for Income Certificates,3
+45,MAYURESWAR-II,Search - Application Status of Digital Ration Card Application,4
+45,MAYURESWAR-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+45,MAYURESWAR-II,Apply - GP Certificate,6
+46,MURARAI-I,Apply - Payment of WBSEDCL Electricity Bill,1
+46,MURARAI-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+46,MURARAI-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+46,MURARAI-I,Application for Income Certificates,4
+46,MURARAI-I,Search - Application Status of Digital Ration Card Application,5
+46,MURARAI-I,Search - Status of Application of Swasthya Sathi Card,6
+47,MURARAI-II,Apply - Payment of WBSEDCL Electricity Bill,1
+47,MURARAI-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+47,MURARAI-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+47,MURARAI-II,Application for Income Certificates,4
+47,MURARAI-II,Apply - GP Certificate,5
+47,MURARAI-II,Search - Application Status of Digital Ration Card Application,6
+48,COOCH BEHAR -I,Apply - Payment of WBSEDCL Electricity Bill,1
+48,COOCH BEHAR -I,Application for Income Certificates,2
+48,COOCH BEHAR -I,Apply - Submission of Form for Electoral Roll,3
+48,COOCH BEHAR -I,Apply - GP Certificate,4
+48,COOCH BEHAR -I,Search - Gram Panchayat Tax Payment,5
+48,COOCH BEHAR -I,Apply - Land Revenue (Khajna),6
+49,COOCH BEHAR -II,Apply - Payment of WBSEDCL Electricity Bill,1
+49,COOCH BEHAR -II,Apply - GP Certificate,2
+49,COOCH BEHAR -II,Caste Certificate,3
+49,COOCH BEHAR -II,Search - Gram Panchayat Tax Payment,4
+49,COOCH BEHAR -II,Search - Application Status of Digital Ration Card Application,5
+49,COOCH BEHAR -II,Apply - Submission of Form for Electoral Roll,6
+50,DINHATA -I,Apply - Payment of WBSEDCL Electricity Bill,1
+50,DINHATA -I,Search - Application Status of Digital Ration Card Application,2
+50,DINHATA -I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+50,DINHATA -I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+50,DINHATA -I,Payment - e-Payment Stamp Duty & Registration Fees,5
+50,DINHATA -I,Apply - ROR Application ,6
+51,DINHATA -II,Apply - Payment of WBSEDCL Electricity Bill,1
+51,DINHATA -II,Application for Income Certificates,2
+51,DINHATA -II,Apply - GP Certificate,3
+51,DINHATA -II,Search - Gram Panchayat Tax Payment,3
+51,DINHATA -II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+51,DINHATA -II,Apply - Submission of Form for Electoral Roll,5
+51,DINHATA -II,Caste Certificate,6
+52,SITAI,Payment - e-Payment Stamp Duty & Registration Fees,1
+52,SITAI,Application for Income Certificates,2
+52,SITAI,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+52,SITAI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+52,SITAI,Search - Status of Application of Swasthya Sathi Card,5
+52,SITAI,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),6
+53,MATHABHANGA -I,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+53,MATHABHANGA -I,Apply - ROR Application ,2
+53,MATHABHANGA -I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+53,MATHABHANGA -I,Search - Status of Application of Swasthya Sathi Card,4
+53,MATHABHANGA -I,Apply - Payment of WBSEDCL Electricity Bill,5
+53,MATHABHANGA -I,Search - Application Status of Digital Ration Card Application,6
+54,MATHABHANGA -II,Apply - Payment of WBSEDCL Electricity Bill,1
+54,MATHABHANGA -II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+54,MATHABHANGA -II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+54,MATHABHANGA -II,Search - Gram Panchayat Tax Payment,4
+54,MATHABHANGA -II,Apply - Submission of Form for Electoral Roll,5
+54,MATHABHANGA -II,Apply - GP Certificate,6
+55,SITALKUCHI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+55,SITALKUCHI,Application for Income Certificates,2
+55,SITALKUCHI,Payment - e-Payment Stamp Duty & Registration Fees,3
+55,SITALKUCHI,Search - Application Status of Digital Ration Card Application,4
+55,SITALKUCHI,Caste Certificate,5
+55,SITALKUCHI,Search - Status of Application of Swasthya Sathi Card,6
+56,MEKHLIGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+56,MEKHLIGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+56,MEKHLIGANJ,Search - Status of Application of Swasthya Sathi Card,3
+56,MEKHLIGANJ,Application for Income Certificates,4
+56,MEKHLIGANJ,Apply - Payment of WBSEDCL Electricity Bill,5
+56,MEKHLIGANJ,Search - Download of e-Ration Card,6
+57,HALDIBARI,Application for Income Certificates,1
+57,HALDIBARI,Search - Application Status of Digital Ration Card Application,2
+57,HALDIBARI,Search - Status of Application of Swasthya Sathi Card,3
+57,HALDIBARI,Payment - e-Payment Stamp Duty & Registration Fees,4
+57,HALDIBARI,Apply - Payment of WBSEDCL Electricity Bill,5
+57,HALDIBARI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+58,TUFANGANJ -I,Application for Income Certificates,1
+58,TUFANGANJ -I,Apply - Submission of Form for Electoral Roll,2
+58,TUFANGANJ -I,Apply - Payment of WBSEDCL Electricity Bill,3
+58,TUFANGANJ -I,Search - Status of Application of Swasthya Sathi Card,4
+58,TUFANGANJ -I,Caste Certificate,5
+58,TUFANGANJ -I,Apply - GP Certificate,6
+59,TUFANGANJ -II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+59,TUFANGANJ -II,Apply - Payment of WBSEDCL Electricity Bill,2
+59,TUFANGANJ -II,Application for Income Certificates,3
+59,TUFANGANJ -II,Search - Status of Application of Swasthya Sathi Card,4
+59,TUFANGANJ -II,Caste Certificate,5
+59,TUFANGANJ -II,Search - Application Status of Digital Ration Card Application,6
+60,BALURGHAT,Apply - Payment of WBSEDCL Electricity Bill,1
+60,BALURGHAT,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+60,BALURGHAT,Apply - Submission of Form for Electoral Roll,3
+60,BALURGHAT,Apply - Land Revenue (Khajna),4
+60,BALURGHAT,Search - Download of e-Ration Card,5
+60,BALURGHAT,Modify - Add member / FPS of Ration Card Holder,6
+61,HILI,Apply - Payment of WBSEDCL Electricity Bill,1
+61,HILI,Application for Income Certificates,2
+61,HILI,Payment History - WBSEDCL,3
+61,HILI,Apply - Land Revenue (Khajna),4
+61,HILI,Apply - GP Certificate,5
+61,HILI,Apply - Submission of Form for Electoral Roll,6
+62,KUMARGANJ,Apply - Payment of WBSEDCL Electricity Bill,1
+62,KUMARGANJ,Apply - Submission of Form for Electoral Roll,2
+62,KUMARGANJ,Search - Application Status of Digital Ration Card Application,3
+62,KUMARGANJ,Apply - Verification of Electoral Roll Online,4
+62,KUMARGANJ,Status of Application (Krishak Bandhu),5
+62,KUMARGANJ,Search - Regenerate Receipt of WBSEDCL,6
+63,TAPAN,Apply - Payment of WBSEDCL Electricity Bill,1
+63,TAPAN,Payment - e-Payment Stamp Duty & Registration Fees,2
+63,TAPAN,Search - Status of Application of Swasthya Sathi Card,3
+63,TAPAN,Payment History - WBSEDCL,4
+63,TAPAN,Application for Income Certificates,5
+63,TAPAN,Apply for Birth & Death Certificate,6
+64,GANGARAMPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+64,GANGARAMPUR,Application for Income Certificates,2
+64,GANGARAMPUR,Status of Application (Krishak Bandhu),3
+64,GANGARAMPUR,Apply - Land Revenue (Khajna),4
+64,GANGARAMPUR,Apply - GP Certificate,5
+64,GANGARAMPUR,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),6
+65,KUSHMANDI,Application for Income Certificates,1
+65,KUSHMANDI,Apply - Payment of WBSEDCL Electricity Bill,2
+65,KUSHMANDI,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+65,KUSHMANDI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+65,KUSHMANDI,Modify - Add member / FPS of Ration Card Holder,5
+65,KUSHMANDI,Apply - New Digital Ration Card,6
+66,BANSIHARI,Apply - Payment of WBSEDCL Electricity Bill,1
+66,BANSIHARI,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+66,BANSIHARI,Application for Income Certificates,3
+66,BANSIHARI,Apply - Submission of Form for Electoral Roll,4
+66,BANSIHARI,Search - Download of e-Ration Card,5
+66,BANSIHARI,Modify - Add member / FPS of Ration Card Holder,6
+67,HARIRAMPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+67,HARIRAMPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+67,HARIRAMPUR,Search - Status of Application of Swasthya Sathi Card,3
+67,HARIRAMPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+67,HARIRAMPUR,Modify - Add member / FPS of Ration Card Holder,5
+67,HARIRAMPUR,Status of Application (Krishak Bandhu),5
+67,HARIRAMPUR,Search - Bangla Shasya Bima,6
+68,PULBAZAR,Apply - Payment of WBSEDCL Electricity Bill,1
+68,PULBAZAR,Application for Income Certificates,2
+68,PULBAZAR,Apply - Ordinary Residencial Certificate,3
+68,PULBAZAR,Apply - Land Revenue (Khajna),4
+68,PULBAZAR,Apply - Submission of Form for Electoral Roll,5
+68,PULBAZAR,Caste Certificate,6
+69,RANGLI RANGLIOT,Apply - Payment of WBSEDCL Electricity Bill,1
+69,RANGLI RANGLIOT,Apply - Ordinary Residencial Certificate,2
+69,RANGLI RANGLIOT,Search - Status of Application of Swasthya Sathi Card,3
+69,RANGLI RANGLIOT,Apply - Submission of Form for Electoral Roll,4
+69,RANGLI RANGLIOT,Application for Income Certificates,5
+69,RANGLI RANGLIOT,Apply - GP Certificate,6
+70,JOREBUNGLOW SUKIAPOKHRI,Apply - Payment of WBSEDCL Electricity Bill,1
+70,JOREBUNGLOW SUKIAPOKHRI,Apply - Ordinary Residencial Certificate,2
+70,JOREBUNGLOW SUKIAPOKHRI,Application for Income Certificates,3
+70,JOREBUNGLOW SUKIAPOKHRI,Apply - Submission of Form for Electoral Roll,4
+70,JOREBUNGLOW SUKIAPOKHRI,Apply - OPD Registration,5
+70,JOREBUNGLOW SUKIAPOKHRI,Apply - Land Revenue (Khajna),6
+71,KURSEONG,Apply - Payment of WBSEDCL Electricity Bill,1
+71,KURSEONG,eDistrict Dashboard,2
+71,KURSEONG,Apply - Submission of Form for Electoral Roll,3
+71,KURSEONG,Apply - Ordinary Residencial Certificate,4
+71,KURSEONG,Apply - GP Certificate,5
+71,KURSEONG,Search - Status of Application of Swasthya Sathi Card,6
+72,MIRIK,Apply - Submission of Form for Electoral Roll,1
+72,MIRIK,Apply - Payment of WBSEDCL Electricity Bill,2
+72,MIRIK,Apply - Ordinary Residencial Certificate,3
+72,MIRIK,Caste Certificate,4
+72,MIRIK,Apply - Verification of Electoral Roll Online,5
+72,MIRIK,Search - Status of Application of Swasthya Sathi Card,6
+73,MATIGARA,Application for Income Certificates,1
+73,MATIGARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+73,MATIGARA,Apply - Payment of WBSEDCL Electricity Bill,3
+73,MATIGARA,Apply - Ordinary Residencial Certificate,4
+73,MATIGARA,Apply - Land Revenue (Khajna),5
+73,MATIGARA,Apply - Submission of Form for Electoral Roll,6
+74,NAXALBARI,Apply - Payment of WBSEDCL Electricity Bill,1
+74,NAXALBARI,Apply - Submission of Form for Electoral Roll,2
+74,NAXALBARI,Application for Income Certificates,3
+74,NAXALBARI,Apply - Ordinary Residencial Certificate,4
+74,NAXALBARI,Apply - Land Revenue (Khajna),5
+74,NAXALBARI,Apply - GP Certificate,6
+75,KHORIBARI,Caste Certificate,1
+75,KHORIBARI,Application for Income Certificates,2
+75,KHORIBARI,Apply - Submission of Form for Electoral Roll,3
+75,KHORIBARI,Apply - Payment of WBSEDCL Electricity Bill,4
+75,KHORIBARI,Apply - GP Certificate,5
+75,KHORIBARI,Info - Old Age Pension Scheme,6
+76,PHANSIDEWA,Apply - Payment of WBSEDCL Electricity Bill,1
+76,PHANSIDEWA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+76,PHANSIDEWA,Caste Certificate,3
+76,PHANSIDEWA,Apply - Submission of Form for Electoral Roll,4
+76,PHANSIDEWA,Apply - GP Certificate,5
+76,PHANSIDEWA,Application for Income Certificates,6
+77,ARAMBAGH,Apply - Payment of WBSEDCL Electricity Bill,1
+77,ARAMBAGH,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+77,ARAMBAGH,Application for Income Certificates,3
+77,ARAMBAGH,Info - Old Age Pension Scheme,4
+77,ARAMBAGH,Apply - ROR Application ,5
+77,ARAMBAGH,Status of Application (Krishak Bandhu),6
+78,PURSURAH,Apply - Payment of WBSEDCL Electricity Bill,1
+78,PURSURAH,Info - Old Age Pension Scheme,2
+78,PURSURAH,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+78,PURSURAH,Search - Status of Application of Swasthya Sathi Card,4
+78,PURSURAH,Application for Income Certificates,5
+78,PURSURAH,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+79,KHANAKUL-I,Apply - Payment of WBSEDCL Electricity Bill,1
+79,KHANAKUL-I,Apply - ROR Application ,2
+79,KHANAKUL-I,Search - GRN Information,3
+79,KHANAKUL-I,Search - Status of Application of Swasthya Sathi Card,4
+79,KHANAKUL-I,Application for Income Certificates,5
+79,KHANAKUL-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+80,KHANAKUL-II,Apply - Payment of WBSEDCL Electricity Bill,1
+80,KHANAKUL-II,Search - Status of Application of Swasthya Sathi Card,2
+80,KHANAKUL-II,Apply - ROR Application ,3
+80,KHANAKUL-II,Search - Download of e-Ration Card,4
+80,KHANAKUL-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+80,KHANAKUL-II,Caste Certificate,6
+81,GOGHAT-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+81,GOGHAT-I,Apply - Payment of WBSEDCL Electricity Bill,2
+81,GOGHAT-I,Apply - ROR Application ,3
+81,GOGHAT-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+81,GOGHAT-I,Status of Application (Krishak Bandhu),5
+81,GOGHAT-I,Caste Certificate,6
+82,GOGHAT-II,Apply - Payment of WBSEDCL Electricity Bill,1
+82,GOGHAT-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+82,GOGHAT-II,Application for Income Certificates,3
+82,GOGHAT-II,Apply - ROR Application ,4
+82,GOGHAT-II,Search - GRN Information,5
+82,GOGHAT-II,Caste Certificate,6
+83,BALAGARH,Apply - Payment of WBSEDCL Electricity Bill,1
+83,BALAGARH,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+83,BALAGARH,Caste Certificate,3
+83,BALAGARH,Application for Income Certificates,4
+83,BALAGARH,Search - Status of Application of Swasthya Sathi Card,5
+83,BALAGARH,Apply - ROR Application ,6
+84,PANDUA,Apply - Payment of WBSEDCL Electricity Bill,1
+84,PANDUA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+84,PANDUA,Caste Certificate,3
+84,PANDUA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+84,PANDUA,Search - Status of Application of Swasthya Sathi Card,5
+84,PANDUA,Application for Income Certificates,6
+85,CHINSURAHA MAGRA,Apply - Payment of WBSEDCL Electricity Bill,1
+85,CHINSURAHA MAGRA,Search - Status of Application of Swasthya Sathi Card,2
+85,CHINSURAHA MAGRA,Application for Income Certificates,3
+85,CHINSURAHA MAGRA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+85,CHINSURAHA MAGRA,Search - Application Status of Digital Ration Card Application,5
+85,CHINSURAHA MAGRA,Apply- Addition of New Member after Receiving Card (Form Â A),6
+86,POLBA DADPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+86,POLBA DADPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+86,POLBA DADPUR,Search - Application Status of Digital Ration Card Application,3
+86,POLBA DADPUR,Search - Download of e-Ration Card,4
+86,POLBA DADPUR,Application for Income Certificates,5
+86,POLBA DADPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+87,DHANIAKHALI,Apply - Payment of WBSEDCL Electricity Bill,1
+87,DHANIAKHALI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+87,DHANIAKHALI,Apply - ROR Application ,3
+87,DHANIAKHALI,Caste Certificate,4
+87,DHANIAKHALI,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+87,DHANIAKHALI,Application for Income Certificates,6
+88,TARAKESHWAR,Apply - Payment of WBSEDCL Electricity Bill,1
+88,TARAKESHWAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+88,TARAKESHWAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+88,TARAKESHWAR,Apply - ROR Application ,4
+88,TARAKESHWAR,Apply - Submission of Form for Electoral Roll,5
+88,TARAKESHWAR,Application for Income Certificates,6
+89,HARIPAL,Apply - Payment of WBSEDCL Electricity Bill,1
+89,HARIPAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+89,HARIPAL,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+89,HARIPAL,Application for Income Certificates,4
+89,HARIPAL,Apply - ROR Application ,5
+89,HARIPAL,Search - Status of Application of Swasthya Sathi Card,6
+90,SINGUR,Apply - Payment of WBSEDCL Electricity Bill,1
+90,SINGUR,Search - Application Status of Digital Ration Card Application,2
+90,SINGUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+90,SINGUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+90,SINGUR,Search - Download of e-Ration Card,5
+90,SINGUR,Application for Income Certificates,6
+91,SRIRAMPUR UTTARPARA,Apply - Payment of WBSEDCL Electricity Bill,1
+91,SRIRAMPUR UTTARPARA,Apply - Land Revenue (Khajna),2
+91,SRIRAMPUR UTTARPARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+91,SRIRAMPUR UTTARPARA,Payment - Electricity Bill of CESC,4
+91,SRIRAMPUR UTTARPARA,Search - Application Status of Digital Ration Card Application,5
+91,SRIRAMPUR UTTARPARA,Apply - Online Trade Registration,6
+92,CHANDITALA-I,Apply - Payment of WBSEDCL Electricity Bill,1
+92,CHANDITALA-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+92,CHANDITALA-I,Apply - Submission of Form for Electoral Roll,3
+92,CHANDITALA-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+92,CHANDITALA-I,Application for Income Certificates,5
+92,CHANDITALA-I,Apply - Land Revenue (Khajna),6
+93,CHANDITALA-II,Apply - Payment of WBSEDCL Electricity Bill,1
+93,CHANDITALA-II,Apply - ROR Application ,2
+93,CHANDITALA-II,Search - GRN Information,3
+93,CHANDITALA-II,Apply - Land Revenue (Khajna),4
+93,CHANDITALA-II,Search - Download of e-Ration Card,5
+93,CHANDITALA-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+94,JANGIPARA,Apply - Payment of WBSEDCL Electricity Bill,1
+94,JANGIPARA,Apply - Submission of Form for Electoral Roll,2
+94,JANGIPARA,Apply - Land Revenue (Khajna),3
+94,JANGIPARA,Search - Download of e-Ration Card,4
+94,JANGIPARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+94,JANGIPARA,Application for Income Certificates,6
+95,BALLY JAGACHA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+95,BALLY JAGACHA,Apply - Payment of WBSEDCL Electricity Bill,2
+95,BALLY JAGACHA,Apply - New Digital Ration Card,3
+95,BALLY JAGACHA,Apply - Land Revenue (Khajna),4
+95,BALLY JAGACHA,Search - Application Status of Digital Ration Card Application,5
+95,BALLY JAGACHA,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+96,DOMJUR,Apply - Payment of WBSEDCL Electricity Bill,1
+96,DOMJUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+96,DOMJUR,Search - Application Status of Digital Ration Card Application,3
+96,DOMJUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+96,DOMJUR,Search - Download of e-Ration Card,5
+96,DOMJUR,Application for Income Certificates,6
+97,PANCHLA,Apply - Payment of WBSEDCL Electricity Bill,1
+97,PANCHLA,Application for Income Certificates,2
+97,PANCHLA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+97,PANCHLA,Apply - ROR Application ,4
+97,PANCHLA,Search - Download of e-Ration Card,5
+97,PANCHLA,Apply - Land Revenue (Khajna),6
+98,SANKRAIL,Apply - Payment of WBSEDCL Electricity Bill,1
+98,SANKRAIL,Search - Application Status of Digital Ration Card Application,2
+98,SANKRAIL,Search - Status of Application of Swasthya Sathi Card,3
+98,SANKRAIL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+98,SANKRAIL,Apply - OPD Registration,5
+98,SANKRAIL,Caste Certificate,6
+99,JAGATBALLAVPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+99,JAGATBALLAVPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+99,JAGATBALLAVPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+99,JAGATBALLAVPUR,Application for Income Certificates,4
+99,JAGATBALLAVPUR,Caste Certificate,5
+99,JAGATBALLAVPUR,Search - Status of Application of Swasthya Sathi Card,6
+100,ULUBERIA-I,Application for Income Certificates,1
+100,ULUBERIA-I,Apply - Payment of WBSEDCL Electricity Bill,2
+100,ULUBERIA-I,Search - Status of Application of Swasthya Sathi Card,3
+100,ULUBERIA-I,Search - Application Status of Digital Ration Card Application,4
+100,ULUBERIA-I,Apply - Land Revenue (Khajna),5
+100,ULUBERIA-I,Caste Certificate,6
+101,ULUBERIA-II,Apply - Payment of WBSEDCL Electricity Bill,1
+101,ULUBERIA-II,Application for Income Certificates,2
+101,ULUBERIA-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+101,ULUBERIA-II,Apply - Land Revenue (Khajna),4
+101,ULUBERIA-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+101,ULUBERIA-II,Search - Download of e-Ration Card,6
+102,AMTA-I,Apply - Payment of WBSEDCL Electricity Bill,1
+102,AMTA-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+102,AMTA-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+102,AMTA-I,Search - Status of Application of Swasthya Sathi Card,4
+102,AMTA-I,Caste Certificate,5
+102,AMTA-I,Search - Download of e-Ration Card,6
+103,AMTA-II,Apply - Payment of WBSEDCL Electricity Bill,1
+103,AMTA-II,Search - Application Status of Digital Ration Card Application,2
+103,AMTA-II,Search - Status of Application of Swasthya Sathi Card,3
+103,AMTA-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+103,AMTA-II,Search - Download of e-Ration Card,5
+103,AMTA-II,Caste Certificate,6
+104,BAGNAN-I,Apply - Payment of WBSEDCL Electricity Bill,1
+104,BAGNAN-I,Application for Income Certificates,2
+104,BAGNAN-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+104,BAGNAN-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+104,BAGNAN-I,Search - Status of Application of Swasthya Sathi Card,5
+104,BAGNAN-I,Search - Application Status of Digital Ration Card Application,6
+105,BAGNAN-II,Apply - Payment of WBSEDCL Electricity Bill,1
+105,BAGNAN-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+105,BAGNAN-II,Search - Download of e-Ration Card,3
+105,BAGNAN-II,Search - Application Status of Digital Ration Card Application,4
+105,BAGNAN-II,Application for Income Certificates,5
+105,BAGNAN-II,Search - Status of Application of Swasthya Sathi Card,6
+106,SHYAMPUR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+106,SHYAMPUR-I,Application for Income Certificates,2
+106,SHYAMPUR-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+106,SHYAMPUR-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+106,SHYAMPUR-I,Caste Certificate,5
+106,SHYAMPUR-I,Apply - ROR Application ,6
+107,SHYAMPUR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+107,SHYAMPUR-II,Search - Status of Application of Swasthya Sathi Card,2
+107,SHYAMPUR-II,Payment - e-Payment Stamp Duty & Registration Fees,3
+107,SHYAMPUR-II,Search - GRN Information,4
+107,SHYAMPUR-II,Application for Income Certificates,5
+107,SHYAMPUR-II,Info - Old Age Pension Scheme,6
+108,UDAYNARAYANPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+108,UDAYNARAYANPUR,Application for Income Certificates,2
+108,UDAYNARAYANPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+108,UDAYNARAYANPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+108,UDAYNARAYANPUR,Caste Certificate,5
+108,UDAYNARAYANPUR,Search - Download of e-Ration Card,6
+109,JALPAIGURI (SADAR),Apply - Payment of WBSEDCL Electricity Bill,1
+109,JALPAIGURI (SADAR),Caste Certificate,2
+109,JALPAIGURI (SADAR),Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+109,JALPAIGURI (SADAR),Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+109,JALPAIGURI (SADAR),Search - Status of Application of Swasthya Sathi Card,5
+109,JALPAIGURI (SADAR),Modify - Add member / FPS of Ration Card Holder,6
+110,DHUPGURI,Caste Certificate,1
+110,DHUPGURI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+110,DHUPGURI,Apply - Payment of WBSEDCL Electricity Bill,3
+110,DHUPGURI,Application for Income Certificates,4
+110,DHUPGURI,Modify - Add member / FPS of Ration Card Holder,5
+110,DHUPGURI,Apply - Submission of Form for Electoral Roll,6
+111,MAYNAGURI,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+111,MAYNAGURI,Apply - Payment of WBSEDCL Electricity Bill,2
+111,MAYNAGURI,Caste Certificate,3
+111,MAYNAGURI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+111,MAYNAGURI,Search - Application Status of Digital Ration Card Application,5
+111,MAYNAGURI,Search - Status of Application of Swasthya Sathi Card,6
+112,RAJGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+112,RAJGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+112,RAJGANJ,Apply - Payment of WBSEDCL Electricity Bill,3
+112,RAJGANJ,Search - Application Status of Digital Ration Card Application,4
+112,RAJGANJ,Search - Status of Application of Swasthya Sathi Card,5
+112,RAJGANJ,Caste Certificate,6
+113,MAL,Application for Income Certificates,1
+113,MAL,Caste Certificate,2
+113,MAL,Apply - New Digital Ration Card,3
+113,MAL,Apply - Submission of Form for Electoral Roll,4
+113,MAL,Apply - Payment of WBSEDCL Electricity Bill,5
+113,MAL,Apply - Verification of Electoral Roll Online,6
+114,MATIALI,Apply - Payment of WBSEDCL Electricity Bill,1
+114,MATIALI,Application for Income Certificates,2
+114,MATIALI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+114,MATIALI,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+114,MATIALI,Search - Application Status of Digital Ration Card Application,5
+114,MATIALI,Caste Certificate,6
+115,NAGRAKATA,Apply - Payment of WBSEDCL Electricity Bill,1
+115,NAGRAKATA,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+115,NAGRAKATA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+115,NAGRAKATA,Search - Application Status of Digital Ration Card Application,4
+115,NAGRAKATA,Application for Income Certificates,5
+115,NAGRAKATA,Caste Certificate,6
+116,JHARGRAM,Application for Income Certificates,1
+116,JHARGRAM,Apply - Payment of WBSEDCL Electricity Bill,2
+116,JHARGRAM,Apply - GP Certificate,3
+116,JHARGRAM,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+116,JHARGRAM,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+116,JHARGRAM,Caste Certificate,6
+117,JAMBONI,Application for Income Certificates,1
+117,JAMBONI,Apply - Payment of WBSEDCL Electricity Bill,2
+117,JAMBONI,Apply - GP Certificate,3
+117,JAMBONI,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+117,JAMBONI,Apply - ROR Application ,5
+117,JAMBONI,Caste Certificate,6
+118,BINPUR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+118,BINPUR-I,Application for Income Certificates,2
+118,BINPUR-I,Apply - GP Certificate,3
+118,BINPUR-I,Caste Certificate,4
+118,BINPUR-I,Apply - Plot Information,5
+118,BINPUR-I,Search - Download of e-Ration Card,6
+119,BINPUR-II,Caste Certificate,1
+119,BINPUR-II,Application for Income Certificates,2
+119,BINPUR-II,Apply - Payment of WBSEDCL Electricity Bill,3
+119,BINPUR-II,Apply - GP Certificate,4
+119,BINPUR-II,Apply - Plot Information,5
+119,BINPUR-II,Apply - Ordinary Residencial Certificate,6
+120,GOPIBALLAVPUR-I,Application for Income Certificates,1
+120,GOPIBALLAVPUR-I,Apply - Payment of WBSEDCL Electricity Bill,2
+120,GOPIBALLAVPUR-I,Caste Certificate,3
+120,GOPIBALLAVPUR-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+120,GOPIBALLAVPUR-I,Apply - GP Certificate,5
+120,GOPIBALLAVPUR-I,Apply - ROR Application ,6
+121,GOPIBALLAVPUR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+121,GOPIBALLAVPUR-II,Apply - ROR Application ,2
+121,GOPIBALLAVPUR-II,Application for Income Certificates,3
+121,GOPIBALLAVPUR-II,Apply - GP Certificate,4
+121,GOPIBALLAVPUR-II,Search - Gram Panchayat Tax Payment,5
+121,GOPIBALLAVPUR-II,Caste Certificate,6
+122,SANKRAIL,Apply - Payment of WBSEDCL Electricity Bill,1
+122,SANKRAIL,Application for Income Certificates,2
+122,SANKRAIL,Apply - GP Certificate,3
+122,SANKRAIL,Search - Status of Application of Swasthya Sathi Card,4
+122,SANKRAIL,Search - NSAP under Jai Bangla,5
+122,SANKRAIL,Caste Certificate,6
+123,NAYAGRAM,Caste Certificate,1
+123,NAYAGRAM,Application for Income Certificates,2
+123,NAYAGRAM,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+123,NAYAGRAM,Apply - Payment of WBSEDCL Electricity Bill,4
+123,NAYAGRAM,Info - Old Age Pension Scheme,5
+123,NAYAGRAM,Apply - GP Certificate,6
+124,GORUBATHAN,Apply - Payment of WBSEDCL Electricity Bill,1
+124,GORUBATHAN,Apply - Land Revenue (Khajna),2
+124,GORUBATHAN,Apply - Ordinary Residencial Certificate,3
+124,GORUBATHAN,Apply - Submission of Form for Electoral Roll,4
+124,GORUBATHAN,Application for applying learners licence,5
+124,GORUBATHAN,Apply - GP Certificate,6
+125,KALIMPONG-I,Apply - Payment of WBSEDCL Electricity Bill,1
+125,KALIMPONG-I,Application for Income Certificates,2
+125,KALIMPONG-I,Apply - Land Revenue (Khajna),3
+125,KALIMPONG-I,Apply - Ordinary Residencial Certificate,4
+125,KALIMPONG-I,Search - Status of Application of Swasthya Sathi Card,5
+125,KALIMPONG-I,Caste Certificate,6
+126,PEDONG,Application for Income Certificates,1
+126,PEDONG,Apply - Land Revenue (Khajna),2
+126,PEDONG,Apply - Ordinary Residencial Certificate,3
+126,PEDONG,Apply - Payment of WBSEDCL Electricity Bill,4
+126,PEDONG,Apply - Online Trade Registration,5
+126,PEDONG,Caste Certificate,6
+127,ENGLISH BAZAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+127,ENGLISH BAZAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+127,ENGLISH BAZAR,Apply - Payment of WBSEDCL Electricity Bill,3
+127,ENGLISH BAZAR,Search - Application Status of Digital Ration Card Application,4
+127,ENGLISH BAZAR,Search - Schedule Paddy Sale,5
+127,ENGLISH BAZAR,Apply for Birth & Death Certificate,6
+128,GAZOLE,Apply - Payment of WBSEDCL Electricity Bill,1
+128,GAZOLE,Application for Income Certificates,2
+128,GAZOLE,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+128,GAZOLE,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+128,GAZOLE,Caste Certificate,5
+128,GAZOLE,Apply - OPD Registration,6
+129,HABIBPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+129,HABIBPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+129,HABIBPUR,Application for Income Certificates,3
+129,HABIBPUR,Search - Application Status of Digital Ration Card Application,4
+129,HABIBPUR,Search - Download of e-Ration Card,5
+129,HABIBPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+130,KALIACHAK I,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+130,KALIACHAK I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+130,KALIACHAK I,Apply - Payment of WBSEDCL Electricity Bill,3
+130,KALIACHAK I,Search - Status of Application of Swasthya Sathi Card,4
+130,KALIACHAK I,Search - Application Status of Digital Ration Card Application,5
+130,KALIACHAK I,Modify - Add member / FPS of Ration Card Holder,6
+131,KALIACHAK II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+131,KALIACHAK II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+131,KALIACHAK II,Apply - Payment of WBSEDCL Electricity Bill,3
+131,KALIACHAK II,Apply - Submission of Form for Electoral Roll,4
+131,KALIACHAK II,Modify - Add member / FPS of Ration Card Holder,5
+131,KALIACHAK II,Search - Status of Application of Swasthya Sathi Card,6
+132,KALIACHAK III,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+132,KALIACHAK III,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+132,KALIACHAK III,Apply - Payment of WBSEDCL Electricity Bill,3
+132,KALIACHAK III,Apply for Birth & Death Certificate,4
+132,KALIACHAK III,Modify - Add member / FPS of Ration Card Holder,5
+132,KALIACHAK III,Application for Income Certificates,6
+133,MANIKCHAK,Apply - Payment of WBSEDCL Electricity Bill,1
+133,MANIKCHAK,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+133,MANIKCHAK,Search - Status of Application of Swasthya Sathi Card,3
+133,MANIKCHAK,Caste Certificate,4
+133,MANIKCHAK,Apply - New Digital Ration Card,5
+133,MANIKCHAK,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+134,OLD MALDA,Apply - Payment of WBSEDCL Electricity Bill,1
+134,OLD MALDA,Search - Application Status of Digital Ration Card Application,2
+134,OLD MALDA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+134,OLD MALDA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+134,OLD MALDA,Caste Certificate,5
+134,OLD MALDA,Search - Download of e-Ration Card,6
+135,BAMONGOLA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+135,BAMONGOLA,Apply - Payment of WBSEDCL Electricity Bill,2
+135,BAMONGOLA,Caste Certificate,3
+135,BAMONGOLA,Search - Status of Application of Swasthya Sathi Card,4
+135,BAMONGOLA,Application for Income Certificates,5
+135,BAMONGOLA,Apply - Submission of Form for Electoral Roll,6
+136,CHANCHAL I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+136,CHANCHAL I,Apply - Submission of Form for Electoral Roll,2
+136,CHANCHAL I,Apply - Payment of WBSEDCL Electricity Bill,3
+136,CHANCHAL I,Info - Old Age Pension Scheme,4
+136,CHANCHAL I,Application for Income Certificates,5
+136,CHANCHAL I,Search - Status of Application of Swasthya Sathi Card,6
+137,CHANCHAL II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+137,CHANCHAL II,Apply - Payment of WBSEDCL Electricity Bill,2
+137,CHANCHAL II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+137,CHANCHAL II,Search - Application Status of Digital Ration Card Application,4
+137,CHANCHAL II,Info - Old Age Pension Scheme,5
+137,CHANCHAL II,Search - Status of Application of Swasthya Sathi Card,6
+138,HARISCHANDRAPUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+138,HARISCHANDRAPUR I,Apply - Payment of WBSEDCL Electricity Bill,2
+138,HARISCHANDRAPUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+138,HARISCHANDRAPUR I,Search - Status of Application of Swasthya Sathi Card,4
+138,HARISCHANDRAPUR I,Search - Download of e-Ration Card,5
+138,HARISCHANDRAPUR I,Application for Income Certificates,6
+139,HARISCHANDRAPUR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+139,HARISCHANDRAPUR II,Apply - Payment of WBSEDCL Electricity Bill,2
+139,HARISCHANDRAPUR II,Search - Status of Application of Swasthya Sathi Card,3
+139,HARISCHANDRAPUR II,Modify - Member Name Correction after Receiving Card (Form Â C),4
+139,HARISCHANDRAPUR II,Apply - Disability Certificate,5
+139,HARISCHANDRAPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+140,RATUA I,Apply - Payment of WBSEDCL Electricity Bill,1
+140,RATUA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+140,RATUA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+140,RATUA I,Search - Status of Application of Swasthya Sathi Card,4
+140,RATUA I,Status of Application (Krishak Bandhu),5
+140,RATUA I,Search - Application Status of Digital Ration Card Application,6
+141,RATUA II,Apply - Payment of WBSEDCL Electricity Bill,1
+141,RATUA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+141,RATUA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+141,RATUA II,Application for Income Certificates,4
+141,RATUA II,Search - Application Status of Digital Ration Card Application,5
+141,RATUA II,Search - Download of e-Ration Card,6
+142,BERHAMPORE,Apply - Payment of WBSEDCL Electricity Bill,1
+142,BERHAMPORE,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+142,BERHAMPORE,Application for Income Certificates,3
+142,BERHAMPORE,Apply - Land Revenue (Khajna),4
+142,BERHAMPORE,Apply - GP Certificate,5
+142,BERHAMPORE,Apply - Ordinary Residencial Certificate,6
+143,BELDANGA I,Apply - Payment of WBSEDCL Electricity Bill,1
+143,BELDANGA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+143,BELDANGA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+143,BELDANGA I,Modify - Add member / FPS of Ration Card Holder,4
+143,BELDANGA I,Apply - Submission of Form for Electoral Roll,5
+143,BELDANGA I,Apply - Verification of Electoral Roll Online,6
+144,BELDANGA II,Apply - Payment of WBSEDCL Electricity Bill,1
+144,BELDANGA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+144,BELDANGA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+144,BELDANGA II,Search - Application Status of Digital Ration Card Application,4
+144,BELDANGA II,Modify - Add member / FPS of Ration Card Holder,5
+144,BELDANGA II,Apply - GP Certificate,6
+145,HARIHARPARA,Apply - Payment of WBSEDCL Electricity Bill,1
+145,HARIHARPARA,Search - Status of Application of Swasthya Sathi Card,2
+145,HARIHARPARA,Modify - Member Name Correction after Receiving Card (Form Â C),3
+145,HARIHARPARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+145,HARIHARPARA,Modify - Add member / FPS of Ration Card Holder,5
+145,HARIHARPARA,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+146,NAODA,Apply - Payment of WBSEDCL Electricity Bill,1
+146,NAODA,Search - Status of Application of Swasthya Sathi Card,2
+146,NAODA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+146,NAODA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+146,NAODA,Search - Application Status of Digital Ration Card Application,5
+146,NAODA,Search - Download of e-Ration Card,6
+147,DOMKAL,Apply - Payment of WBSEDCL Electricity Bill,1
+147,DOMKAL,Search - Status of Application of Swasthya Sathi Card,2
+147,DOMKAL,Modify - Member Name Correction after Receiving Card (Form Â C),3
+147,DOMKAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+147,DOMKAL,Application for Income Certificates,5
+147,DOMKAL,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+148,RANINAGAR I,Apply - Payment of WBSEDCL Electricity Bill,1
+148,RANINAGAR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+148,RANINAGAR I,Application for Income Certificates,3
+148,RANINAGAR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+148,RANINAGAR I,Apply - GP Certificate,5
+148,RANINAGAR I,Payment - Tax or Fees,6
+149,RANINAGAR II,Apply - Payment of WBSEDCL Electricity Bill,1
+149,RANINAGAR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+149,RANINAGAR II,Search - Status of Application of Swasthya Sathi Card,3
+149,RANINAGAR II,Status of Application (Krishak Bandhu),4
+149,RANINAGAR II,Apply - Krishak Bandhu Scheme,5
+149,RANINAGAR II,Application for Income Certificates,6
+150,JALANGI,Apply - Payment of WBSEDCL Electricity Bill,1
+150,JALANGI,Apply - Krishak Bandhu Scheme,2
+150,JALANGI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+150,JALANGI,Apply - Submission of Form for Electoral Roll,4
+150,JALANGI,Application for Income Certificates,5
+150,JALANGI,Status of Application (Krishak Bandhu),6
+151,RAGHUNATHGANJ I,Apply - Payment of WBSEDCL Electricity Bill,1
+151,RAGHUNATHGANJ I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+151,RAGHUNATHGANJ I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+151,RAGHUNATHGANJ I,Modify - Add member / FPS of Ration Card Holder,4
+151,RAGHUNATHGANJ I,Search - Application Status of Digital Ration Card Application,5
+151,RAGHUNATHGANJ I,Application - Refund of e-Payment,6
+152,RAGHUNATHGANJ II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+152,RAGHUNATHGANJ II,Application for Income Certificates,2
+152,RAGHUNATHGANJ II,Apply - Payment of WBSEDCL Electricity Bill,3
+152,RAGHUNATHGANJ II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+152,RAGHUNATHGANJ II,Search - Application Status of Digital Ration Card Application,5
+152,RAGHUNATHGANJ II,Search - Status of Application of Swasthya Sathi Card,6
+153,SUTI I,Application for Income Certificates,1
+153,SUTI I,Apply - Payment of WBSEDCL Electricity Bill,2
+153,SUTI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+153,SUTI I,Caste Certificate,4
+153,SUTI I,Search - Status of Application of Swasthya Sathi Card,5
+153,SUTI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+154,SUTI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+154,SUTI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+154,SUTI II,Apply - Payment of WBSEDCL Electricity Bill,3
+154,SUTI II,Modify - Add member / FPS of Ration Card Holder,4
+154,SUTI II,Apply - Rupashree Prakalpa,5
+154,SUTI II,Search - Application Status of Digital Ration Card Application,6
+155,SAGARDIGHI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+155,SAGARDIGHI,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+155,SAGARDIGHI,Application for Income Certificates,3
+155,SAGARDIGHI,Search - Application Status of Digital Ration Card Application,4
+155,SAGARDIGHI,Apply - Payment of WBSEDCL Electricity Bill,5
+155,SAGARDIGHI,Status of Application (Krishak Bandhu),6
+156,SAMSERGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+156,SAMSERGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+156,SAMSERGANJ,Apply - Payment of WBSEDCL Electricity Bill,3
+156,SAMSERGANJ,Application for Income Certificates,4
+156,SAMSERGANJ,Search - Application Status of Digital Ration Card Application,5
+156,SAMSERGANJ,Apply - Submission of Form for Electoral Roll,6
+157,FARAKKA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+157,FARAKKA,Apply - Payment of WBSEDCL Electricity Bill,2
+157,FARAKKA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+157,FARAKKA,Modify - Add member / FPS of Ration Card Holder,4
+157,FARAKKA,Apply - New Digital Ration Card,5
+157,FARAKKA,Search - Application Status of Digital Ration Card Application,6
+158,KANDI,Apply - Payment of WBSEDCL Electricity Bill,1
+158,KANDI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+158,KANDI,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+158,KANDI,Search - Application Status of Digital Ration Card Application,4
+158,KANDI,Application for Income Certificates,5
+158,KANDI,Apply - Submission of Form for Electoral Roll,6
+159,KHARGRAM,Apply - Krishak Bandhu Scheme,1
+159,KHARGRAM,Application for Income Certificates,2
+159,KHARGRAM,Apply - Payment of WBSEDCL Electricity Bill,3
+159,KHARGRAM,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+159,KHARGRAM,Apply - Local Residence (Domicile) Certificate,5
+159,KHARGRAM,Caste Certificate,6
+160,BURWAN,Apply - Payment of WBSEDCL Electricity Bill,1
+160,BURWAN,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+160,BURWAN,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+160,BURWAN,Application for Income Certificates,4
+160,BURWAN,Caste Certificate,5
+160,BURWAN,Apply - Krishak Bandhu Scheme,6
+161,BHARATPUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+161,BHARATPUR I,Apply - Payment of WBSEDCL Electricity Bill,2
+161,BHARATPUR I,Application for Income Certificates,3
+161,BHARATPUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+161,BHARATPUR I,Search - Application Status of Digital Ration Card Application,5
+161,BHARATPUR I,Apply - Samajik Suraksha Yojana Application ,6
+162,BHARATPUR II,Apply - Payment of WBSEDCL Electricity Bill,1
+162,BHARATPUR II,Search - Application Status of Digital Ration Card Application,2
+162,BHARATPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+162,BHARATPUR II,Search - GRN Information,4
+162,BHARATPUR II,Payment History - WBSEDCL,5
+162,BHARATPUR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+163,MURSHIDABAD JIAGANJ,Apply - Payment of WBSEDCL Electricity Bill,1
+163,MURSHIDABAD JIAGANJ,Application for Income Certificates,2
+163,MURSHIDABAD JIAGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+163,MURSHIDABAD JIAGANJ,Apply - GP Certificate,4
+163,MURSHIDABAD JIAGANJ,Search - Download of e-Ration Card,5
+163,MURSHIDABAD JIAGANJ,Search - Status of Application of Swasthya Sathi Card,6
+164,BHAGAWANGOLA I,Apply - Payment of WBSEDCL Electricity Bill,1
+164,BHAGAWANGOLA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+164,BHAGAWANGOLA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+164,BHAGAWANGOLA I,Search - Download of e-Ration Card,4
+164,BHAGAWANGOLA I,Apply - Submission of Form for Electoral Roll,5
+164,BHAGAWANGOLA I,Application for Income Certificates,6
+165,BHAGAWANGOLA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+165,BHAGAWANGOLA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+165,BHAGAWANGOLA II,Apply - Payment of WBSEDCL Electricity Bill,3
+165,BHAGAWANGOLA II,Search - Status of Application of Swasthya Sathi Card,4
+165,BHAGAWANGOLA II,Search - Application Status of Digital Ration Card Application,5
+165,BHAGAWANGOLA II,Search - Download of e-Ration Card,6
+166,LALGOLA,Apply - Payment of WBSEDCL Electricity Bill,1
+166,LALGOLA,Application for Income Certificates,2
+166,LALGOLA,Search - Status of Application of Swasthya Sathi Card,3
+166,LALGOLA,Apply- Addition of New Member after Receiving Card (Form Â A),4
+166,LALGOLA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+166,LALGOLA,Search - Application Status of Digital Ration Card Application,6
+167,NABAGRAM,Apply - Payment of WBSEDCL Electricity Bill,1
+167,NABAGRAM,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+167,NABAGRAM,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+167,NABAGRAM,Search - Download of e-Ration Card,4
+167,NABAGRAM,Search - Application Status of Digital Ration Card Application,5
+167,NABAGRAM,Search - Status of Application of Swasthya Sathi Card,6
+168,KRISHANAGAR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+168,KRISHANAGAR-I,Apply - GP Certificate,2
+168,KRISHANAGAR-I,Payment History - WBSEDCL,3
+168,KRISHANAGAR-I,Application for Income Certificates,4
+168,KRISHANAGAR-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+168,KRISHANAGAR-I,Search - Gram Panchayat Tax Payment,6
+169,KRISHANAGAR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+169,KRISHANAGAR-II,Search - GRN Information,2
+169,KRISHANAGAR-II,Apply - ROR Application ,3
+169,KRISHANAGAR-II,Apply - GP Certificate,4
+169,KRISHANAGAR-II,Apply - Plot Information,5
+169,KRISHANAGAR-II,Search - Gram Panchayat Tax Payment,6
+170,KRISHNAGANJ,Apply - Payment of WBSEDCL Electricity Bill,1
+170,KRISHNAGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+170,KRISHNAGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+170,KRISHNAGANJ,Apply - ROR Application ,4
+170,KRISHNAGANJ,Apply - Plot Information,5
+170,KRISHNAGANJ,Apply - GP Certificate,6
+171,KALIGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+171,KALIGANJ,Apply - Payment of WBSEDCL Electricity Bill,2
+171,KALIGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+171,KALIGANJ,Apply - Krishak Bandhu Scheme,4
+171,KALIGANJ,Apply - GP Certificate,5
+171,KALIGANJ,Modify - Add member / FPS of Ration Card Holder,6
+172,NABADWIP,Apply - Payment of WBSEDCL Electricity Bill,1
+172,NABADWIP,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+172,NABADWIP,Application for Income Certificates,3
+172,NABADWIP,Apply - GP Certificate,4
+172,NABADWIP,Apply - ROR Application ,5
+172,NABADWIP,Apply - Land Revenue (Khajna),6
+173,NAKASHIPARA,Apply - Payment of WBSEDCL Electricity Bill,1
+173,NAKASHIPARA,Apply - GP Certificate,2
+173,NAKASHIPARA,Application for Income Certificates,3
+173,NAKASHIPARA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+173,NAKASHIPARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+173,NAKASHIPARA,Search - Gram Panchayat Tax Payment,6
+174,CHAPRA,Apply - Payment of WBSEDCL Electricity Bill,1
+174,CHAPRA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+174,CHAPRA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+174,CHAPRA,Apply - GP Certificate,4
+174,CHAPRA,Search - Application Status of Digital Ration Card Application,5
+174,CHAPRA,Payment - e-Payment Stamp Duty & Registration Fees,6
+175,RANAGHAT -I,Apply - Payment of WBSEDCL Electricity Bill,1
+175,RANAGHAT -I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+175,RANAGHAT -I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+175,RANAGHAT -I,Modify - Add member / FPS of Ration Card Holder,4
+175,RANAGHAT -I,Caste Certificate,5
+175,RANAGHAT -I,Apply - Land Revenue (Khajna),6
+176,RANAGHAT -II,Apply - Payment of WBSEDCL Electricity Bill,1
+176,RANAGHAT -II,Application for Income Certificates,2
+176,RANAGHAT -II,Apply - GP Certificate,3
+176,RANAGHAT -II,Search - Gram Panchayat Tax Payment,4
+176,RANAGHAT -II,Apply - Land Revenue (Khajna),5
+176,RANAGHAT -II,Modify - Add member / FPS of Ration Card Holder,6
+177,HANSKHALI,Apply - Payment of WBSEDCL Electricity Bill,1
+177,HANSKHALI,Payment - e-Payment Stamp Duty & Registration Fees,2
+177,HANSKHALI,Apply - GP Certificate,3
+177,HANSKHALI,Caste Certificate,4
+177,HANSKHALI,Apply - Land Revenue (Khajna),5
+177,HANSKHALI,Search - Regenerate Receipt of WBSEDCL,6
+178,SANTIPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+178,SANTIPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+178,SANTIPUR,Application for Income Certificates,3
+178,SANTIPUR,Apply - Land Revenue (Khajna),4
+178,SANTIPUR,Apply - Local Residence (Domicile) Certificate,5
+178,SANTIPUR,Search - Status of Application of Swasthya Sathi Card,6
+179,TEHATTA -I,Apply - Payment of WBSEDCL Electricity Bill,1
+179,TEHATTA -I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+179,TEHATTA -I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+179,TEHATTA -I,Apply - Submission of Form for Electoral Roll,4
+179,TEHATTA -I,Modify - Add member / FPS of Ration Card Holder,5
+179,TEHATTA -I,Caste Certificate,6
+180,TEHATTA -II,Apply - Payment of WBSEDCL Electricity Bill,1
+180,TEHATTA -II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+180,TEHATTA -II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+180,TEHATTA -II,Modify - Add member / FPS of Ration Card Holder,4
+180,TEHATTA -II,Search - Application Status of Digital Ration Card Application,5
+180,TEHATTA -II,Search - Download of e-Ration Card,6
+181,KARIMPUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+181,KARIMPUR I,Apply - Payment of WBSEDCL Electricity Bill,2
+181,KARIMPUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+181,KARIMPUR I,Payment - e-Payment Stamp Duty & Registration Fees,4
+181,KARIMPUR I,Application for Income Certificates,5
+181,KARIMPUR I,Apply - New Digital Ration Card,6
+182,KARIMPUR II,Apply - Payment of WBSEDCL Electricity Bill,1
+182,KARIMPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+182,KARIMPUR II,Apply - Submission of Form for Electoral Roll,3
+182,KARIMPUR II,Application for Income Certificates,4
+182,KARIMPUR II,Apply - GP Certificate,5
+182,KARIMPUR II,Search - Download of e-Ration Card,6
+183,KALYANI,Apply - Payment of WBSEDCL Electricity Bill,1
+183,KALYANI,Payment - e-Payment Stamp Duty & Registration Fees,2
+183,KALYANI,Apply - Land Revenue (Khajna),3
+183,KALYANI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+183,KALYANI,Application for Income Certificates,5
+183,KALYANI,Apply - Submission of Form for Electoral Roll,6
+184,HARINGHATA,Apply - Payment of WBSEDCL Electricity Bill,1
+184,HARINGHATA,Application for Income Certificates,2
+184,HARINGHATA,Search - Gram Panchayat Tax Payment,3
+184,HARINGHATA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+184,HARINGHATA,Apply - GP Certificate,5
+184,HARINGHATA,Payment - e-Payment Stamp Duty & Registration Fees,6
+185,CHAKDAHA,Apply - Payment of WBSEDCL Electricity Bill,1
+185,CHAKDAHA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+185,CHAKDAHA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+185,CHAKDAHA,Application for Income Certificates,4
+185,CHAKDAHA,Caste Certificate,5
+185,CHAKDAHA,Search - Gram Panchayat Tax Payment,6
+186,BARRACKPORE I,Application for Income Certificates,1
+186,BARRACKPORE I,Info - Old Age Pension Scheme,2
+186,BARRACKPORE I,Apply - Payment of WBSEDCL Electricity Bill,3
+186,BARRACKPORE I,Caste Certificate,4
+186,BARRACKPORE I,Apply - Ordinary Residencial Certificate,5
+186,BARRACKPORE I,Apply - Submission of Form for Electoral Roll,6
+187,BARRACKPORE II,Apply - Payment of WBSEDCL Electricity Bill,1
+187,BARRACKPORE II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+187,BARRACKPORE II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+187,BARRACKPORE II,Application for Income Certificates,4
+187,BARRACKPORE II,Apply - GP Certificate,5
+187,BARRACKPORE II,Apply - Submission of Form for Electoral Roll,6
+188,BARASAT I,Application for Income Certificates,1
+188,BARASAT I,Search - Status of Application of Swasthya Sathi Card,2
+188,BARASAT I,Search - Application Status of Digital Ration Card Application,3
+188,BARASAT I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+188,BARASAT I,Apply - Payment of WBSEDCL Electricity Bill,5
+188,BARASAT I,Apply - Land Revenue (Khajna),6
+189,BARASAT II,Apply - Payment of WBSEDCL Electricity Bill,1
+189,BARASAT II,Payment History - WBSEDCL,2
+189,BARASAT II,Apply - Submission of Form for Electoral Roll,3
+189,BARASAT II,Application for Income Certificates,4
+189,BARASAT II,Apply - Verification of Electoral Roll Online,5
+189,BARASAT II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+190,AMDANGA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+190,AMDANGA,Apply - Payment of WBSEDCL Electricity Bill,2
+190,AMDANGA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+190,AMDANGA,Application for Income Certificates,4
+190,AMDANGA,Search - Download of e-Ration Card,5
+190,AMDANGA,Modify - Add member / FPS of Ration Card Holder,6
+191,DEGANGA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+191,DEGANGA,Apply - Payment of WBSEDCL Electricity Bill,2
+191,DEGANGA,Search - Application Status of Digital Ration Card Application,3
+191,DEGANGA,Application for Income Certificates,4
+191,DEGANGA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+191,DEGANGA,Search - Gram Panchayat Tax Payment,6
+192,HABRA I,Apply - Payment of WBSEDCL Electricity Bill,1
+192,HABRA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+192,HABRA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+192,HABRA I,Application for Income Certificates,4
+192,HABRA I,Search - Status of Application of Swasthya Sathi Card,5
+192,HABRA I,Caste Certificate,6
+193,HABRA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+193,HABRA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+193,HABRA II,Apply - Payment of WBSEDCL Electricity Bill,3
+193,HABRA II,Search - Download of e-Ration Card,4
+193,HABRA II,Apply - Submission of Form for Electoral Roll,5
+193,HABRA II,Search - Application Status of Digital Ration Card Application,6
+194,BAGDAH,Search - Download of e-Ration Card,1
+194,BAGDAH,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+194,BAGDAH,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+194,BAGDAH,Search - Application Status of Digital Ration Card Application,4
+194,BAGDAH,Apply - Payment of WBSEDCL Electricity Bill,5
+194,BAGDAH,Search - Status of Application of Swasthya Sathi Card,6
+195,BANGAON,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+195,BANGAON,Apply - Payment of WBSEDCL Electricity Bill,2
+195,BANGAON,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+195,BANGAON,Application for Income Certificates,4
+195,BANGAON,Modify - Add member / FPS of Ration Card Holder,5
+195,BANGAON,Caste Certificate,6
+196,GAIGHATA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+196,GAIGHATA,Apply - Payment of WBSEDCL Electricity Bill,2
+196,GAIGHATA,Application for Income Certificates,3
+196,GAIGHATA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+196,GAIGHATA,Modify - Add member / FPS of Ration Card Holder,5
+196,GAIGHATA,Search - Gram Panchayat Tax Payment,6
+197,BADURIA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+197,BADURIA,Apply - Payment of WBSEDCL Electricity Bill,2
+197,BADURIA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+197,BADURIA,Apply - Submission of Form for Electoral Roll,4
+197,BADURIA,Search - Gram Panchayat Tax Payment,5
+197,BADURIA,Apply - GP Certificate,6
+198,BASIRHAT I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+198,BASIRHAT I,Apply - Payment of WBSEDCL Electricity Bill,2
+198,BASIRHAT I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+198,BASIRHAT I,Search - Application Status of Digital Ration Card Application,4
+198,BASIRHAT I,Application for Income Certificates,5
+198,BASIRHAT I,Apply - Land Revenue (Khajna),6
+199,BASIRHAT II,Apply - Payment of WBSEDCL Electricity Bill,1
+199,BASIRHAT II,Apply - OPD Registration,2
+199,BASIRHAT II,Application for Income Certificates,3
+199,BASIRHAT II,Search - Application Status of Digital Ration Card Application,4
+199,BASIRHAT II,Search - Status of Application of Swasthya Sathi Card,5
+199,BASIRHAT II,Search - Download of e-Ration Card,6
+200,HAROA,Status of Application (Krishak Bandhu),1
+200,HAROA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+200,HAROA,Search - Status of Application of Swasthya Sathi Card,3
+200,HAROA,Apply - Payment of WBSEDCL Electricity Bill,4
+200,HAROA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+200,HAROA,Search - Download of e-Ration Card,6
+201,HASNABAD,Search - Application Status of Digital Ration Card Application,1
+201,HASNABAD,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+201,HASNABAD,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+201,HASNABAD,Search - Status of Application of Swasthya Sathi Card,4
+201,HASNABAD,Application for Income Certificates,5
+201,HASNABAD,Apply - Payment of WBSEDCL Electricity Bill,6
+202,HINGALGANJ,Apply - Payment of WBSEDCL Electricity Bill,1
+202,HINGALGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+202,HINGALGANJ,Application for Income Certificates,3
+202,HINGALGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+202,HINGALGANJ,Caste Certificate,5
+202,HINGALGANJ,Apply - Submission of Form for Electoral Roll,6
+203,MINAKHAN,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+203,MINAKHAN,Caste Certificate,2
+203,MINAKHAN,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+203,MINAKHAN,Search - Status of Application of Swasthya Sathi Card,4
+203,MINAKHAN,Search - Price Information,5
+203,MINAKHAN,Status of Application (Krishak Bandhu),6
+204,SANDESHKHALI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+204,SANDESHKHALI I,Search - Status of Application of Swasthya Sathi Card,2
+204,SANDESHKHALI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+204,SANDESHKHALI I,Caste Certificate,4
+204,SANDESHKHALI I,Application for Income Certificates,5
+204,SANDESHKHALI I,Search - Application Status of Digital Ration Card Application,6
+205,SANDESHKHALI II,Caste Certificate,1
+205,SANDESHKHALI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+205,SANDESHKHALI II,Apply - Payment of WBSEDCL Electricity Bill,3
+205,SANDESHKHALI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+205,SANDESHKHALI II,Search - Download of e-Ration Card,5
+205,SANDESHKHALI II,Search - Status of Application of Swasthya Sathi Card,6
+206,SWARUPNAGAR,Apply - Payment of WBSEDCL Electricity Bill,1
+206,SWARUPNAGAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+206,SWARUPNAGAR,Application for Income Certificates,3
+206,SWARUPNAGAR,Apply - GP Certificate,4
+206,SWARUPNAGAR,Apply - OPD Registration,5
+206,SWARUPNAGAR,Apply - Ordinary Residencial Certificate,6
+207,RAJARHAT,Apply - Payment of WBSEDCL Electricity Bill,1
+207,RAJARHAT,Apply - GP Certificate,2
+207,RAJARHAT,Application for Income Certificates,3
+207,RAJARHAT,Apply - Land Revenue (Khajna),4
+207,RAJARHAT,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+207,RAJARHAT,Apply for Birth & Death Certificate,5
+207,RAJARHAT,Apply - Ordinary Residencial Certificate,6
+208,RANIGANJ,Apply - Payment of WBSEDCL Electricity Bill,1
+208,RANIGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+208,RANIGANJ,Search - GRN Information,3
+208,RANIGANJ,Search - Property Information,4
+208,RANIGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+208,RANIGANJ,Payment - e-Payment Stamp Duty & Registration Fees,6
+209,JAMURIA,Apply - Payment of WBSEDCL Electricity Bill,1
+209,JAMURIA,Application for Income Certificates,2
+209,JAMURIA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+209,JAMURIA,Search - Application Status of Digital Ration Card Application,4
+209,JAMURIA,Caste Certificate,5
+209,JAMURIA,Apply - GP Certificate,6
+210,BARABANI,Apply - Payment of WBSEDCL Electricity Bill,1
+210,BARABANI,Search - Application Status of Digital Ration Card Application,2
+210,BARABANI,Application for Income Certificates,3
+210,BARABANI,Search - Download of e-Ration Card,4
+210,BARABANI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+210,BARABANI,Search - Status of Application of Swasthya Sathi Card,6
+211,SALANPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+211,SALANPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+211,SALANPUR,Application for Income Certificates,3
+211,SALANPUR,Search - Application Status of Digital Ration Card Application,4
+211,SALANPUR,Search - Gram Panchayat Tax Payment,5
+211,SALANPUR,Caste Certificate,6
+212,DURGAPUR FARIDPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+212,DURGAPUR FARIDPUR,Search - Status of Application of Swasthya Sathi Card,2
+212,DURGAPUR FARIDPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+212,DURGAPUR FARIDPUR,Application for Income Certificates,4
+212,DURGAPUR FARIDPUR,Search - Application Status of Digital Ration Card Application,5
+212,DURGAPUR FARIDPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+213,ANDAL,Apply - Payment of WBSEDCL Electricity Bill,1
+213,ANDAL,Application for Income Certificates,2
+213,ANDAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+213,ANDAL,Apply - Ordinary Residencial Certificate,4
+213,ANDAL,Apply - Land Revenue (Khajna),5
+213,ANDAL,Search - Application Status of Digital Ration Card Application,6
+214,KANKSA,Apply - Payment of WBSEDCL Electricity Bill,1
+214,KANKSA,Search - Status of Application of Swasthya Sathi Card,2
+214,KANKSA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+214,KANKSA,Search - Application Status of Digital Ration Card Application,4
+214,KANKSA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+214,KANKSA,Caste Certificate,6
+215,PANDABESWAR,Search - Application Status of Digital Ration Card Application,1
+215,PANDABESWAR,Apply - Payment of WBSEDCL Electricity Bill,2
+215,PANDABESWAR,Search - Download of e-Ration Card,3
+215,PANDABESWAR,Apply - Land Revenue (Khajna),4
+215,PANDABESWAR,Search - GRN Information,5
+215,PANDABESWAR,Caste Certificate,6
+216,CHANDRAKONA-I,Apply - Payment of WBSEDCL Electricity Bill,1
+216,CHANDRAKONA-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+216,CHANDRAKONA-I,Application for Income Certificates,3
+216,CHANDRAKONA-I,Apply - Local Residence (Domicile) Certificate,4
+216,CHANDRAKONA-I,Apply - ROR Application ,5
+216,CHANDRAKONA-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+217,CHANDRAKONA-II,Apply - Payment of WBSEDCL Electricity Bill,1
+217,CHANDRAKONA-II,Application for Income Certificates,2
+217,CHANDRAKONA-II,Apply - OPD Registration,3
+217,CHANDRAKONA-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+217,CHANDRAKONA-II,Modify - Add member / FPS of Ration Card Holder,5
+217,CHANDRAKONA-II,Apply - ROR Application ,6
+218,DASPUR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+218,DASPUR-I,Apply - ROR Application ,2
+218,DASPUR-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+218,DASPUR-I,Apply - Land Revenue (Khajna),4
+218,DASPUR-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+218,DASPUR-I,Search - Application Status of Digital Ration Card Application,6
+219,DASPUR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+219,DASPUR-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+219,DASPUR-II,Application for Income Certificates,3
+219,DASPUR-II,Apply - ROR Application ,4
+219,DASPUR-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+219,DASPUR-II,Apply - GP Certificate,6
+220,GHATAL,Apply - Payment of WBSEDCL Electricity Bill,1
+220,GHATAL,Apply - ROR Application ,2
+220,GHATAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+220,GHATAL,Search - GRN Information,4
+220,GHATAL,Application for Income Certificates,5
+220,GHATAL,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+221,DANTAN-I,Apply - Payment of WBSEDCL Electricity Bill,1
+221,DANTAN-I,Application for Income Certificates,2
+221,DANTAN-I,Search - Status of Application of Swasthya Sathi Card,3
+221,DANTAN-I,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),4
+221,DANTAN-I,Apply - GP Certificate,5
+221,DANTAN-I,Search - Gram Panchayat Tax Payment,6
+222,DANTAN-II,Apply - Payment of WBSEDCL Electricity Bill,1
+222,DANTAN-II,Application for Income Certificates,2
+222,DANTAN-II,Apply - GP Certificate,3
+222,DANTAN-II,Search - Bangla Awas Yojana,4
+222,DANTAN-II,Caste Certificate,5
+222,DANTAN-II,Search - GRN Information,6
+223,DEBRA,Apply - Payment of WBSEDCL Electricity Bill,1
+223,DEBRA,Application for Income Certificates,2
+223,DEBRA,Apply - GP Certificate,3
+223,DEBRA,Apply - Land Revenue (Khajna),4
+223,DEBRA,Payment History - WBSEDCL,5
+223,DEBRA,Caste Certificate,6
+224,KESHIARY,Caste Certificate,1
+224,KESHIARY,Apply - Payment of WBSEDCL Electricity Bill,2
+224,KESHIARY,Search - Status of Application of Swasthya Sathi Card,3
+224,KESHIARY,Search - Application Status of Digital Ration Card Application,4
+224,KESHIARY,Info - Old Age Pension Scheme,5
+224,KESHIARY,Application for Income Certificates,6
+225,KHARAGPUR-I,Apply - Payment of WBSEDCL Electricity Bill,1
+225,KHARAGPUR-I,Caste Certificate,2
+225,KHARAGPUR-I,Apply - Land Revenue (Khajna),3
+225,KHARAGPUR-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+225,KHARAGPUR-I,Application for Income Certificates,5
+225,KHARAGPUR-I,Apply - GP Certificate,6
+226,KHARAGPUR-II,Apply - Payment of WBSEDCL Electricity Bill,1
+226,KHARAGPUR-II,Application for Income Certificates,2
+226,KHARAGPUR-II,Search - Application Status of Digital Ration Card Application,3
+226,KHARAGPUR-II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+226,KHARAGPUR-II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+226,KHARAGPUR-II,Caste Certificate,6
+227,MOHANPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+227,MOHANPUR,Application for Income Certificates,2
+227,MOHANPUR,Apply - GP Certificate,3
+227,MOHANPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+227,MOHANPUR,Caste Certificate,5
+227,MOHANPUR,Apply - Local Residence (Domicile) Certificate,6
+228,NARAYANGARH,Apply - Payment of WBSEDCL Electricity Bill,1
+228,NARAYANGARH,Application for Income Certificates,2
+228,NARAYANGARH,Search - Status of Application of Swasthya Sathi Card,3
+228,NARAYANGARH,Caste Certificate,4
+228,NARAYANGARH,Apply - GP Certificate,5
+228,NARAYANGARH,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+229,PINGLA,Apply - Payment of WBSEDCL Electricity Bill,1
+229,PINGLA,Status of Application (Krishak Bandhu),2
+229,PINGLA,Application for Income Certificates,3
+229,PINGLA,Search - Status of Application of Swasthya Sathi Card,4
+229,PINGLA,Info - Old Age Pension Scheme,5
+229,PINGLA,Apply - GP Certificate,6
+230,SABANG,Apply - Payment of WBSEDCL Electricity Bill,1
+230,SABANG,Search - Status of Application of Swasthya Sathi Card,2
+230,SABANG,Status of Application (Krishak Bandhu),3
+230,SABANG,Application for Income Certificates,4
+230,SABANG,Info - Old Age Pension Scheme,5
+230,SABANG,Caste Certificate,6
+231,GARHBETA-I,Apply - Payment of WBSEDCL Electricity Bill,1
+231,GARHBETA-I,Modify - Add member / FPS of Ration Card Holder,2
+231,GARHBETA-I,Search - Download of e-Ration Card,3
+231,GARHBETA-I,Search - Application Status of Digital Ration Card Application,4
+231,GARHBETA-I,Application for Income Certificates,5
+231,GARHBETA-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+232,GARHBETA-II,Apply - Payment of WBSEDCL Electricity Bill,1
+232,GARHBETA-II,Apply - OPD Registration,2
+232,GARHBETA-II,Application for Income Certificates,3
+232,GARHBETA-II,Caste Certificate,4
+232,GARHBETA-II,Apply - GP Certificate,5
+232,GARHBETA-II,Search - Status of Application of Swasthya Sathi Card,6
+233,GARHBETA-III,Apply - Payment of WBSEDCL Electricity Bill,1
+233,GARHBETA-III,Application for Income Certificates,2
+233,GARHBETA-III,Search - Schedule Paddy Sale,3
+233,GARHBETA-III,Search - Download of e-Ration Card,4
+233,GARHBETA-III,Apply - GP Certificate,5
+233,GARHBETA-III,Caste Certificate,6
+234,KESHPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+234,KESHPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+234,KESHPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+234,KESHPUR,Application for Income Certificates,4
+234,KESHPUR,Apply - GP Certificate,5
+234,KESHPUR,Modify - Add member / FPS of Ration Card Holder,6
+235,MIDNAPORE SADAR,Apply - Payment of WBSEDCL Electricity Bill,1
+235,MIDNAPORE SADAR,Application for Income Certificates,2
+235,MIDNAPORE SADAR,Apply - Land Revenue (Khajna),3
+235,MIDNAPORE SADAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+235,MIDNAPORE SADAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+235,MIDNAPORE SADAR,Apply - OPD Registration,6
+236,SALBONI,Apply - Payment of WBSEDCL Electricity Bill,1
+236,SALBONI,Application for Income Certificates,2
+236,SALBONI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+236,SALBONI,Caste Certificate,4
+236,SALBONI,Search - Gram Panchayat Tax Payment,5
+236,SALBONI,Apply - GP Certificate,6
+237,AUSGRAM I,Caste Certificate,1
+237,AUSGRAM I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+237,AUSGRAM I,Search - Status of Application of Swasthya Sathi Card,3
+237,AUSGRAM I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+237,AUSGRAM I,Search - Application Status of Digital Ration Card Application,5
+237,AUSGRAM I,Search - Download of e-Ration Card,6
+238,AUSGRAM II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+238,AUSGRAM II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+238,AUSGRAM II,Application for Income Certificates,3
+238,AUSGRAM II,Caste Certificate,4
+238,AUSGRAM II,Search - Application Status of Digital Ration Card Application,5
+238,AUSGRAM II,Apply - Payment of WBSEDCL Electricity Bill,6
+239,BHATAR,Search - Status of Application of Swasthya Sathi Card,1
+239,BHATAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+239,BHATAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+239,BHATAR,Search - Application Status of Digital Ration Card Application,4
+239,BHATAR,Caste Certificate,5
+239,BHATAR,Application for Income Certificates,6
+240,GALSI I,Application for Income Certificates,1
+240,GALSI I,Apply - Payment of WBSEDCL Electricity Bill,2
+240,GALSI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+240,GALSI I,Apply - Plot Information,4
+240,GALSI I,Search - Application Status of Digital Ration Card Application,5
+240,GALSI I,Caste Certificate,6
+241,GALSI II,Application for Income Certificates,1
+241,GALSI II,Apply - Payment of WBSEDCL Electricity Bill,2
+241,GALSI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+241,GALSI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+241,GALSI II,Caste Certificate,5
+241,GALSI II,Search - Application Status of Digital Ration Card Application,6
+242,BURDWAN I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+242,BURDWAN I,Application for Income Certificates,2
+242,BURDWAN I,Search - Application Status of Digital Ration Card Application,3
+242,BURDWAN I,Caste Certificate,4
+242,BURDWAN I,Apply - Download and Print Birth Certificate,5
+242,BURDWAN I,Search - Download of e-Ration Card,6
+243,BURDWAN II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+243,BURDWAN II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+243,BURDWAN II,Application for Income Certificates,3
+243,BURDWAN II,Apply - Payment of WBSEDCL Electricity Bill,4
+243,BURDWAN II,Search - Application Status of Digital Ration Card Application,5
+243,BURDWAN II,Caste Certificate,6
+244,MEMARI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+244,MEMARI I,Application for Income Certificates,2
+244,MEMARI I,Caste Certificate,3
+244,MEMARI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+244,MEMARI I,Search - Status of Application of Swasthya Sathi Card,5
+244,MEMARI I,Apply - Payment of WBSEDCL Electricity Bill,6
+245,MEMARI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+245,MEMARI II,Caste Certificate,2
+245,MEMARI II,Search - Application Status of Digital Ration Card Application,3
+245,MEMARI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+245,MEMARI II,Search - Download of e-Ration Card,5
+245,MEMARI II,Search - Status of Application of Swasthya Sathi Card,6
+246,JAMALPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+246,JAMALPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+246,JAMALPUR,Modify - Add member / FPS of Ration Card Holder,3
+246,JAMALPUR,Caste Certificate,4
+246,JAMALPUR,Search - Application Status of Digital Ration Card Application,5
+246,JAMALPUR,Apply - Payment of WBSEDCL Electricity Bill,6
+247,RAINA I,Apply - Payment of WBSEDCL Electricity Bill,1
+247,RAINA I,Application for Income Certificates,2
+247,RAINA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+247,RAINA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+247,RAINA I,Search - Application Status of Digital Ration Card Application,5
+247,RAINA I,Search - Download of e-Ration Card,6
+248,RAINA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+248,RAINA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+248,RAINA II,Search - Application Status of Digital Ration Card Application,3
+248,RAINA II,Search - Download of e-Ration Card,4
+248,RAINA II,Apply - New Digital Ration Card,5
+248,RAINA II,Modify - Add member / FPS of Ration Card Holder,6
+249,KHANDAGHOSH,Caste Certificate,1
+249,KHANDAGHOSH,Status of Application (Krishak Bandhu),2
+249,KHANDAGHOSH,Application for Income Certificates,3
+249,KHANDAGHOSH,Apply - Payment of WBSEDCL Electricity Bill,4
+249,KHANDAGHOSH,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+249,KHANDAGHOSH,Search - Application Status of Digital Ration Card Application,6
+250,MONGALKOTE,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+250,MONGALKOTE,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+250,MONGALKOTE,Application for Income Certificates,3
+250,MONGALKOTE,Apply - Payment of WBSEDCL Electricity Bill,4
+250,MONGALKOTE,Search - Application Status of Digital Ration Card Application,5
+250,MONGALKOTE,Search - Download of e-Ration Card,6
+251,KETUGRAM I,Application for Income Certificates,1
+251,KETUGRAM I,Search - Status of Application of Swasthya Sathi Card,2
+251,KETUGRAM I,Status of Application (Krishak Bandhu),3
+251,KETUGRAM I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+251,KETUGRAM I,Apply - Payment of WBSEDCL Electricity Bill,5
+251,KETUGRAM I,Apply - Submission of Form for Electoral Roll,6
+252,KETUGRAM II,Application for Income Certificates,1
+252,KETUGRAM II,eDistrict Dashboard,2
+252,KETUGRAM II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+252,KETUGRAM II,Search - Status of Application of Swasthya Sathi Card,4
+252,KETUGRAM II,Apply - Local Residence (Domicile) Certificate,5
+252,KETUGRAM II,Apply - Ordinary Residencial Certificate,6
+253,KATWA I,Apply - Payment of WBSEDCL Electricity Bill,1
+253,KATWA I,Apply - Submission of Form for Electoral Roll,2
+253,KATWA I,Search - Status of Application of Swasthya Sathi Card,3
+253,KATWA I,Caste Certificate,4
+253,KATWA I,Search - Application Status of Digital Ration Card Application,5
+253,KATWA I,Status of Application (Krishak Bandhu),6
+254,KATWA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+254,KATWA II,Application for Income Certificates,2
+254,KATWA II,Apply - OPD Registration,3
+254,KATWA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+254,KATWA II,Modify - Add member / FPS of Ration Card Holder,5
+254,KATWA II,Apply - Payment of WBSEDCL Electricity Bill,6
+255,PURBASTHALI I,Search - Status of Application of Swasthya Sathi Card,1
+255,PURBASTHALI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+255,PURBASTHALI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+255,PURBASTHALI I,Apply - Payment of WBSEDCL Electricity Bill,4
+255,PURBASTHALI I,Modify - Add member / FPS of Ration Card Holder,5
+255,PURBASTHALI I,Search - Download of e-Ration Card,6
+256,PURBASTHALI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+256,PURBASTHALI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+256,PURBASTHALI II,Apply - Payment of WBSEDCL Electricity Bill,3
+256,PURBASTHALI II,Search - Application Status of Digital Ration Card Application,4
+256,PURBASTHALI II,Modify - Add member / FPS of Ration Card Holder,5
+256,PURBASTHALI II,Application for Income Certificates,6
+257,KALNA I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+257,KALNA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+257,KALNA I,Apply - Payment of WBSEDCL Electricity Bill,3
+257,KALNA I,Apply - Submission of Form for Electoral Roll,4
+257,KALNA I,Application for Income Certificates,5
+257,KALNA I,Search - Application Status of Digital Ration Card Application,6
+258,KALNA II,Search - Application Status of Digital Ration Card Application,1
+258,KALNA II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+258,KALNA II,Application for Income Certificates,3
+258,KALNA II,Search - Status of Application of Swasthya Sathi Card,4
+258,KALNA II,Search - Download of e-Ration Card,5
+258,KALNA II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+259,MANTESWAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+259,MANTESWAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+259,MANTESWAR,Apply - Payment of WBSEDCL Electricity Bill,3
+259,MANTESWAR,Application for Income Certificates,4
+259,MANTESWAR,Search - Application Status of Digital Ration Card Application,5
+259,MANTESWAR,Search - Download of e-Ration Card,6
+260,TAMLUK,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+260,TAMLUK,Status of Application (Krishak Bandhu),2
+260,TAMLUK,Search - Application Status of Digital Ration Card Application,3
+260,TAMLUK,Search - Download of e-Ration Card,4
+260,TAMLUK,Search - GRN Information,5
+260,TAMLUK,Apply - Verification of Electoral Roll Online,6
+261,SAHID MATANGINI,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+261,SAHID MATANGINI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+261,SAHID MATANGINI,Search - Download of e-Ration Card,3
+261,SAHID MATANGINI,Search - Application Status of Digital Ration Card Application,4
+261,SAHID MATANGINI,Apply - Payment of WBSEDCL Electricity Bill,5
+261,SAHID MATANGINI,Modify - Add member / FPS of Ration Card Holder,6
+262,PANSKURA,Apply - Payment of WBSEDCL Electricity Bill,1
+262,PANSKURA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+262,PANSKURA,Search - Download of e-Ration Card,3
+262,PANSKURA,Apply - Samajik Suraksha Yojana Application ,4
+262,PANSKURA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+262,PANSKURA,Search - Price Information,6
+263,KOLAGHAT,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+263,KOLAGHAT,Search - Status of Application of Swasthya Sathi Card,2
+263,KOLAGHAT,Application for Income Certificates,3
+263,KOLAGHAT,Search - Download of e-Ration Card,4
+263,KOLAGHAT,Status of Application (Krishak Bandhu),5
+263,KOLAGHAT,Payment - Tax or Fees,6
+264,MOYNA,Application for Income Certificates,1
+264,MOYNA,Apply - Payment of WBSEDCL Electricity Bill,2
+264,MOYNA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+264,MOYNA,Apply - ROR Application ,4
+264,MOYNA,Apply - Plot Information,5
+264,MOYNA,Search - GRN Information,6
+265,NANDAKUMAR,Search - Status of Application of Swasthya Sathi Card,1
+265,NANDAKUMAR,Apply - Payment of WBSEDCL Electricity Bill,2
+265,NANDAKUMAR,Status of Application (Krishak Bandhu),3
+265,NANDAKUMAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+265,NANDAKUMAR,Search - Application Status of Digital Ration Card Application,5
+265,NANDAKUMAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+266,CHANDIPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+266,CHANDIPUR,Search - Download of e-Ration Card,2
+266,CHANDIPUR,Search - Status of Application of Swasthya Sathi Card,3
+266,CHANDIPUR,Status of Application (Krishak Bandhu),4
+266,CHANDIPUR,Application for Income Certificates,5
+266,CHANDIPUR,Modify - Member Name Correction after Receiving Card (Form Â C),6
+267,HALDIA,Search - Status of Application of Swasthya Sathi Card,1
+267,HALDIA,Apply - ROR Application ,2
+267,HALDIA,Status of Application (Krishak Bandhu),3
+267,HALDIA,Apply - Land Revenue (Khajna),4
+267,HALDIA,Search - Application Status of Digital Ration Card Application,5
+267,HALDIA,Apply - Payment of WBSEDCL Electricity Bill,6
+268,MAHISHADAL,Search - Application Status of Digital Ration Card Application,1
+268,MAHISHADAL,Payment - e-Payment Stamp Duty & Registration Fees,2
+268,MAHISHADAL,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+268,MAHISHADAL,Search - Download of e-Ration Card,4
+268,MAHISHADAL,Apply - New Digital Ration Card,5
+268,MAHISHADAL,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+269,NANDIGRAM I,Apply - OPD Registration,1
+269,NANDIGRAM I,Application for Income Certificates,2
+269,NANDIGRAM I,Apply - Plot Information,3
+269,NANDIGRAM I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+269,NANDIGRAM I,Apply - Payment of WBSEDCL Electricity Bill,5
+269,NANDIGRAM I,Search - GRN Information,6
+270,NANDIGRAM II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+270,NANDIGRAM II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+270,NANDIGRAM II,Search - Status of Application of Swasthya Sathi Card,3
+270,NANDIGRAM II,Application for Income Certificates,4
+270,NANDIGRAM II,Apply - Payment of WBSEDCL Electricity Bill,5
+270,NANDIGRAM II,Search - Download of e-Ration Card,6
+271,SUTAHATA,Apply - Land Revenue (Khajna),1
+271,SUTAHATA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+271,SUTAHATA,Payment - e-Payment Stamp Duty & Registration Fees,3
+271,SUTAHATA,Search - Application Status of Digital Ration Card Application,4
+271,SUTAHATA,Search - Status of Application of Swasthya Sathi Card,5
+271,SUTAHATA,Status of Application (Krishak Bandhu),6
+272,PATASHPUR I,Search - Status of Application of Swasthya Sathi Card,1
+272,PATASHPUR I,Status of Application (Krishak Bandhu),2
+272,PATASHPUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+272,PATASHPUR I,Search - Application Status of Digital Ration Card Application,4
+272,PATASHPUR I,Search - Download of e-Ration Card,5
+272,PATASHPUR I,Application for Income Certificates,6
+273,PATASHPUR II,Status of Application (Krishak Bandhu),1
+273,PATASHPUR II,Search - Application Status of Digital Ration Card Application,2
+273,PATASHPUR II,Application for Income Certificates,3
+273,PATASHPUR II,Search - Download of e-Ration Card,4
+273,PATASHPUR II,Apply - Krishak Bandhu Scheme,5
+273,PATASHPUR II,Search - Status of Application of Swasthya Sathi Card,6
+274,BHAGABANPUR I,Search - Price Information,1
+274,BHAGABANPUR I,Application for Income Certificates,2
+274,BHAGABANPUR I,Status of Application (Krishak Bandhu),3
+274,BHAGABANPUR I,eDistrict Dashboard,4
+274,BHAGABANPUR I,Apply - FPC Enrollment,5
+274,BHAGABANPUR I,Apply - ROR Application ,6
+275,EGRA I,Application for Income Certificates,1
+275,EGRA I,Apply - ROR Application ,2
+275,EGRA I,Apply - Submission of Form for Electoral Roll,3
+275,EGRA I,Payment - e-Payment Stamp Duty & Registration Fees,4
+275,EGRA I,Search - GRN Information,5
+275,EGRA I,Status of Application (Krishak Bandhu),6
+276,EGRA II,Search - Status of Application of Swasthya Sathi Card,1
+276,EGRA II,Status of Application (Krishak Bandhu),2
+276,EGRA II,Apply - Krishak Bandhu Scheme,3
+276,EGRA II,Search - Application Status of Digital Ration Card Application,4
+276,EGRA II,Apply - Payment of WBSEDCL Electricity Bill,5
+276,EGRA II,Info - Old Age Pension Scheme,6
+277,KHEJURI I,Search - Status of Application of Swasthya Sathi Card,1
+277,KHEJURI I,Application for Income Certificates,2
+277,KHEJURI I,Status of Application (Krishak Bandhu),3
+277,KHEJURI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+277,KHEJURI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+277,KHEJURI I,Apply - ROR Application ,6
+278,KHEJURI II,Search - Status of Application of Swasthya Sathi Card,1
+278,KHEJURI II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+278,KHEJURI II,Search - Application Status of Digital Ration Card Application,3
+278,KHEJURI II,Apply - Payment of WBSEDCL Electricity Bill,4
+278,KHEJURI II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+278,KHEJURI II,Modify - Member Name Correction after Receiving Card (Form Â C),6
+279,BHAGABANPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+279,BHAGABANPUR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+279,BHAGABANPUR II,Apply - Payment of WBSEDCL Electricity Bill,3
+279,BHAGABANPUR II,Search - Download of e-Ration Card,4
+279,BHAGABANPUR II,Status of Application (Krishak Bandhu),5
+279,BHAGABANPUR II,Search - GRN Information,6
+280,RAMNAGAR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+280,RAMNAGAR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+280,RAMNAGAR I,Search - Status of Application of Swasthya Sathi Card,3
+280,RAMNAGAR I,Search - Application Status of Digital Ration Card Application,4
+280,RAMNAGAR I,Apply - Payment of WBSEDCL Electricity Bill,5
+280,RAMNAGAR I,Modify - Member Name Correction after Receiving Card (Form Â C),6
+281,RAMNAGAR II,Application for Income Certificates,1
+281,RAMNAGAR II,Apply - Payment of WBSEDCL Electricity Bill,2
+281,RAMNAGAR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+281,RAMNAGAR II,Search - Deed by Deed Number & Query Number ,4
+281,RAMNAGAR II,Apply - Local Residence (Domicile) Certificate,5
+281,RAMNAGAR II,Search - Download of e-Ration Card,6
+282,CONTAI I,Search - Status of Application of Swasthya Sathi Card,1
+282,CONTAI I,Application for Income Certificates,2
+282,CONTAI I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+282,CONTAI I,Status of Application (Krishak Bandhu),4
+282,CONTAI I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+282,CONTAI I,Caste Certificate,6
+283,DESHAPRAN,Apply - ROR Application ,1
+283,DESHAPRAN,Application for Income Certificates,2
+283,DESHAPRAN,Apply - Conversion Application,3
+283,DESHAPRAN,Search - GRN Information,4
+283,DESHAPRAN,eDistrict Dashboard,5
+283,DESHAPRAN,Apply - Samajik Suraksha Yojana Application ,6
+284,CONTAI III,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+284,CONTAI III,Application for Income Certificates,2
+284,CONTAI III,Search - GRN Information,3
+284,CONTAI III,Search - Download of e-Ration Card,4
+284,CONTAI III,Payment - e-Payment Stamp Duty & Registration Fees,5
+284,CONTAI III,eDistrict Dashboard,6
+285,PURULIA I,Apply - Payment of WBSEDCL Electricity Bill,1
+285,PURULIA I,Application for Income Certificates,2
+285,PURULIA I,Apply - Ordinary Residencial Certificate,3
+285,PURULIA I,Apply for Birth & Death Certificate,4
+285,PURULIA I,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+285,PURULIA I,Apply - GP Certificate,6
+286,PURULIA II,Search - Status of Application of Swasthya Sathi Card,1
+286,PURULIA II,Application for Income Certificates,2
+286,PURULIA II,Apply - Payment of WBSEDCL Electricity Bill,3
+286,PURULIA II,Apply - Mutation Application,4
+286,PURULIA II,Apply - GP Certificate,5
+286,PURULIA II,Caste Certificate,6
+287,HURA,Search - Status of Application of Swasthya Sathi Card,1
+287,HURA,Apply for Birth & Death Certificate,2
+287,HURA,Apply - Payment of WBSEDCL Electricity Bill,3
+287,HURA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+287,HURA,Search - Download of e-Ration Card,5
+287,HURA,Apply- Addition of New Member after Receiving Card (Form Â A),6
+288,BALARAMPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+288,BALARAMPUR,Search - GRN Information,2
+288,BALARAMPUR,Apply - ROR Application ,3
+288,BALARAMPUR,Caste Certificate,4
+288,BALARAMPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+288,BALARAMPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+289,ARSHA,Apply - Payment of WBSEDCL Electricity Bill,1
+289,ARSHA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+289,ARSHA,Application for Income Certificates,3
+289,ARSHA,Apply for Birth & Death Certificate,4
+289,ARSHA,Search - Blood Test Report,5
+289,ARSHA,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+290,MANBAZAR I,Application for Income Certificates,1
+290,MANBAZAR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+290,MANBAZAR I,Caste Certificate,3
+290,MANBAZAR I,Search - Download of e-Ration Card,4
+290,MANBAZAR I,Apply - Payment of WBSEDCL Electricity Bill,5
+290,MANBAZAR I,Search - Status of Application of Swasthya Sathi Card,6
+291,MANBAZAR II,Apply - Payment of WBSEDCL Electricity Bill,1
+291,MANBAZAR II,Apply for Birth & Death Certificate,2
+291,MANBAZAR II,Application for Income Certificates,3
+291,MANBAZAR II,Search - Bangla Awas Yojana,4
+291,MANBAZAR II,Caste Certificate,5
+291,MANBAZAR II,Apply - Plot Information,6
+292,BANDWAN,Caste Certificate,1
+292,BANDWAN,Search - Download of e-Ration Card,2
+292,BANDWAN,Apply - Payment of WBSEDCL Electricity Bill,3
+292,BANDWAN,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+292,BANDWAN,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+292,BANDWAN,Apply for Birth & Death Certificate,6
+293,PUNCHA,Apply - Payment of WBSEDCL Electricity Bill,1
+293,PUNCHA,Apply - ROR Application ,2
+293,PUNCHA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+293,PUNCHA,Search - GRN Information,4
+293,PUNCHA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+293,PUNCHA,Application for Income Certificates,6
+294,BARABAZAR,Apply - Payment of WBSEDCL Electricity Bill,1
+294,BARABAZAR,Apply for Birth & Death Certificate,2
+294,BARABAZAR,Caste Certificate,3
+294,BARABAZAR,Application for Income Certificates,4
+294,BARABAZAR,Apply - GP Certificate,5
+294,BARABAZAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+295,JHALDA I,Apply - Payment of WBSEDCL Electricity Bill,1
+295,JHALDA I,Search - Status of Application of Swasthya Sathi Card,2
+295,JHALDA I,Application for Income Certificates,3
+295,JHALDA I,Search - Application Status of Digital Ration Card Application,4
+295,JHALDA I,Apply for Birth & Death Certificate,5
+295,JHALDA I,Apply - GP Certificate,6
+296,JHALDA II,Apply - Payment of WBSEDCL Electricity Bill,1
+296,JHALDA II,Apply for Birth & Death Certificate,2
+296,JHALDA II,Application for Income Certificates,3
+296,JHALDA II,Search - Regenerate Receipt of WBSEDCL,4
+296,JHALDA II,Payment - Tax or Fees,5
+296,JHALDA II,Info - Old Age Pension Scheme,6
+297,JOYPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+297,JOYPUR,Application for Income Certificates,2
+297,JOYPUR,Apply - Ordinary Residencial Certificate,3
+297,JOYPUR,Search - Status of Application of Swasthya Sathi Card,4
+297,JOYPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+297,JOYPUR,Apply - GP Certificate,6
+298,BAGHMUNDI,Apply - Payment of WBSEDCL Electricity Bill,1
+298,BAGHMUNDI,Apply for Birth & Death Certificate,2
+298,BAGHMUNDI,Apply - Download and Print Birth Certificate,3
+298,BAGHMUNDI,Search - Status of Application of Swasthya Sathi Card,4
+298,BAGHMUNDI,Application for Income Certificates,5
+298,BAGHMUNDI,Apply - GP Certificate,6
+299,PARA,Apply - Payment of WBSEDCL Electricity Bill,1
+299,PARA,Apply for Birth & Death Certificate,2
+299,PARA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+299,PARA,Application for Income Certificates,4
+299,PARA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+299,PARA,Caste Certificate,6
+300,RAGHUNATHPUR I,Apply - Payment of WBSEDCL Electricity Bill,1
+300,RAGHUNATHPUR I,Application for Income Certificates,2
+300,RAGHUNATHPUR I,Search - Application Status of Digital Ration Card Application,3
+300,RAGHUNATHPUR I,Search - Status of Application of Swasthya Sathi Card,4
+300,RAGHUNATHPUR I,Apply - Submission of Form for Electoral Roll,5
+300,RAGHUNATHPUR I,Status of Application (Krishak Bandhu),6
+301,RAGHUNATHPUR II,Application for Income Certificates,1
+301,RAGHUNATHPUR II,Apply - Payment of WBSEDCL Electricity Bill,2
+301,RAGHUNATHPUR II,Apply - GP Certificate,3
+301,RAGHUNATHPUR II,Search - NSAP under Jai Bangla,4
+301,RAGHUNATHPUR II,Apply - Ordinary Residencial Certificate,5
+301,RAGHUNATHPUR II,Apply - Local Residence (Domicile) Certificate,6
+302,NETURIA,Apply - Payment of WBSEDCL Electricity Bill,1
+302,NETURIA,Application for Income Certificates,2
+302,NETURIA,Search - Application Status of Digital Ration Card Application,3
+302,NETURIA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+302,NETURIA,Apply - Bangla Shasya Bima,5
+302,NETURIA,Caste Certificate,6
+303,SANTURI,Apply - Payment of WBSEDCL Electricity Bill,1
+303,SANTURI,Application for Income Certificates,2
+303,SANTURI,Caste Certificate,3
+303,SANTURI,Apply - GP Certificate,4
+303,SANTURI,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+303,SANTURI,Search - Taposali Bandhu Pension Scheme,6
+304,KASHIPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+304,KASHIPUR,Application for Income Certificates,2
+304,KASHIPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+304,KASHIPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+304,KASHIPUR,Apply for Birth & Death Certificate,5
+304,KASHIPUR,Apply - Download and Print Birth Certificate,6
+305,BISHNUPUR I,Apply - Payment of WBSEDCL Electricity Bill,1
+305,BISHNUPUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+305,BISHNUPUR I,Application for Income Certificates,3
+305,BISHNUPUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+305,BISHNUPUR I,Apply - Land Revenue (Khajna),5
+305,BISHNUPUR I,Search - Application Status of Digital Ration Card Application,6
+306,BISHNUPUR II,Apply - Payment of WBSEDCL Electricity Bill,1
+306,BISHNUPUR II,Apply - Land Revenue (Khajna),2
+306,BISHNUPUR II,Payment - Electricity Bill of CESC,3
+306,BISHNUPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+306,BISHNUPUR II,Apply for Birth & Death Certificate,5
+306,BISHNUPUR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+307,BUDGE BUDGE I,Apply - Payment of WBSEDCL Electricity Bill,1
+307,BUDGE BUDGE I,Payment - Electricity Bill of CESC,2
+307,BUDGE BUDGE I,Apply for Birth & Death Certificate,3
+307,BUDGE BUDGE I,Apply - Land Revenue (Khajna),4
+307,BUDGE BUDGE I,Search - Status of Application of Swasthya Sathi Card,5
+307,BUDGE BUDGE I,Caste Certificate,6
+308,BUDGE BUDGE II,Apply - Payment of WBSEDCL Electricity Bill,1
+308,BUDGE BUDGE II,Apply - Land Revenue (Khajna),2
+308,BUDGE BUDGE II,Payment History - WBSEDCL,3
+308,BUDGE BUDGE II,Application for Income Certificates,4
+308,BUDGE BUDGE II,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+308,BUDGE BUDGE II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+309,THAKURPUKUR MAHESHTALA,Payment - Electricity Bill of CESC,1
+309,THAKURPUKUR MAHESHTALA,Apply - Payment of WBSEDCL Electricity Bill,2
+309,THAKURPUKUR MAHESHTALA,Apply - Land Revenue (Khajna),3
+309,THAKURPUKUR MAHESHTALA,Search - GRN Information,4
+309,THAKURPUKUR MAHESHTALA,Modify - Add member / FPS of Ration Card Holder,5
+309,THAKURPUKUR MAHESHTALA,Search - Application Status of Digital Ration Card Application,6
+310,BARUIPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+310,BARUIPUR,Modify - Add member / FPS of Ration Card Holder,2
+310,BARUIPUR,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+310,BARUIPUR,Apply - Driving Licence,4
+310,BARUIPUR,Caste Certificate,5
+310,BARUIPUR,Apply - Land Revenue (Khajna),6
+311,BHANGAR I,Apply - Payment of WBSEDCL Electricity Bill,1
+311,BHANGAR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+311,BHANGAR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+311,BHANGAR I,Search - Application Status of Digital Ration Card Application,4
+311,BHANGAR I,Application for Income Certificates,5
+311,BHANGAR I,Apply for Birth & Death Certificate,6
+312,BHANGAR II,Apply - Payment of WBSEDCL Electricity Bill,1
+312,BHANGAR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+312,BHANGAR II,Search - Status of Application of Swasthya Sathi Card,3
+312,BHANGAR II,Search - Application Status of Digital Ration Card Application,4
+312,BHANGAR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+312,BHANGAR II,Search - GRN Information,6
+313,JAYNAGAR I,Apply - Payment of WBSEDCL Electricity Bill,1
+313,JAYNAGAR I,Application for Income Certificates,2
+313,JAYNAGAR I,Apply - New Digital Ration Card,3
+313,JAYNAGAR I,Apply - GP Certificate,4
+313,JAYNAGAR I,Caste Certificate,5
+313,JAYNAGAR I,Search - Regenerate Receipt of WBSEDCL,6
+314,JAYNAGAR II,Apply - Payment of WBSEDCL Electricity Bill,1
+314,JAYNAGAR II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+314,JAYNAGAR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+314,JAYNAGAR II,Application for Income Certificates,4
+314,JAYNAGAR II,Apply - GP Certificate,5
+314,JAYNAGAR II,Search - Status of Application of Swasthya Sathi Card,6
+315,KULTALI,Apply - Payment of WBSEDCL Electricity Bill,1
+315,KULTALI,Caste Certificate,2
+315,KULTALI,Application for Income Certificates,3
+315,KULTALI,Apply for Birth & Death Certificate,4
+315,KULTALI,Apply - Submission of Form for Electoral Roll,5
+315,KULTALI,Search - Download of e-Ration Card,6
+316,SONARPUR,Apply - Payment of WBSEDCL Electricity Bill,1
+316,SONARPUR,Apply - Land Revenue (Khajna),2
+316,SONARPUR,Search - GRN Information,3
+316,SONARPUR,Payment - Electricity Bill of CESC,4
+316,SONARPUR,Application for Income Certificates,5
+316,SONARPUR,Apply - ROR Application ,6
+317,BASANTI,Apply - Payment of WBSEDCL Electricity Bill,1
+317,BASANTI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+317,BASANTI,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+317,BASANTI,Application for Income Certificates,4
+317,BASANTI,Apply - Grievance to CMO,5
+317,BASANTI,Search - Download of e-Ration Card,6
+318,CANNING I,Apply - Payment of WBSEDCL Electricity Bill,1
+318,CANNING I,Caste Certificate,2
+318,CANNING I,Apply- Addition of New Member after Receiving Card (Form Â A),3
+318,CANNING I,Payment History - WBSEDCL,4
+318,CANNING I,Application for Income Certificates,5
+318,CANNING I,Search - Download of e-Ration Card,6
+319,CANNING II,Apply - Payment of WBSEDCL Electricity Bill,1
+319,CANNING II,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+319,CANNING II,Modify - Add member / FPS of Ration Card Holder,3
+319,CANNING II,Application for Income Certificates,4
+319,CANNING II,Apply - ROR Application ,5
+319,CANNING II,Apply - Samajik Suraksha Yojana Application ,6
+320,GOSABA,Apply - Payment of WBSEDCL Electricity Bill,1
+320,GOSABA,Caste Certificate,2
+320,GOSABA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+320,GOSABA,Modify - Add member / FPS of Ration Card Holder,4
+320,GOSABA,Search - Gram Panchayat Tax Payment,5
+320,GOSABA,Application for Income Certificates,6
+321,DIAMOND HARBOUR I,Apply - Payment of WBSEDCL Electricity Bill,1
+321,DIAMOND HARBOUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+321,DIAMOND HARBOUR I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+321,DIAMOND HARBOUR I,Search - Download of e-Ration Card,4
+321,DIAMOND HARBOUR I,Application for Income Certificates,5
+321,DIAMOND HARBOUR I,Search - Application Status of Digital Ration Card Application,6
+322,DIAMOND HARBOUR II,Apply - Payment of WBSEDCL Electricity Bill,1
+322,DIAMOND HARBOUR II,Apply - Land Revenue (Khajna),2
+322,DIAMOND HARBOUR II,Search - Regenerate Receipt of WBSEDCL,3
+322,DIAMOND HARBOUR II,Application for Income Certificates,4
+322,DIAMOND HARBOUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+322,DIAMOND HARBOUR II,Apply - GP Certificate,5
+322,DIAMOND HARBOUR II,Apply - ROR Application ,6
+323,FALTA,Apply - Payment of WBSEDCL Electricity Bill,1
+323,FALTA,Application for Income Certificates,2
+323,FALTA,Search - Status of Application of Swasthya Sathi Card,3
+323,FALTA,Apply - Driving Licence,4
+323,FALTA,Apply - Land Revenue (Khajna),5
+323,FALTA,Payment - Electricity Bill of CESC,6
+324,KULPI,Apply - Payment of WBSEDCL Electricity Bill,1
+324,KULPI,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+324,KULPI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+324,KULPI,Search - Blood Test Report,4
+324,KULPI,Apply - OPD Registration,5
+324,KULPI,Search - Application Status of Digital Ration Card Application,6
+325,MAGRAHAT I,Apply - Payment of WBSEDCL Electricity Bill,1
+325,MAGRAHAT I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+325,MAGRAHAT I,Application for Income Certificates,3
+325,MAGRAHAT I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+325,MAGRAHAT I,Apply - Rupashree Prakalpa,5
+325,MAGRAHAT I,Payment History - WBSEDCL,6
+326,MAGRAHAT II,Apply - Payment of WBSEDCL Electricity Bill,1
+326,MAGRAHAT II,Caste Certificate,2
+326,MAGRAHAT II,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+326,MAGRAHAT II,Application for Income Certificates,4
+326,MAGRAHAT II,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+326,MAGRAHAT II,Apply - ROR Application ,6
+327,MANDIRBAZAR,Apply - Payment of WBSEDCL Electricity Bill,1
+327,MANDIRBAZAR,Apply - Land Revenue (Khajna),2
+327,MANDIRBAZAR,Apply - Mutation Application,3
+327,MANDIRBAZAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+327,MANDIRBAZAR,Apply - ROR Application ,4
+327,MANDIRBAZAR,Search - Status of Application of Swasthya Sathi Card,4
+327,MANDIRBAZAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+327,MANDIRBAZAR,Search - Regenerate Receipt of WBSEDCL,6
+328,MATHURAPUR I,Apply - Payment of WBSEDCL Electricity Bill,1
+328,MATHURAPUR I,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+328,MATHURAPUR I,Payment - e-Payment Stamp Duty & Registration Fees,3
+328,MATHURAPUR I,Search - Application Status of Digital Ration Card Application,4
+328,MATHURAPUR I,Apply - Land Revenue (Khajna),5
+328,MATHURAPUR I,Apply - ROR Application ,6
+329,MATHURAPUR II,Apply - Payment of WBSEDCL Electricity Bill,1
+329,MATHURAPUR II,Application for Income Certificates,2
+329,MATHURAPUR II,Apply - GP Certificate,3
+329,MATHURAPUR II,Search - Gram Panchayat Tax Payment,4
+329,MATHURAPUR II,Info - Old Age Pension Scheme,5
+329,MATHURAPUR II,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+330,KAKDWIP,Apply - Payment of WBSEDCL Electricity Bill,1
+330,KAKDWIP,Application for Income Certificates,2
+330,KAKDWIP,Apply - Land Revenue (Khajna),3
+330,KAKDWIP,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+330,KAKDWIP,Apply - Grievance to CMO,5
+330,KAKDWIP,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+331,NAMKHANA,Apply - Payment of WBSEDCL Electricity Bill,1
+331,NAMKHANA,Application for Income Certificates,2
+331,NAMKHANA,Modify - Add member / FPS of Ration Card Holder,3
+331,NAMKHANA,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+331,NAMKHANA,Apply - GP Certificate,5
+331,NAMKHANA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+332,PATHARPRATIMA,Apply - Payment of WBSEDCL Electricity Bill,1
+332,PATHARPRATIMA,Application for Income Certificates,2
+332,PATHARPRATIMA,Apply - GP Certificate,3
+332,PATHARPRATIMA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+332,PATHARPRATIMA,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+332,PATHARPRATIMA,Search - Download of e-Ration Card,6
+333,SAGAR,Apply - Payment of WBSEDCL Electricity Bill,1
+333,SAGAR,Application for Income Certificates,2
+333,SAGAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+333,SAGAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+333,SAGAR,Apply - GP Certificate,5
+333,SAGAR,Payment - e-Payment Stamp Duty & Registration Fees,6
+334,RAIGANJ,Apply - Submission of Form for Electoral Roll,1
+334,RAIGANJ,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+334,RAIGANJ,Caste Certificate,3
+334,RAIGANJ,Search - Status of Application of Swasthya Sathi Card,4
+334,RAIGANJ,Application for Income Certificates,5
+334,RAIGANJ,Apply - Payment of WBSEDCL Electricity Bill,6
+335,HEMTABAD,Application for Income Certificates,1
+335,HEMTABAD,Caste Certificate,2
+335,HEMTABAD,Apply - Payment of WBSEDCL Electricity Bill,3
+335,HEMTABAD,Apply - GP Certificate,4
+335,HEMTABAD,Search - Gram Panchayat Tax Payment,5
+335,HEMTABAD,Apply - OPD Registration,6
+336,KALIYAGANJ,Caste Certificate,1
+336,KALIYAGANJ,Apply - Payment of WBSEDCL Electricity Bill,2
+336,KALIYAGANJ,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+336,KALIYAGANJ,Application for Income Certificates,4
+336,KALIYAGANJ,Search - Status of Application of Swasthya Sathi Card,5
+336,KALIYAGANJ,Search - Download of e-Ration Card,6
+337,ITAHAR,Caste Certificate,1
+337,ITAHAR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+337,ITAHAR,Application for Income Certificates,3
+337,ITAHAR,Apply - Submission of Form for Electoral Roll,4
+337,ITAHAR,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+337,ITAHAR,Search - Application Status of Digital Ration Card Application,6
+338,ISLAMPUR,Application for Income Certificates,1
+338,ISLAMPUR,Apply - Submission of Form for Electoral Roll,2
+338,ISLAMPUR,Apply - Payment of WBSEDCL Electricity Bill,3
+338,ISLAMPUR,Caste Certificate,4
+338,ISLAMPUR,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+338,ISLAMPUR,Apply - New Digital Ration Card,6
+339,CHOPRA,Application for Income Certificates,1
+339,CHOPRA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+339,CHOPRA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+339,CHOPRA,Apply - Submission of Form for Electoral Roll,4
+339,CHOPRA,Apply - Payment of WBSEDCL Electricity Bill,5
+339,CHOPRA,Apply - Local Residence (Domicile) Certificate,6
+340,GOALPOKHER-I,Application for Income Certificates,1
+340,GOALPOKHER-I,Payment - e-Payment Stamp Duty & Registration Fees,2
+340,GOALPOKHER-I,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+340,GOALPOKHER-I,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+340,GOALPOKHER-I,Apply - Payment of WBSEDCL Electricity Bill,5
+340,GOALPOKHER-I,Apply - GP Certificate,6
+341,GOALPOKHER-II,Search - Status of Application of Swasthya Sathi Card,1
+341,GOALPOKHER-II,Caste Certificate,2
+341,GOALPOKHER-II,Search - Application Status of Digital Ration Card Application,3
+341,GOALPOKHER-II,Apply - Payment of WBSEDCL Electricity Bill,4
+341,GOALPOKHER-II,Apply - GP Certificate,5
+341,GOALPOKHER-II,Application for Income Certificates,6
+342,KARANDIGHI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+342,KARANDIGHI,Modify - Add member / FPS of Ration Card Holder,2
+342,KARANDIGHI,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+342,KARANDIGHI,Apply - Submission of Form for Electoral Roll,4
+342,KARANDIGHI,Caste Certificate,5
+342,KARANDIGHI,Application for Income Certificates,6
+343,ALIPURDUAR MUNICIPALITY,Apply for Birth & Death Certificate,1
+343,ALIPURDUAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+343,ALIPURDUAR MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+343,ALIPURDUAR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,4
+343,ALIPURDUAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+343,ALIPURDUAR MUNICIPALITY,Caste Certificate,6
+344,BANKURA MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,1
+344,BANKURA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+344,BANKURA MUNICIPALITY,Caste Certificate,3
+344,BANKURA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+344,BANKURA MUNICIPALITY,Application for Income Certificates,5
+344,BANKURA MUNICIPALITY,Search - GRN Information,6
+345,BISHNUPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+345,BISHNUPUR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,2
+345,BISHNUPUR MUNICIPALITY,Caste Certificate,3
+345,BISHNUPUR MUNICIPALITY,Application for Income Certificates,4
+345,BISHNUPUR MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,5
+345,BISHNUPUR MUNICIPALITY,Application for applying learners licence,6
+346,SONAMUKHI MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+346,SONAMUKHI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+346,SONAMUKHI MUNICIPALITY,Caste Certificate,3
+346,SONAMUKHI MUNICIPALITY,Application for Income Certificates,4
+346,SONAMUKHI MUNICIPALITY,Apply - ROR Application ,5
+346,SONAMUKHI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+347,BOLPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+347,BOLPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+347,BOLPUR MUNICIPALITY,Caste Certificate,3
+347,BOLPUR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+347,BOLPUR MUNICIPALITY,Application for Income Certificates,5
+347,BOLPUR MUNICIPALITY,Apply - Land Revenue (Khajna),6
+348,DUBRAJPUR MUNICIPALITY,Search - Download of e-Ration Card,1
+348,DUBRAJPUR MUNICIPALITY,Caste Certificate,2
+348,DUBRAJPUR MUNICIPALITY,Search - Application Status of Digital Ration Card Application,3
+348,DUBRAJPUR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+348,DUBRAJPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+348,DUBRAJPUR MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,6
+349,NALHATI MUNICIPALITY,Apply - OPD Registration,1
+349,NALHATI MUNICIPALITY,Apply - ROR Application ,2
+349,NALHATI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+349,NALHATI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,4
+349,NALHATI MUNICIPALITY,Apply - Mutation Application,5
+349,NALHATI MUNICIPALITY,Search - GRN Information,6
+350,RAMPURHAT MUNICIPALITY,Caste Certificate,1
+350,RAMPURHAT MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,2
+350,RAMPURHAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+350,RAMPURHAT MUNICIPALITY,Apply - Submission of Form for Electoral Roll,4
+350,RAMPURHAT MUNICIPALITY,Apply - Land Revenue (Khajna),5
+350,RAMPURHAT MUNICIPALITY,Search - GRN Information,6
+351,SAINTHIA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+351,SAINTHIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+351,SAINTHIA MUNICIPALITY,Search - Download of e-Ration Card,3
+351,SAINTHIA MUNICIPALITY,Apply for Birth & Death Certificate,4
+351,SAINTHIA MUNICIPALITY,Apply - OPD Registration,5
+351,SAINTHIA MUNICIPALITY,Search - Blood Bank Information,6
+352,SURI MUNICIPALITY,Caste Certificate,1
+352,SURI MUNICIPALITY,Apply - OPD Registration,2
+352,SURI MUNICIPALITY,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),3
+352,SURI MUNICIPALITY,Application for Income Certificates,4
+352,SURI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+352,SURI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,6
+353,COOCH BEHAR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,1
+353,COOCH BEHAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+353,COOCH BEHAR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+353,COOCH BEHAR MUNICIPALITY,Caste Certificate,4
+353,COOCH BEHAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+353,COOCH BEHAR MUNICIPALITY,Apply - Mutation Application,6
+354,DINHATA MUNICIPALITY,Caste Certificate,1
+354,DINHATA MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,2
+354,DINHATA MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,3
+354,DINHATA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+354,DINHATA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+354,DINHATA MUNICIPALITY,Apply - Land Revenue (Khajna),6
+355,MATHABHANGA MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,1
+355,MATHABHANGA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+355,MATHABHANGA MUNICIPALITY,Status - Application of Learners Licence,3
+355,MATHABHANGA MUNICIPALITY,Caste Certificate,4
+355,MATHABHANGA MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,5
+355,MATHABHANGA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,6
+356,MEKHLIGANJ MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,1
+356,MEKHLIGANJ MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+356,MEKHLIGANJ MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+356,MEKHLIGANJ MUNICIPALITY,Search - Application Status of Digital Ration Card Application,4
+356,MEKHLIGANJ MUNICIPALITY,Search - Download of e-Ration Card,5
+356,MEKHLIGANJ MUNICIPALITY,Caste Certificate,6
+357,TUFANGANJ MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,1
+357,TUFANGANJ MUNICIPALITY,Apply - ROR Application ,2
+357,TUFANGANJ MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+357,TUFANGANJ MUNICIPALITY,Apply - Submission of Form for Electoral Roll,4
+357,TUFANGANJ MUNICIPALITY,Caste Certificate,5
+357,TUFANGANJ MUNICIPALITY,Apply - Verification of Electoral Roll Online,6
+358,HALDIBARI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+358,HALDIBARI MUNICIPALITY,Apply - Land Revenue (Khajna),2
+358,HALDIBARI MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+358,HALDIBARI MUNICIPALITY,Apply - Mutation Application,4
+358,HALDIBARI MUNICIPALITY,Apply - Issuance of Trade Licence in Municipal Areas,5
+358,HALDIBARI MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+359,BALURGHAT MUNICIPALITY,Apply - Land Revenue (Khajna),1
+359,BALURGHAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+359,BALURGHAT MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+359,BALURGHAT MUNICIPALITY,Apply - Map Service,4
+359,BALURGHAT MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,5
+359,BALURGHAT MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+360,BUNIADPUR MUNICIPALITY,Caste Certificate,1
+360,BUNIADPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+360,BUNIADPUR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+360,BUNIADPUR MUNICIPALITY,Application for Income Certificates,4
+360,BUNIADPUR MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+360,BUNIADPUR MUNICIPALITY,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),6
+361,GANGARAMPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+361,GANGARAMPUR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+361,GANGARAMPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+361,GANGARAMPUR MUNICIPALITY,Apply for Birth & Death Certificate,4
+361,GANGARAMPUR MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,5
+361,GANGARAMPUR MUNICIPALITY,Payment History - WBSEDCL,6
+362,DARJEELING MUNICIPALITY,Apply - Land Revenue (Khajna),1
+362,DARJEELING MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+362,DARJEELING MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,3
+362,DARJEELING MUNICIPALITY,Apply - Gorkha Certificate,4
+362,DARJEELING MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,5
+362,DARJEELING MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,6
+363,KURSEONG MUNICIPALITY,Apply - Land Revenue (Khajna),1
+363,KURSEONG MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,2
+363,KURSEONG MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,3
+363,KURSEONG MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+363,KURSEONG MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+363,KURSEONG MUNICIPALITY,Caste Certificate,6
+364,MIRIK NOTIFIED AREA,Apply - Submission of Form for Electoral Roll,1
+364,MIRIK NOTIFIED AREA,Apply - Verification of Electoral Roll Online,2
+364,MIRIK NOTIFIED AREA,Apply - Payment of WBSEDCL Electricity Bill,3
+364,MIRIK NOTIFIED AREA,Caste Certificate,4
+364,MIRIK NOTIFIED AREA,Application for applying learners licence,5
+364,MIRIK NOTIFIED AREA,Apply - Payment of Municipal & Corporation Tax,6
+365,SILIGURI MUNICIPAL CORPORATION,Apply - Submission of Form for Electoral Roll,1
+365,SILIGURI MUNICIPAL CORPORATION,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+365,SILIGURI MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),3
+365,SILIGURI MUNICIPAL CORPORATION,Apply - Payment of WBSEDCL Electricity Bill,4
+365,SILIGURI MUNICIPAL CORPORATION,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+365,SILIGURI MUNICIPAL CORPORATION,Apply - Verification of Electoral Roll Online,6
+368,ARAMBAGH MUNICIPALITY,Apply - Land Revenue (Khajna),1
+368,ARAMBAGH MUNICIPALITY,Caste Certificate,2
+368,ARAMBAGH MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+368,ARAMBAGH MUNICIPALITY,Application for Income Certificates,4
+368,ARAMBAGH MUNICIPALITY,Info - Old Age Pension Scheme,5
+368,ARAMBAGH MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,6
+369,BAIDYABATI MUNICIPALITY,Apply - Land Revenue (Khajna),1
+369,BAIDYABATI MUNICIPALITY,Payment - Electricity Bill of CESC,2
+369,BAIDYABATI MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,3
+369,BAIDYABATI MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+369,BAIDYABATI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+369,BAIDYABATI MUNICIPALITY,Apply - Issuance of Trade Licence in Municipal Areas,6
+370,BANSBERIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+370,BANSBERIA MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,2
+370,BANSBERIA MUNICIPALITY,Apply - Land Revenue (Khajna),3
+370,BANSBERIA MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,4
+370,BANSBERIA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+370,BANSBERIA MUNICIPALITY,Apply - Verification of Electoral Roll Online,6
+371,BHADRESWAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+371,BHADRESWAR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+371,BHADRESWAR MUNICIPALITY,Payment - Electricity Bill of CESC,3
+371,BHADRESWAR MUNICIPALITY,Search - Download of e-Ration Card,4
+371,BHADRESWAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+371,BHADRESWAR MUNICIPALITY,Search - GRN Information,6
+372,CHAMPDANI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+372,CHAMPDANI MUNICIPALITY,Search - GRN Information,2
+372,CHAMPDANI MUNICIPALITY,Search - Property Information,2
+372,CHAMPDANI MUNICIPALITY,Apply - Land Revenue (Khajna),3
+372,CHAMPDANI MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+372,CHAMPDANI MUNICIPALITY,Apply - ROR Application ,5
+372,CHAMPDANI MUNICIPALITY,Payment - Electricity Bill of CESC,6
+373,DANKUNI MUNICIPALITY,Apply - Land Revenue (Khajna),1
+373,DANKUNI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+373,DANKUNI MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,3
+373,DANKUNI MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,4
+373,DANKUNI MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,5
+373,DANKUNI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,6
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Apply - Land Revenue (Khajna),1
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,4
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Caste Certificate,5
+374,HOOGHLY-CHINSURAH MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,6
+375,KONNAGAR MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,1
+375,KONNAGAR MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,2
+375,KONNAGAR MUNICIPALITY,Payment - Electricity Bill of CESC,3
+375,KONNAGAR MUNICIPALITY,Apply - Swami Vivekananda Scholarship,4
+375,KONNAGAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+375,KONNAGAR MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+376,RISHRA MUNICIPALITY,Apply - Land Revenue (Khajna),1
+376,RISHRA MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,2
+376,RISHRA MUNICIPALITY,Apply - Student Credit Card,3
+376,RISHRA MUNICIPALITY,Payment - Electricity Bill of CESC,4
+376,RISHRA MUNICIPALITY,Apply for Birth & Death Certificate,5
+376,RISHRA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,6
+377,SERAMPORE MUNICIPALITY,Payment - Electricity Bill of CESC,1
+377,SERAMPORE MUNICIPALITY,Apply - Land Revenue (Khajna),2
+377,SERAMPORE MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+377,SERAMPORE MUNICIPALITY,Search - GRN Information,4
+377,SERAMPORE MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,5
+377,SERAMPORE MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,6
+378,TARAKESWAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+378,TARAKESWAR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+378,TARAKESWAR MUNICIPALITY,Apply - ROR Application ,3
+378,TARAKESWAR MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+378,TARAKESWAR MUNICIPALITY,Search - Download of e-Ration Card,5
+378,TARAKESWAR MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+379,UTTARPARA KOTRUNG MUNICIPALITY,Payment - Electricity Bill of CESC,1
+379,UTTARPARA KOTRUNG MUNICIPALITY,Application for Income Certificates,2
+379,UTTARPARA KOTRUNG MUNICIPALITY,Apply - Land Revenue (Khajna),3
+379,UTTARPARA KOTRUNG MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,4
+379,UTTARPARA KOTRUNG MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,5
+379,UTTARPARA KOTRUNG MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,6
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),1
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Apply - Payment of WBSEDCL Electricity Bill,2
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Caste Certificate,3
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Apply - Submission of Form for Electoral Roll,4
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+380,CHANDERNAGAR MUNICIPAL CORPORATION,Application for Income Certificates,6
+382,ULUBERIA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,1
+382,ULUBERIA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,2
+382,ULUBERIA MUNICIPALITY,Search - Download of e-Ration Card,3
+382,ULUBERIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+382,ULUBERIA MUNICIPALITY,Search - GRN Information,5
+382,ULUBERIA MUNICIPALITY,Apply - Land Revenue (Khajna),6
+383,HOWRAH MUNICIPAL CORPORATION,Payment - Electricity Bill of CESC,1
+383,HOWRAH MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),2
+383,HOWRAH MUNICIPAL CORPORATION,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+383,HOWRAH MUNICIPAL CORPORATION,Application for Income Certificates,4
+383,HOWRAH MUNICIPAL CORPORATION,Apply - OPD Registration,5
+383,HOWRAH MUNICIPAL CORPORATION,Apply - Verification of Electoral Roll Online,6
+386,DHUPGURI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+386,DHUPGURI MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+386,DHUPGURI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+386,DHUPGURI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+386,DHUPGURI MUNICIPALITY,Apply - Verification of Electoral Roll Online,5
+386,DHUPGURI MUNICIPALITY,Search - Payment of Tax (MV),5
+386,DHUPGURI MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+386,DHUPGURI MUNICIPALITY,Apply - Land Revenue (Khajna),6
+387,JALPAIGURI MUNICIPALITY,Status - Application of Learners Licence,1
+387,JALPAIGURI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+387,JALPAIGURI MUNICIPALITY,Apply - Driving Licence,3
+387,JALPAIGURI MUNICIPALITY,Apply - Land Revenue (Khajna),4
+387,JALPAIGURI MUNICIPALITY,Application for applying learners licence,5
+387,JALPAIGURI MUNICIPALITY,Caste Certificate,6
+388,MAL MUNICIPALITY,Caste Certificate,1
+388,MAL MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+388,MAL MUNICIPALITY,Search - Application Status of Digital Ration Card Application,3
+388,MAL MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+388,MAL MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+388,MAL MUNICIPALITY,Apply - Mutation Application,6
+389,JHARGRAM MUNICIPALITY,Application for Income Certificates,1
+389,JHARGRAM MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+389,JHARGRAM MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+389,JHARGRAM MUNICIPALITY,Caste Certificate,4
+389,JHARGRAM MUNICIPALITY,Apply - Land Revenue (Khajna),5
+389,JHARGRAM MUNICIPALITY,Apply - Map Service,6
+390,KALIMPONG MUNICIPALITY,Apply - Land Revenue (Khajna),1
+390,KALIMPONG MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,2
+390,KALIMPONG MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+390,KALIMPONG MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,4
+390,KALIMPONG MUNICIPALITY,Payment - Tax or Fees,5
+390,KALIMPONG MUNICIPALITY,Apply - Mutation Application,6
+391,KOLKATA MUNICIPAL CORPORATION,Search - Printing of Renewal Demand (CE)  (only for KMC),1
+391,KOLKATA MUNICIPAL CORPORATION,Online Deposit of Rent by Tenants,2
+391,KOLKATA MUNICIPAL CORPORATION,Search - Download NOC (only for KMC),3
+391,KOLKATA MUNICIPAL CORPORATION,Payment - Electricity Bill of CESC,4
+391,KOLKATA MUNICIPAL CORPORATION,Print - Unpaid Bills of Outstanding LOI ,5
+391,KOLKATA MUNICIPAL CORPORATION,Search - Print Duplicate Bill of PD (only for KMC),6
+407,ENGLISH BAZAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+407,ENGLISH BAZAR MUNICIPALITY,Caste Certificate,2
+407,ENGLISH BAZAR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+407,ENGLISH BAZAR MUNICIPALITY,Apply - Driving Licence,4
+407,ENGLISH BAZAR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+407,ENGLISH BAZAR MUNICIPALITY,Application for applying learners licence,6
+408,OLD MALDA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+408,OLD MALDA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+408,OLD MALDA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+408,OLD MALDA MUNICIPALITY,Application for Income Certificates,4
+408,OLD MALDA MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,5
+408,OLD MALDA MUNICIPALITY,Apply - Issuance of Trade Licence in Municipal Areas,6
+409,BELDANGA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+409,BELDANGA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+409,BELDANGA MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,3
+409,BELDANGA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+409,BELDANGA MUNICIPALITY,Apply - Krishak Bandhu Scheme,5
+409,BELDANGA MUNICIPALITY,Apply - OPD Registration,6
+410,BERHAMPORE MUNICIPALITY,Apply - Land Revenue (Khajna),1
+410,BERHAMPORE MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+410,BERHAMPORE MUNICIPALITY,Apply - ROR Application ,3
+410,BERHAMPORE MUNICIPALITY,Application for Income Certificates,4
+410,BERHAMPORE MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,5
+410,BERHAMPORE MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+411,DHULIAN MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+411,DHULIAN MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+411,DHULIAN MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+411,DHULIAN MUNICIPALITY,Search - Application Status of Digital Ration Card Application,4
+411,DHULIAN MUNICIPALITY,Search - Download of e-Ration Card,5
+411,DHULIAN MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,6
+412,DOMKAL MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+412,DOMKAL MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,2
+412,DOMKAL MUNICIPALITY,Search - Application Status of Digital Ration Card Application,3
+412,DOMKAL MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+412,DOMKAL MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+412,DOMKAL MUNICIPALITY,Application for Income Certificates,6
+413,JANGIPUR MUNICIPALITY,Apply - Driving Licence,1
+413,JANGIPUR MUNICIPALITY,Application for applying learners licence,2
+413,JANGIPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+413,JANGIPUR MUNICIPALITY,Apply - Land Revenue (Khajna),4
+413,JANGIPUR MUNICIPALITY,Caste Certificate,5
+413,JANGIPUR MUNICIPALITY,Application for Income Certificates,6
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Apply - Land Revenue (Khajna),2
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Search - GRN Information,4
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+414,JIAGANJ-AZIMGANJ MUNICIPALITY,Apply - OPD Registration,6
+415,KANDI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+415,KANDI MUNICIPALITY,Caste Certificate,2
+415,KANDI MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+415,KANDI MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,4
+415,KANDI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+415,KANDI MUNICIPALITY,Apply - Land Revenue (Khajna),6
+416,MURSHIDABAD MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+416,MURSHIDABAD MUNICIPALITY,Caste Certificate,2
+416,MURSHIDABAD MUNICIPALITY,Apply - Land Revenue (Khajna),3
+416,MURSHIDABAD MUNICIPALITY,Application for Income Certificates,4
+416,MURSHIDABAD MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+416,MURSHIDABAD MUNICIPALITY,Search - Download of e-Ration Card,6
+417,BIRNAGAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+417,BIRNAGAR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+417,BIRNAGAR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+417,BIRNAGAR MUNICIPALITY,Payment History - WBSEDCL,4
+417,BIRNAGAR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+417,BIRNAGAR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,6
+418,CHAKDAHA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+418,CHAKDAHA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+418,CHAKDAHA MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,3
+418,CHAKDAHA MUNICIPALITY,Application for Income Certificates,4
+418,CHAKDAHA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+418,CHAKDAHA MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,6
+419,COOPERS CAMP NOTIFIED AREA,Apply - Payment of WBSEDCL Electricity Bill,1
+419,COOPERS CAMP NOTIFIED AREA,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+419,COOPERS CAMP NOTIFIED AREA,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+419,COOPERS CAMP NOTIFIED AREA,Apply - Submission of Form for Electoral Roll,3
+419,COOPERS CAMP NOTIFIED AREA,Apply for Birth & Death Certificate,4
+419,COOPERS CAMP NOTIFIED AREA,Apply - Issuance of Trade Licence in Municipal Areas,5
+419,COOPERS CAMP NOTIFIED AREA,Apply - Download and Print Death Certificate,6
+420,GAYESHPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+420,GAYESHPUR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+420,GAYESHPUR MUNICIPALITY,Payment History - WBSEDCL,3
+420,GAYESHPUR MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,4
+420,GAYESHPUR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+420,GAYESHPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+421,HARINGHATA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+421,HARINGHATA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+421,HARINGHATA MUNICIPALITY,Apply - Land Revenue (Khajna),3
+421,HARINGHATA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+421,HARINGHATA MUNICIPALITY,Apply - Mutation Application,5
+421,HARINGHATA MUNICIPALITY,Apply - ROR Application ,6
+422,KALYANI MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,1
+422,KALYANI MUNICIPALITY,Search - Payment of Tax (MV),2
+422,KALYANI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+422,KALYANI MUNICIPALITY,Apply for Birth & Death Certificate,4
+422,KALYANI MUNICIPALITY,Apply - Land Revenue (Khajna),5
+422,KALYANI MUNICIPALITY,Status - Application of Learners Licence,6
+423,KRISHNANAGAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+423,KRISHNANAGAR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+423,KRISHNANAGAR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,3
+423,KRISHNANAGAR MUNICIPALITY,Apply - Map Service,4
+423,KRISHNANAGAR MUNICIPALITY,Caste Certificate,5
+423,KRISHNANAGAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,6
+424,NABADWIP MUNICIPALITY,Apply - Land Revenue (Khajna),1
+424,NABADWIP MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+424,NABADWIP MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+424,NABADWIP MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,4
+424,NABADWIP MUNICIPALITY,Caste Certificate,5
+424,NABADWIP MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,6
+425,RANAGHAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+425,RANAGHAT MUNICIPALITY,Apply - Land Revenue (Khajna),2
+425,RANAGHAT MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+425,RANAGHAT MUNICIPALITY,Caste Certificate,4
+425,RANAGHAT MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,5
+425,RANAGHAT MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+426,SANTIPUR MUNICIPALITY,Apply - Land Revenue (Khajna),1
+426,SANTIPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+426,SANTIPUR MUNICIPALITY,Apply - Plot Information,3
+426,SANTIPUR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,4
+426,SANTIPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+426,SANTIPUR MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+427,TAHERPUR NOTIFIED AREA,Apply - Payment of WBSEDCL Electricity Bill,1
+427,TAHERPUR NOTIFIED AREA,Payment History - WBSEDCL,2
+427,TAHERPUR NOTIFIED AREA,Search - Regenerate Receipt of WBSEDCL,3
+427,TAHERPUR NOTIFIED AREA,Apply - Gram Panchayat Property Tax,4
+427,TAHERPUR NOTIFIED AREA,Apply - Online Trade Registration,5
+427,TAHERPUR NOTIFIED AREA,Apply - Approval of Building/Plan,6
+427,TAHERPUR NOTIFIED AREA,Apply - Manabik Pension Scheme (Disability Pension Scheme),6
+427,TAHERPUR NOTIFIED AREA,Apply - New Electricity Connection of LT/HT Application,6
+427,TAHERPUR NOTIFIED AREA,Download - Payment for Quotation Letter of New Connection WBSEDCL,6
+427,TAHERPUR NOTIFIED AREA,Payment - Electricity Bill of CESC,6
+427,TAHERPUR NOTIFIED AREA,Payment - e-Payment Stamp Duty & Registration Fees,6
+427,TAHERPUR NOTIFIED AREA,Search - Payment of Tax (MV),6
+428,BARASAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+428,BARASAT MUNICIPALITY,Apply for Birth & Death Certificate,2
+428,BARASAT MUNICIPALITY,Caste Certificate,3
+428,BARASAT MUNICIPALITY,Apply - Land Revenue (Khajna),4
+428,BARASAT MUNICIPALITY,Application for Income Certificates,5
+428,BARASAT MUNICIPALITY,Apply - Submission of Form for Electoral Roll,6
+429,MADHYAMGRAM MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+429,MADHYAMGRAM MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+429,MADHYAMGRAM MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+429,MADHYAMGRAM MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,4
+429,MADHYAMGRAM MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+429,MADHYAMGRAM MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,6
+430,NORTH DUM DUM MUNICIPALITY,Apply - Land Revenue (Khajna),1
+430,NORTH DUM DUM MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,2
+430,NORTH DUM DUM MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+430,NORTH DUM DUM MUNICIPALITY,Payment - Electricity Bill of CESC,4
+430,NORTH DUM DUM MUNICIPALITY,Apply - ROR Application ,5
+430,NORTH DUM DUM MUNICIPALITY,Apply - Plot Information,6
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,2
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,3
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Apply - Land Revenue (Khajna),4
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,5
+431,ASHOKENAGAR-KALYANGARH MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+432,BADURIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+432,BADURIA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+432,BADURIA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+432,BADURIA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+432,BADURIA MUNICIPALITY,Apply - OPD Registration,5
+432,BADURIA MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,6
+433,BARANAGAR MUNICIPALITY,Payment - Electricity Bill of CESC,1
+433,BARANAGAR MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,2
+433,BARANAGAR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+433,BARANAGAR MUNICIPALITY,Search - Application Status of Digital Ration Card Application,4
+433,BARANAGAR MUNICIPALITY,Search - GRN Information,5
+433,BARANAGAR MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+434,BARRACKPORE MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+434,BARRACKPORE MUNICIPALITY,Application for applying learners licence,2
+434,BARRACKPORE MUNICIPALITY,Application for Income Certificates,3
+434,BARRACKPORE MUNICIPALITY,Apply - Renewal of Driving Licence,4
+434,BARRACKPORE MUNICIPALITY,Apply - Driving Licence,5
+434,BARRACKPORE MUNICIPALITY,Payment - Electricity Bill of CESC,6
+435,BASIRHAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+435,BASIRHAT MUNICIPALITY,Search - Application Status of Digital Ration Card Application,2
+435,BASIRHAT MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,3
+435,BASIRHAT MUNICIPALITY,Apply - Land Revenue (Khajna),4
+435,BASIRHAT MUNICIPALITY,Apply - ROR Application ,5
+435,BASIRHAT MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,6
+436,BHATPARA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+436,BHATPARA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+436,BHATPARA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+436,BHATPARA MUNICIPALITY,Payment History - WBSEDCL,4
+436,BHATPARA MUNICIPALITY,Apply - ROR Application ,5
+436,BHATPARA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+437,BONGAON MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+437,BONGAON MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+437,BONGAON MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+437,BONGAON MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+437,BONGAON MUNICIPALITY,Caste Certificate,5
+437,BONGAON MUNICIPALITY,Info - Old Age Pension Scheme,6
+438,DUM DUM MUNICIPALITY,Payment - Electricity Bill of CESC,1
+438,DUM DUM MUNICIPALITY,Apply - Land Revenue (Khajna),2
+438,DUM DUM MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+438,DUM DUM MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+438,DUM DUM MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,5
+438,DUM DUM MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+439,GARULIA MUNICIPALITY,Payment - Electricity Bill of CESC,1
+439,GARULIA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+439,GARULIA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+439,GARULIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+439,GARULIA MUNICIPALITY,Search - Download of e-Ration Card,5
+439,GARULIA MUNICIPALITY,Apply - Verification of Electoral Roll Online,6
+440,GOBARDANGA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+440,GOBARDANGA MUNICIPALITY,Apply - Renewal of Trade License by NKDA,2
+440,GOBARDANGA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+440,GOBARDANGA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+440,GOBARDANGA MUNICIPALITY,Search - Download of e-Ration Card,5
+440,GOBARDANGA MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+441,KANCHRAPARA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+441,KANCHRAPARA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+441,KANCHRAPARA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+441,KANCHRAPARA MUNICIPALITY,Apply - Verification of Electoral Roll Online,4
+441,KANCHRAPARA MUNICIPALITY,Apply for Birth & Death Certificate,5
+441,KANCHRAPARA MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,6
+442,KHARDAH MUNICIPALITY,Apply - Land Revenue (Khajna),1
+442,KHARDAH MUNICIPALITY,Search - GRN Information,2
+442,KHARDAH MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+442,KHARDAH MUNICIPALITY,Payment - Electricity Bill of CESC,4
+442,KHARDAH MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+442,KHARDAH MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,6
+443,NEW BARRACKPORE MUNICIPALITY,Apply - Land Revenue (Khajna),1
+443,NEW BARRACKPORE MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+443,NEW BARRACKPORE MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+443,NEW BARRACKPORE MUNICIPALITY,Application for Income Certificates,4
+443,NEW BARRACKPORE MUNICIPALITY,Search - Download of e-Ration Card,5
+443,NEW BARRACKPORE MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,6
+444,NORTH BARRACKPORE MUNICIPALITY,Payment - Electricity Bill of CESC,1
+444,NORTH BARRACKPORE MUNICIPALITY,Search - GRN Information,2
+444,NORTH BARRACKPORE MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,3
+444,NORTH BARRACKPORE MUNICIPALITY,Apply - Mutation Application,4
+444,NORTH BARRACKPORE MUNICIPALITY,Apply - Land Revenue (Khajna),5
+444,NORTH BARRACKPORE MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,6
+445,PANIHATI MUNICIPALITY,Apply - Land Revenue (Khajna),1
+445,PANIHATI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+445,PANIHATI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+445,PANIHATI MUNICIPALITY,Apply - Mutation Application,4
+445,PANIHATI MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,5
+445,PANIHATI MUNICIPALITY,Apply - Plot Information,6
+446,SOUTH DUM DUM MUNICIPALITY,Payment - Electricity Bill of CESC,1
+446,SOUTH DUM DUM MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+446,SOUTH DUM DUM MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+446,SOUTH DUM DUM MUNICIPALITY,Apply - Land Revenue (Khajna),4
+446,SOUTH DUM DUM MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,5
+446,SOUTH DUM DUM MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,6
+447,TAKI MUNICIPALITY,Apply - Land Revenue (Khajna),1
+447,TAKI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+447,TAKI MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,3
+447,TAKI MUNICIPALITY,Caste Certificate,4
+447,TAKI MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,5
+447,TAKI MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+447,TAKI MUNICIPALITY,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),6
+447,TAKI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+447,TAKI MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,6
+448,TITAGARH MUNICIPALITY,Apply - Submission of Form for Electoral Roll,1
+448,TITAGARH MUNICIPALITY,Apply - Land Revenue (Khajna),2
+448,TITAGARH MUNICIPALITY,Apply - Verification of Electoral Roll Online,3
+448,TITAGARH MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+448,TITAGARH MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+448,TITAGARH MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+449,NAIHATI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+449,NAIHATI MUNICIPALITY,Apply - Land Revenue (Khajna),2
+449,NAIHATI MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+449,NAIHATI MUNICIPALITY,Apply - Verification of Electoral Roll Online,4
+449,NAIHATI MUNICIPALITY,Search - Application Status of Digital Ration Card Application,5
+449,NAIHATI MUNICIPALITY,Caste Certificate,6
+450,HABRA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+450,HABRA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+450,HABRA MUNICIPALITY,Caste Certificate,3
+450,HABRA MUNICIPALITY,Application for Income Certificates,4
+450,HABRA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+450,HABRA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+451,HALISAHAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+451,HALISAHAR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+451,HALISAHAR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+451,HALISAHAR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+451,HALISAHAR MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,5
+451,HALISAHAR MUNICIPALITY,Apply - Verification of Electoral Roll Online,6
+452,KAMARHATI MUNICIPALITY,Payment - Electricity Bill of CESC,1
+452,KAMARHATI MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,2
+452,KAMARHATI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,3
+452,KAMARHATI MUNICIPALITY,Apply - Land Revenue (Khajna),4
+452,KAMARHATI MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,5
+452,KAMARHATI MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Apply - Payment of WBSEDCL Electricity Bill,1
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Payment - Electricity Bill of CESC,2
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),3
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Apply - Submission of Form for Electoral Roll,4
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),5
+453,BIDHANNAGAR MUNICIPAL CORPORATION,Search - Status of Application of Swasthya Sathi Card,6
+456,ASANSOL MUNICIPAL CORPORATION,Apply - Payment of WBSEDCL Electricity Bill,1
+456,ASANSOL MUNICIPAL CORPORATION,Search - Application Status of Digital Ration Card Application,2
+456,ASANSOL MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),3
+456,ASANSOL MUNICIPAL CORPORATION,Search - Status of Application of Swasthya Sathi Card,4
+456,ASANSOL MUNICIPAL CORPORATION,Caste Certificate,5
+456,ASANSOL MUNICIPAL CORPORATION,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+458,DURGAPUR MUNICIPAL CORPORATION,Apply - Payment of WBSEDCL Electricity Bill,1
+458,DURGAPUR MUNICIPAL CORPORATION,Apply - Land Revenue (Khajna),2
+458,DURGAPUR MUNICIPAL CORPORATION,Search - Application Status of Kanyasree Prakalpa,3
+458,DURGAPUR MUNICIPAL CORPORATION,Apply - Submission of Form for Electoral Roll,4
+458,DURGAPUR MUNICIPAL CORPORATION,Apply - Verification of Electoral Roll Online,5
+458,DURGAPUR MUNICIPAL CORPORATION,Search - Status of Application of Swasthya Sathi Card,6
+460,CHANDRAKONA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+460,CHANDRAKONA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+460,CHANDRAKONA MUNICIPALITY,Search - GRN Information,3
+460,CHANDRAKONA MUNICIPALITY,Caste Certificate,4
+460,CHANDRAKONA MUNICIPALITY,Apply - ROR Application ,5
+460,CHANDRAKONA MUNICIPALITY,Search - COVID Patient Information,6
+461,GHATAL MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+461,GHATAL MUNICIPALITY,Caste Certificate,2
+461,GHATAL MUNICIPALITY,Application for Income Certificates,3
+461,GHATAL MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,4
+461,GHATAL MUNICIPALITY,Apply - Submission of Form for Electoral Roll,5
+461,GHATAL MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
+462,KHARAGPUR MUNICIPALITY,Apply - Land Revenue (Khajna),1
+462,KHARAGPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+462,KHARAGPUR MUNICIPALITY,Caste Certificate,3
+462,KHARAGPUR MUNICIPALITY,Apply - Submission of Form for Electoral Roll,4
+462,KHARAGPUR MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,5
+462,KHARAGPUR MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,6
+463,KHARAR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+463,KHARAR MUNICIPALITY,Payment History - WBSEDCL,2
+463,KHARAR MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,3
+463,KHARAR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+463,KHARAR MUNICIPALITY,Search - Download of e-Ration Card,5
+463,KHARAR MUNICIPALITY,Apply - Land Revenue (Khajna),6
+464,KHIRPAI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+464,KHIRPAI MUNICIPALITY,Payment History - WBSEDCL,2
+464,KHIRPAI MUNICIPALITY,Search - GRN Information,3
+464,KHIRPAI MUNICIPALITY,Apply - Plot Information,4
+464,KHIRPAI MUNICIPALITY,Apply for Birth & Death Certificate,5
+464,KHIRPAI MUNICIPALITY,Apply - Land Revenue (Khajna),6
+465,MEDINIPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+465,MEDINIPUR MUNICIPALITY,Search - Download of e-Ration Card,2
+465,MEDINIPUR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+465,MEDINIPUR MUNICIPALITY,Caste Certificate,4
+465,MEDINIPUR MUNICIPALITY,Apply - New Digital Ration Card,5
+465,MEDINIPUR MUNICIPALITY,Apply - Map Service,6
+466,RAMJIBANPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+466,RAMJIBANPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+466,RAMJIBANPUR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+466,RAMJIBANPUR MUNICIPALITY,Payment History - WBSEDCL,4
+466,RAMJIBANPUR MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,5
+466,RAMJIBANPUR MUNICIPALITY,Apply - New Digital Ration Card,6
+467,BURDWAN MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+467,BURDWAN MUNICIPALITY,Search - Download of e-Ration Card,2
+467,BURDWAN MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+467,BURDWAN MUNICIPALITY,Search - Application Status of Digital Ration Card Application,4
+467,BURDWAN MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+467,BURDWAN MUNICIPALITY,Payment - Tax or Fees,6
+468,DAINHAT MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+468,DAINHAT MUNICIPALITY,Application for Income Certificates,2
+468,DAINHAT MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,3
+468,DAINHAT MUNICIPALITY,Apply - Samajik Suraksha Yojana Application ,4
+468,DAINHAT MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+468,DAINHAT MUNICIPALITY,Apply - Submission of Form for Electoral Roll,6
+469,GUSKARA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,1
+469,GUSKARA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+469,GUSKARA MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,3
+469,GUSKARA MUNICIPALITY,Apply - Land Revenue (Khajna),4
+469,GUSKARA MUNICIPALITY,Apply - ROR Application ,5
+469,GUSKARA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+470,KALNA MUNICIPALITY,Caste Certificate,1
+470,KALNA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+470,KALNA MUNICIPALITY,eDistrict Dashboard,3
+470,KALNA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+470,KALNA MUNICIPALITY,Search - Property Information,5
+470,KALNA MUNICIPALITY,Application for Income Certificates,6
+471,KATWA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+471,KATWA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+471,KATWA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+471,KATWA MUNICIPALITY,Application for Income Certificates,4
+471,KATWA MUNICIPALITY,Registration & Admission,5
+471,KATWA MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,6
+472,MEMARI MUNICIPALITY,Caste Certificate,1
+472,MEMARI MUNICIPALITY,Search - Application Status of Digital Ration Card Application,2
+472,MEMARI MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+472,MEMARI MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,4
+472,MEMARI MUNICIPALITY,Application for Income Certificates,5
+472,MEMARI MUNICIPALITY,Search - Download of e-Ration Card,6
+473,CONTAI   MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+473,CONTAI   MUNICIPALITY,Apply - Land Revenue (Khajna),2
+473,CONTAI   MUNICIPALITY,Application for applying learners licence,3
+473,CONTAI   MUNICIPALITY,Apply - Driving Licence,4
+473,CONTAI   MUNICIPALITY,eChallan,5
+473,CONTAI   MUNICIPALITY,Application for Income Certificates,6
+474,EGRA MUNICIPALITY,Search - e-Services Information of Municipal / Urban services,1
+474,EGRA MUNICIPALITY,Search - Price Information,2
+474,EGRA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+474,EGRA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,4
+474,EGRA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,5
+474,EGRA MUNICIPALITY,Application for Income Certificates,6
+475,HALDIA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,1
+475,HALDIA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,2
+475,HALDIA MUNICIPALITY,Status of Application (Krishak Bandhu),3
+475,HALDIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,4
+475,HALDIA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+475,HALDIA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+476,PANSKURA MUNICIPALITY,Payment - Tax or Fees,1
+476,PANSKURA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+476,PANSKURA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+476,PANSKURA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+476,PANSKURA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,5
+476,PANSKURA MUNICIPALITY,Application for Income Certificates,6
+477,TAMRALIPTA MUNICIPALITY,Application for Income Certificates,1
+477,TAMRALIPTA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,2
+477,TAMRALIPTA MUNICIPALITY,Status of Application (Krishak Bandhu),3
+477,TAMRALIPTA MUNICIPALITY,Search - Download of e-Ration Card,4
+477,TAMRALIPTA MUNICIPALITY,Caste Certificate,5
+477,TAMRALIPTA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,6
+478,JHALDA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+478,JHALDA MUNICIPALITY,Apply - Swasthya Sathi Enrolment Certificate New Registration (Form Â B),2
+478,JHALDA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,3
+478,JHALDA MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,4
+478,JHALDA MUNICIPALITY,Apply - New Digital Ration Card,5
+478,JHALDA MUNICIPALITY,Payment History - WBSEDCL,6
+479,PURULIA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+479,PURULIA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,2
+479,PURULIA MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,3
+479,PURULIA MUNICIPALITY,Apply - Verification of Electoral Roll Online,4
+479,PURULIA MUNICIPALITY,Caste Certificate,5
+479,PURULIA MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,6
+480,RAGHUNATHPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+480,RAGHUNATHPUR MUNICIPALITY,Apply for Birth & Death Certificate,2
+480,RAGHUNATHPUR MUNICIPALITY,eDistrict Dashboard,3
+480,RAGHUNATHPUR MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+480,RAGHUNATHPUR MUNICIPALITY,Apply - Download and Print Birth Certificate,5
+480,RAGHUNATHPUR MUNICIPALITY,Apply - Driving Licence,6
+481,BARUIPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+481,BARUIPUR MUNICIPALITY,Apply for Birth & Death Certificate,2
+481,BARUIPUR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+481,BARUIPUR MUNICIPALITY,Payment - Electricity Bill of CESC,4
+481,BARUIPUR MUNICIPALITY,Search - NSAP under Jai Bangla,5
+481,BARUIPUR MUNICIPALITY,Caste Certificate,6
+482,BUDGE BUDGE MUNICIPALITY,Payment - Electricity Bill of CESC,1
+482,BUDGE BUDGE MUNICIPALITY,Apply - SHG Loan Application,2
+482,BUDGE BUDGE MUNICIPALITY,Search - PMSVA Nidhi Scheme,3
+482,BUDGE BUDGE MUNICIPALITY,Apply - Land Revenue (Khajna),4
+482,BUDGE BUDGE MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,5
+482,BUDGE BUDGE MUNICIPALITY,Apply - GP Certificate,6
+483,DIAMOND HARBOUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+483,DIAMOND HARBOUR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+483,DIAMOND HARBOUR MUNICIPALITY,Apply - OPD Registration,3
+483,DIAMOND HARBOUR MUNICIPALITY,Payment - Electricity Bill of CESC,4
+483,DIAMOND HARBOUR MUNICIPALITY,Apply- Addition of New Member after Receiving Card (Form Â A),5
+483,DIAMOND HARBOUR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,6
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,2
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Apply - Land Revenue (Khajna),3
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Modify - Add member / FPS of Ration Card Holder,4
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+484,JAYNAGAR-MAZILPUR MUNICIPALITY,Search - Download of e-Ration Card,6
+485,MAHESHTALA MUNICIPALITY,Payment - Electricity Bill of CESC,1
+485,MAHESHTALA MUNICIPALITY,Apply - Land Revenue (Khajna),2
+485,MAHESHTALA MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,3
+485,MAHESHTALA MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+485,MAHESHTALA MUNICIPALITY,Apply for Birth & Death Certificate,5
+485,MAHESHTALA MUNICIPALITY,Search - GRN Information,5
+485,MAHESHTALA MUNICIPALITY,Apply - ROR Application ,6
+486,PUJALI MUNICIPALITY,Payment - Electricity Bill of CESC,1
+486,PUJALI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+486,PUJALI MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,3
+486,PUJALI MUNICIPALITY,Payment History - WBSEDCL,4
+486,PUJALI MUNICIPALITY,Apply - Land Revenue (Khajna),5
+486,PUJALI MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,5
+486,PUJALI MUNICIPALITY,eDistrict Dashboard,6
+487,RAJPUR-SONARPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+487,RAJPUR-SONARPUR MUNICIPALITY,Apply - Land Revenue (Khajna),2
+487,RAJPUR-SONARPUR MUNICIPALITY,Payment - Electricity Bill of CESC,3
+487,RAJPUR-SONARPUR MUNICIPALITY,Caste Certificate,4
+487,RAJPUR-SONARPUR MUNICIPALITY,Apply - Payment of Municipal & Corporation Tax,5
+487,RAJPUR-SONARPUR MUNICIPALITY,Search - Regenerate Receipt of WBSEDCL,6
+488,DALKHOLA MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,1
+488,DALKHOLA MUNICIPALITY,Caste Certificate,2
+488,DALKHOLA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+488,DALKHOLA MUNICIPALITY,Apply - Land Revenue (Khajna),4
+488,DALKHOLA MUNICIPALITY,Search - Application Status of Digital Ration Card Application,5
+488,DALKHOLA MUNICIPALITY,Search - Download of e-Ration Card,6
+489,ISLAMPUR MUNICIPALITY,Application for Income Certificates,1
+489,ISLAMPUR MUNICIPALITY,eDistrict Dashboard,2
+489,ISLAMPUR MUNICIPALITY,Apply - Local Residence (Domicile) Certificate,3
+489,ISLAMPUR MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,4
+489,ISLAMPUR MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,5
+489,ISLAMPUR MUNICIPALITY,Apply for Birth & Death Certificate,6
+490,KALIAGANJ MUNICIPALITY,Search - Application Status of Digital Ration Card Application,1
+490,KALIAGANJ MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,2
+490,KALIAGANJ MUNICIPALITY,Apply - Submission of Form for Electoral Roll,3
+490,KALIAGANJ MUNICIPALITY,Apply - Verification of Electoral Roll Online,4
+490,KALIAGANJ MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+490,KALIAGANJ MUNICIPALITY,Application for mutation of holding in municipality/ Municipal Corporation,6
+491,RAIGANJ MUNICIPALITY,Apply - Plot Information,1
+491,RAIGANJ MUNICIPALITY,Search - Download of e-Ration Card,2
+491,RAIGANJ MUNICIPALITY,Apply - Land Revenue (Khajna),3
+491,RAIGANJ MUNICIPALITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,4
+491,RAIGANJ MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,5
+491,RAIGANJ MUNICIPALITY,Search - Application Status of Digital Ration Card Application,6
+492,FALAKATA MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,1
+492,FALAKATA MUNICIPALITY,Payment - e-Payment Stamp Duty & Registration Fees,2
+492,FALAKATA MUNICIPALITY,Caste Certificate,3
+492,FALAKATA MUNICIPALITY,Apply - Submission of Form for Electoral Roll,4
+492,FALAKATA MUNICIPALITY,Apply - Land Revenue (Khajna),5
+492,FALAKATA MUNICIPALITY,Apply for Birth & Death Certificate,6
+493,KRANTI,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+493,KRANTI,Apply - Payment of WBSEDCL Electricity Bill,2
+493,KRANTI,Apply - New Digital Ration Card,3
+493,KRANTI,Caste Certificate,4
+493,KRANTI,Apply - Aadhaar & Mobile Link with Digital Ration Card,5
+493,KRANTI,Search - Application Status of Digital Ration Card Application,6
+496,BANARHAT,Apply - eKYC Seeding of Aadhaar with Digital Ration Card,1
+496,BANARHAT,Application for Income Certificates,2
+496,BANARHAT,Apply - Payment of WBSEDCL Electricity Bill,3
+496,BANARHAT,Search - Download of e-Ration Card,4
+496,BANARHAT,Caste Certificate,5
+496,BANARHAT,Search - Gram Panchayat Tax Payment,6
+497,LAVA,Apply - Payment of WBSEDCL Electricity Bill,1
+497,LAVA,Application for Income Certificates,2
+497,LAVA,Apply - Land Revenue (Khajna),3
+497,LAVA,Apply - Local Residence (Domicile) Certificate,4
+497,LAVA,Caste Certificate,5
+497,LAVA,Apply - Ordinary Residencial Certificate,6
+498,MAYNAGURI MUNICIPALITY,Apply - Issuance of Trade Licence in Municipal Areas,1
+498,MAYNAGURI MUNICIPALITY,Caste Certificate,2
+498,MAYNAGURI MUNICIPALITY,Apply - Renewal of Trade License in Municipal Areas,3
+498,MAYNAGURI MUNICIPALITY,Search - Status of Application of Swasthya Sathi Card,4
+498,MAYNAGURI MUNICIPALITY,Apply - Land Revenue (Khajna),5
+498,MAYNAGURI MUNICIPALITY,Apply - Payment of WBSEDCL Electricity Bill,6
+499,KMC(ALIPORE SADAR),Payment - Electricity Bill of CESC,1
+499,KMC(ALIPORE SADAR),Apply - Payment of WBSEDCL Electricity Bill,2
+499,KMC(ALIPORE SADAR),Apply - Local Residence (Domicile) Certificate,3
+499,KMC(ALIPORE SADAR),Application for Income Certificates,4
+499,KMC(ALIPORE SADAR),Online Deposit of Rent by Tenants,5
+499,KMC(ALIPORE SADAR),Search - Bangla Awas Yojana,6
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Apply - Payment of WBSEDCL Electricity Bill,1
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Apply - Verification of Electoral Roll Online,2
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Search - Application Status of Digital Ration Card Application,3
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Apply - Submission of Form for Electoral Roll,4
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Apply - Land Revenue (Khajna),5
+502,NEWTOWN KOLKATA DEVELOPMENT AUTHORITY,Apply - Aadhaar & Mobile Link with Digital Ration Card,6
