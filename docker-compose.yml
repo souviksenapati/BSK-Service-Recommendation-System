@@ -1,7 +1,9 @@
 # ==============================================================================
-# BSK-SER Docker Compose Configuration
+# BSK-SER Docker Compose - One-Command Deployment
 # ==============================================================================
-# Production-ready setup with PostgreSQL database and FastAPI application
+# Just run: docker-compose up -d
+# First run: Auto-initializes database (5-10 mins)
+# Subsequent runs: Instant start
 # ==============================================================================
 
 services:
@@ -18,7 +20,6 @@ services:
       - "${DB_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./data:/docker-entrypoint-initdb.d/data:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
       interval: 10s
@@ -91,13 +92,13 @@ services:
     ports:
       - "${API_PORT:-8000}:8000"
     volumes:
-      - ./data:/app/data  # Mount data directory (contains CSV files and .db_initialized marker)
+      - ./data:/app/data  # Persists .db_initialized marker
       - api_logs:/var/log/bsk-ser
     healthcheck:
       test: ["CMD", "python", "-c", "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); exit(0 if h.getresponse().status == 200 else 1)"]
       interval: 30s
       timeout: 10s
-      start_period: 120s  # Increased to 120s for first-run database setup
+      start_period: 120s  # Allow time for first-run database setup
       retries: 3
     restart: unless-stopped
     networks:
