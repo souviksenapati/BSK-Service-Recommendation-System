@@ -93,13 +93,13 @@ services:
     ports:
       - "${API_PORT:-8000}:8000"
     volumes:
-      - ./data:/app/data
+      - ./data:/app/data  # Mount data directory (contains CSV files and .db_initialized marker)
       - api_logs:/var/log/bsk-ser
     healthcheck:
       test: ["CMD", "python", "-c", "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); exit(0 if h.getresponse().status == 200 else 1)"]
       interval: 30s
       timeout: 10s
-      start_period: 60s
+      start_period: 120s  # Increased to 120s for first-run database setup
       retries: 3
     restart: unless-stopped
     networks:

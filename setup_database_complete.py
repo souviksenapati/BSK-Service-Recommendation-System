@@ -545,7 +545,19 @@ ADMIN_API_KEY=change-this-to-secure-random-key
 
 def main():
     """Main setup function"""
-    print_banner("🚀 BSK-SER COMPLETE DATABASE SETUP")
+    # This function is now just a placeholder or can be removed if all logic moves to __main__
+    pass
+
+
+if __name__ == "__main__":
+    import argparse
+    
+    parser = argparse.ArgumentParser(description='Setup BSK-SER Database')
+    parser.add_argument('--skip-confirmation', action='store_true', 
+                        help='Skip user confirmation prompt (for automated deployments)')
+    args = parser.parse_args()
+    
+    print_banner("🚀 BSK-SER DATABASE SETUP") # Changed banner text
     
     logger.info("\nThis script will:")
     logger.info("  1. Create PostgreSQL database")
@@ -556,11 +568,15 @@ def main():
     logger.info("  6. Initialize sync metadata")
     logger.info("  7. Verify all imports")
     
-    response = input("\nProceed with setup? (yes/no): ").strip().lower()
-    
-    if response not in ['yes', 'y']:
-        logger.info("Setup cancelled.")
-        return
+    if not args.skip_confirmation:
+        response = input("\nProceed with setup? (yes/no): ").strip().lower()
+        
+        if response not in ['yes', 'y']:
+            logger.info("Setup cancelled.")
+            sys.exit(0) # Exit cleanly if user cancels
+    else:
+        logger.info("\nSkipping confirmation (--skip-confirmation flag set)")
+        logger.info("Proceeding with automated setup...")
     
     try:
         # Execute setup steps

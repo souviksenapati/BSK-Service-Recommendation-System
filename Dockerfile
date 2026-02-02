@@ -45,9 +45,13 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 COPY backend/ /app/backend/
 COPY data/ /app/data/
 COPY setup_database_complete.py /app/
+COPY docker-entrypoint.sh /app/
 
 # Create directories for logs and data
 RUN mkdir -p /var/log/bsk-ser /app/data
+
+# Set executable permissions for entrypoint
+RUN chmod +x /app/docker-entrypoint.sh
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -60,6 +64,9 @@ EXPOSE 8000
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD python -c "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); r = h.getresponse(); exit(0 if r.status == 200 else 1)"
+
+# Set entrypoint
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 # Run application with Gunicorn for production
 CMD ["gunicorn", "backend.main_api:app", \
