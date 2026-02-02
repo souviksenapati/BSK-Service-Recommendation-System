@@ -8,7 +8,7 @@ When transferring project to a new system, ensure ALL these files are included:
 ```
 ✅ Dockerfile
 ✅ docker-compose.yml
-✅ docker-entrypoint.sh          ← CRITICAL!
+✅ entrypoint.py                     ← Python entrypoint (cross-platform)
 ✅ .dockerignore
 ✅ requirements.txt
 ✅ setup_database_complete.py
@@ -23,7 +23,7 @@ When transferring project to a new system, ensure ALL these files are included:
 # Check all required files exist
 ls Dockerfile
 ls docker-compose.yml
-ls docker-entrypoint.sh         # ← Must exist!
+ls entrypoint.py                # ← Must exist!
 ls setup_database_complete.py
 ls .env.example
 ls backend
@@ -70,10 +70,9 @@ docker-compose up -d
 
 ## ⚠️ Common Transfer Issues:
 
-- ❌ Missing `docker-entrypoint.sh` → Copy from dev system
+- ❌ Missing `entrypoint.py` → Copy from dev system
 - ❌ Missing `data/` folder → Copy all CSV files
 - ❌ Missing `backend/` folder → Copy entire backend directory
-- ❌ Wrong line endings (CRLF vs LF) → Git autocrlf issue
 
 ---
 
