@@ -8,8 +8,9 @@ When transferring project to a new system, ensure ALL these files are included:
 ```
 ✅ Dockerfile
 ✅ docker-compose.yml
-✅ entrypoint.py                     ← Python entrypoint (cross-platform)
+✅ docker-entrypoint.sh              ← Bash entrypoint (Unix LF format!)
 ✅ .dockerignore
+✅ .gitattributes                    ← Ensures correct line endings
 ✅ requirements.txt
 ✅ setup_database_complete.py
 ✅ .env.example
@@ -23,7 +24,7 @@ When transferring project to a new system, ensure ALL these files are included:
 # Check all required files exist
 ls Dockerfile
 ls docker-compose.yml
-ls entrypoint.py                # ← Must exist!
+ls docker-entrypoint.sh         # ← Must exist (Unix LF format!)
 ls setup_database_complete.py
 ls .env.example
 ls backend
@@ -34,9 +35,16 @@ ls data
 
 ## 🔧 If `docker-entrypoint.sh` is Missing:
 
-**Copy from development machine OR create it manually:**
+**CRITICAL: Must have Unix (LF) line endings, not Windows (CRLF)!**
 
-Create file: `docker-entrypoint.sh` with the exact content from development system.
+**Copy from development machine:**
+```powershell
+# After copying, convert line endings:
+dos2unix docker-entrypoint.sh
+
+# OR using PowerShell:
+(Get-Content docker-entrypoint.sh -Raw) -replace "`r`n", "`n" | Set-Content docker-entrypoint.sh -NoNewline
+```
 
 **Then rebuild:**
 ```powershell
@@ -44,6 +52,8 @@ docker-compose down
 docker-compose build --no-cache
 docker-compose up -d
 ```
+
+See `LINE_ENDINGS_FIX.md` for details.
 
 ---
 
@@ -70,9 +80,10 @@ docker-compose up -d
 
 ## ⚠️ Common Transfer Issues:
 
-- ❌ Missing `entrypoint.py` → Copy from dev system
+- ❌ Missing `docker-entrypoint.sh` → Copy from dev system (convert to Unix LF!)
 - ❌ Missing `data/` folder → Copy all CSV files
 - ❌ Missing `backend/` folder → Copy entire backend directory
+- ⚠️ Wrong line endings on `.sh` files → Run `dos2unix docker-entrypoint.sh`
 
 ---
 

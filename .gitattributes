@@ -1,0 +1,30 @@
+# Shell scripts must use Unix line endings (LF)
+*.sh text eol=lf
+
+# Python scripts
+*.py text eol=lf
+
+# Markdown and config files
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+
+# Windows-specific files
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Dockerfile
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.pkl binary
+*.csv binary

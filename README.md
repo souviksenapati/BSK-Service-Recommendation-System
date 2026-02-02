@@ -37,9 +37,41 @@
 
 ### Prerequisites
 
-- **Python 3.8+**
-- **PostgreSQL 13+**
-- **Git** (for cloning repository)
+- **Option A: Docker Deployment (Recommended)**
+  - Docker Desktop 20.10+
+  - 8GB+ RAM, 20GB+ disk space
+  - See **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** for complete instructions
+
+- **Option B: Manual Setup**
+  - Python 3.8+
+  - PostgreSQL 13+
+  - Git (for cloning repository)
+
+### Docker Deployment (Quick!)
+
+```bash
+# 1. Clone repository
+git clone <repository-url>
+cd BSK-SER
+
+# 2. Create environment file
+cp .env.example .env
+# Edit .env with your credentials
+
+# 3. Convert line endings (Windows only)
+dos2unix docker-entrypoint.sh
+
+# 4. Deploy!
+docker-compose up -d
+
+# 5. Monitor initialization (5-10 minutes first run)
+docker-compose logs -f api
+
+# 6. Access API
+# http://localhost:8000/docs
+```
+
+📖 **For detailed deployment guide, see [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)**
 
 ### Installation
 
