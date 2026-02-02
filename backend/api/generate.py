@@ -1,4 +1,5 @@
 import logging
+from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -6,6 +7,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 from ..database.connection import get_db
+from ..database.models import RegenerationLog
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
@@ -13,26 +15,29 @@ logger = logging.getLogger(__name__)
 class GenerateRequest(BaseModel):
     generate_all: bool = True
     files: Optional[List[str]] = None
+    triggered_by: str = "manual"  # 'manual', 'scheduler', 'admin'
 
 @router.post("/generate-static-files")
 async def generate_static_files(request: GenerateRequest, db: Session = Depends(get_db)):
     """
     Regenerate derived static tables used for recommendations.
+    Logs each regeneration event to regeneration_log table.
     """
-    logger.info(f"Starting static file generation. All={request.generate_all}")
+    start_time = datetime.now()
+    logger.info(f"Starting static file generation. All={request.generate_all}, Triggered by={request.triggered_by}")
     
     generated = []
     
     try:
         # 1. Generate grouped_df (Demographic Clusters)
         if request.generate_all or (request.files and "grouped_df" in request.files):
+            table_start = datetime.now()
             logger.info("Generating grouped_df...")
             
             # Clear existing
             db.execute(text("TRUNCATE TABLE grouped_df"))
             
             # Insert new groups
-            # Logic: Group by demographics, assign new cluster_ids
             query = text("""
                 INSERT INTO grouped_df (cluster_id, district_id, gender, caste, age_group, religion_group)
                 SELECT 
@@ -65,10 +70,27 @@ async def generate_static_files(request: GenerateRequest, db: Session = Depends(
                     END;
             """)
             db.execute(query)
+            
+            # Get row count
+            row_count = db.execute(text("SELECT COUNT(*) FROM grouped_df")).scalar()
+            duration = (datetime.now() - table_start).total_seconds()
+            
+            # Log regeneration
+            log_entry = RegenerationLog(
+                table_name="grouped_df",
+                rows_generated=row_count,
+                duration_seconds=duration,
+                status="success",
+                triggered_by=request.triggered_by
+            )
+            db.add(log_entry)
+            
             generated.append("grouped_df")
+            logger.info(f"✅ grouped_df: {row_count:,} rows in {duration:.2f}s")
             
         # 2. Generate district_top_services
         if request.generate_all or (request.files and "district_top_services" in request.files):
+            table_start = datetime.now()
             logger.info("Generating district_top_services...")
             
             db.execute(text("TRUNCATE TABLE district_top_services"))
@@ -105,61 +127,77 @@ async def generate_static_files(request: GenerateRequest, db: Session = Depends(
                 JOIN district_totals dt ON dsc.district_id = dt.district_id;
             """)
             db.execute(query)
+            
+            row_count = db.execute(text("SELECT COUNT(*) FROM district_top_services")).scalar()
+            duration = (datetime.now() - table_start).total_seconds()
+            
+            log_entry = RegenerationLog(
+                table_name="district_top_services",
+                rows_generated=row_count,
+                duration_seconds=duration,
+                status="success",
+                triggered_by=request.triggered_by
+            )
+            db.add(log_entry)
+            
             generated.append("district_top_services")
+            logger.info(f"✅ district_top_services: {row_count:,} rows in {duration:.2f}s")
 
-        # 3. Generate block_wise_top_services
-        # Assuming block_id in ml_citizen_master is effectively sub_div_id or linked via ml_bsk_master
-        # For simplicity, using sub_div_id as block proxy if not specifically available, OR join with bsk_master if bsk_id present in provision
+        # 3. Generate block_wise_top_services (4 columns ONLY)
+        # Table schema: block_id, service_name, block_name, rank_in_block
         if request.generate_all or (request.files and "block_wise_top_services" in request.files):
+            table_start = datetime.now()
             logger.info("Generating block_wise_top_services...")
             
             db.execute(text("TRUNCATE TABLE block_wise_top_services"))
             
-            # Using bsk_id from provision to link to block
             query = text("""
-                INSERT INTO block_wise_top_services (block_id, block_name, service_id, service_name, unique_citizen_count, citizen_percentage, rank_in_block)
+                INSERT INTO block_wise_top_services (block_id, service_name, block_name, rank_in_block)
                 WITH block_service_counts AS (
                     SELECT 
                         b.block_mun_id as block_id,
                         b.block_municipalty_name as block_name,
-                        p.service_id,
                         p.service_name,
                         COUNT(DISTINCT p.customer_id) as unique_citizen_count
                     FROM ml_provision p
                     JOIN ml_bsk_master b ON p.bsk_id = b.bsk_id
                     WHERE b.block_mun_id IS NOT NULL
-                    GROUP BY b.block_mun_id, b.block_municipalty_name, p.service_id, p.service_name
-                ),
-                block_totals AS (
-                    SELECT b.block_mun_id, COUNT(DISTINCT p.customer_id) as total_citizens
-                    FROM ml_provision p
-                    JOIN ml_bsk_master b ON p.bsk_id = b.bsk_id
-                    WHERE b.block_mun_id IS NOT NULL
-                    GROUP BY b.block_mun_id
+                    GROUP BY b.block_mun_id, b.block_municipalty_name, p.service_name
                 )
                 SELECT 
                     bsc.block_id,
-                    bsc.block_name,
-                    bsc.service_id,
                     bsc.service_name,
-                    bsc.unique_citizen_count,
-                    COALESCE(ROUND((bsc.unique_citizen_count::DECIMAL / NULLIF(bt.total_citizens, 0)) * 100, 2), 0) as citizen_percentage,
+                    bsc.block_name,
                     RANK() OVER (PARTITION BY bsc.block_id ORDER BY bsc.unique_citizen_count DESC) as rank_in_block
-                FROM block_service_counts bsc
-                JOIN block_totals bt ON bsc.block_id = bt.block_mun_id;
+                FROM block_service_counts bsc;
             """)
             db.execute(query)
+            
+            row_count = db.execute(text("SELECT COUNT(*) FROM block_wise_top_services")).scalar()
+            duration = (datetime.now() - table_start).total_seconds()
+            
+            log_entry = RegenerationLog(
+                table_name="block_wise_top_services",
+                rows_generated=row_count,
+                duration_seconds=duration,
+                status="success",
+                triggered_by=request.triggered_by
+            )
+            db.add(log_entry)
+            
             generated.append("block_wise_top_services")
+            logger.info(f"✅ block_wise_top_services: {row_count:,} rows in {duration:.2f}s")
 
-        # 4. Generate cluster_service_map
+        # 4. Generate cluster_service_map (3 columns ONLY)
+        # Table schema: cluster_id, service_id, rank (NO usage_count)
         if request.generate_all or (request.files and "cluster_service_map" in request.files):
+            table_start = datetime.now()
             logger.info("Generating cluster_service_map...")
             
             db.execute(text("TRUNCATE TABLE cluster_service_map"))
             
-            # Complex query linking groups back to citizens back to services
             query = text("""
-                INSERT INTO cluster_service_map (cluster_id, service_id, usage_count, rank)
+                INSERT INTO cluster_service_map (cluster_id, service_id, rank)
                 WITH cluster_services AS (
                     SELECT 
                         g.cluster_id,
@@ -178,21 +216,56 @@ async def generate_static_files(request: GenerateRequest, db: Session = Depends(
                 SELECT 
                     cluster_id,
                     service_id,
-                    usage_count,
                     RANK() OVER (PARTITION BY cluster_id ORDER BY usage_count DESC) as rank
                 FROM cluster_services;
             """)
             db.execute(query)
+            
+            row_count = db.execute(text("SELECT COUNT(*) FROM cluster_service_map")).scalar()
+            duration = (datetime.now() - table_start).total_seconds()
+            
+            log_entry = RegenerationLog(
+                table_name="cluster_service_map",
+                rows_generated=row_count,
+                duration_seconds=duration,
+                status="success",
+                triggered_by=request.triggered_by
+            )
+            db.add(log_entry)
+            
             generated.append("cluster_service_map")
+            logger.info(f"✅ cluster_service_map: {row_count:,} rows in {duration:.2f}s")
             
         db.commit()
+        total_duration = (datetime.now() - start_time).total_seconds()
+        
+        logger.info(f"🎉 All generations complete! Total time: {total_duration:.2f}s")
+        
         return {
             "status": "success", 
             "generated_files": generated,
-            "message": "Static generation completed successfully"
+            "total_duration_seconds": round(total_duration, 2),
+            "message": f"Static generation completed successfully in {total_duration:.2f}s"
         }
         
     except Exception as e:
         db.rollback()
-        logger.error(f"Generation failed: {e}")
+        total_duration = (datetime.now() - start_time).total_seconds()
+        logger.error(f"Generation failed after {total_duration:.2f}s: {e}")
+        
+        # Log failure
+        error_log = RegenerationLog(
+            table_name="ALL",
+            rows_generated=0,
+            duration_seconds=total_duration,
+            status="failed",
+            error_message=str(e)[:500],
+            triggered_by=request.triggered_by
+        )
+        try:
+            db.add(error_log)
+            db.commit()
+        except:
+            pass  # Don't fail if we can't log the error
+            
         raise HTTPException(status_code=500, detail=str(e))

@@ -7,8 +7,10 @@ openai
 psycopg2-binary
 python-dotenv
 fastapi
-uvicorn
+uvicorn[standard]
 apscheduler
 requests
 toml
 PyJWT>=2.8.0
+sqlalchemy>=2.0.0
+gunicorn==21.2.0

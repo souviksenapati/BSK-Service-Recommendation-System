@@ -1,52 +1,19 @@
-# Python
-*.py[cod]
-*$py.class
-*.so
-.Python
-__pycache__/
-*.pyc
+# ===============================================================================
+# .gitignore for BSK-SER Project
+# ===============================================================================
+# Note: Keeping this for reference, even if not using git
 
-# Virtual Environment
-venv/
-env/
-ENV/
-.venv
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Environment Variables
+# Environment files - Never share these!
 .env
 .env.local
 .env.*.local
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
-
-# OS Files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Logs
-*.log
-logs/
-*.out
-
-# Test files
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-.hypothesis/
-
-# Distribution / packaging
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
 build/
 develop-eggs/
 dist/
@@ -59,25 +26,100 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints/
+# Virtual environments
+venv/
+env/
+ENV/
+virtualenv/
 
-# Docker
-*.pid
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-# Temporary files
-tmp/
-temp/
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Temporary files  
 *.tmp
+*.temp
+*.bak
+*.swp
+*~
 
-# API test files (user-created)
-api_health_check.py
-simple_api_test.py
+# Coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
 
-# Keep data files but exclude large backups
-data_backup/
+# Model files (optional - may want to commit these)
+*.pkl
+*.h5
+*.hdf5
+*.pt
+*.pth
+
+# Data files (optional - may want to commit these)
+data/*.csv
+data/*.json
+data/*.parquet
+
+# Compiled files
+*.pyc
+*.pyo
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Backup files
 *.backup
+*.bck
+
+# Lock files
+*.lock
+package-lock.json
+poetry.lock
+Pipfile.lock

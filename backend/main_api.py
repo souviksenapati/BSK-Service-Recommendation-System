@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .api import sync, generate, recommend
 from .database.connection import engine
+from .scheduler import start_scheduler, shutdown_scheduler
 from sqlalchemy import text, inspect
 import uvicorn
 import os
@@ -13,10 +14,14 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="BSK-SER PostgreSQL Backend", version="2.0")
 
-# CORS
+# CORS Configuration
+# Get allowed origins from environment (comma-separated list)
+allowed_origins = os.getenv("CORS_ORIGINS", "*").split(",")
+allowed_origins = [origin.strip() for origin in allowed_origins]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -92,15 +97,45 @@ async def verify_database():
         logger.warning("⚠️  Server starting anyway - Fix database issues")
     
     logger.info("="*70)
+    
+    # Start the automated sync scheduler
+    try:
+        start_scheduler()
+    except Exception as e:
+        logger.error(f"❌ Scheduler startup failed: {e}")
+        logger.warning("⚠️  Server starting anyway - Scheduler disabled")
+
+# Shutdown Event - Stop Scheduler
+@app.on_event("shutdown")
+async def shutdown_scheduler_handler():
+    """Gracefully shutdown scheduler on app termination"""
+    logger.info("🛑 Shutting down application...")
+    try:
+        shutdown_scheduler()
+    except Exception as e:
+        logger.error(f"❌ Scheduler shutdown error: {e}")
 
 # Include Routers
 app.include_router(sync.router, prefix="/api", tags=["Sync"])
 app.include_router(generate.router, prefix="/api", tags=["Generate"])
 app.include_router(recommend.router, prefix="/api", tags=["Recommend"])
 
+# Import admin router
+from .api import admin
+app.include_router(admin.router, prefix="/api/admin", tags=["Admin"])
+
 @app.get("/")
 def root():
     return {"message": "BSK-SER PostgreSQL API Server Running"}
 
 if __name__ == "__main__":
-    uvicorn.run("backend.main_api:app", host="0.0.0.0", port=8000, reload=True)
+    API_HOST = os.getenv("API_HOST", "0.0.0.0")
+    API_PORT = int(os.getenv("API_PORT", "8000"))
+    API_RELOAD = os.getenv("API_RELOAD", "true").lower() == "true"
+    
+    uvicorn.run(
+        "backend.main_api:app", 
+        host=API_HOST, 
+        port=API_PORT, 
+        reload=API_RELOAD
+    )

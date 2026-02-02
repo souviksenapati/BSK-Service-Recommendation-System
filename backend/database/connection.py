@@ -6,12 +6,31 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Get database URL from environment or use default
-# Defaulting to the one seen in setup_db.py for now, but user should configure .env
-DEFAULT_DB_URL = 'postgresql://postgres:Souvik%402004%23@localhost:5432/bsk'
-DATABASE_URL = os.getenv('DATABASE_URL', DEFAULT_DB_URL)
+# Database configuration from environment
+DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_PORT = os.getenv('DB_PORT', '5432')
+DB_USER = os.getenv('DB_USER', 'postgres')
+DB_PASSWORD = os.getenv('DB_PASSWORD', '')
+DB_NAME = os.getenv('DB_NAME', 'bsk')
 
-engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=40)
+# Construct DATABASE_URL
+# Priority: Use DATABASE_URL if explicitly set, otherwise construct from components
+if os.getenv('DATABASE_URL'):
+    DATABASE_URL = os.getenv('DATABASE_URL')
+else:
+    DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+
+# Connection pool settings from environment
+POOL_SIZE = int(os.getenv('DB_POOL_SIZE', '20'))
+MAX_OVERFLOW = int(os.getenv('DB_MAX_OVERFLOW', '40'))
+ECHO_SQL = os.getenv('ECHO_SQL', 'false').lower() == 'true'
+
+engine = create_engine(
+    DATABASE_URL, 
+    pool_size=POOL_SIZE, 
+    max_overflow=MAX_OVERFLOW,
+    echo=ECHO_SQL
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

@@ -1,13 +1,118 @@
+# ==============================================================================
+# BSK-SER Docker Compose Configuration
+# ==============================================================================
+# Production-ready setup with PostgreSQL database and FastAPI application
+# ==============================================================================
+
 version: '3.8'
 
 services:
-  web:
-    build: .
+  # PostgreSQL Database
+  database:
+    image: postgres:15-alpine
+    container_name: bsk-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME:-bsk}
+      POSTGRES_INITDB_ARGS: "-E UTF8"
     ports:
-      - "8000:8000"
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./data:/docker-entrypoint-initdb.d/data:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - bsk-network
+
+  # BSK-SER API Application
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bsk-api
+    depends_on:
+      database:
+        condition: service_healthy
+    environment:
+      # Database
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME:-bsk}
+      - DB_POOL_SIZE=${DB_POOL_SIZE:-20}
+      - DB_MAX_OVERFLOW=${DB_MAX_OVERFLOW:-40}
+      - ECHO_SQL=${ECHO_SQL:-false}
+      
+      # External API
+      - EXTERNAL_SYNC_URL=${EXTERNAL_SYNC_URL}
+      - EXTERNAL_LOGIN_URL=${EXTERNAL_LOGIN_URL}
+      - JWT_USERNAME=${JWT_USERNAME}
+      - JWT_PASSWORD=${JWT_PASSWORD}
+      
+      # OpenAI
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      - OPENAI_CHAT_MODEL=${OPENAI_CHAT_MODEL:-gpt-4}
+      
+      # Application
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_RELOAD=false
+      - CORS_ORIGINS=${CORS_ORIGINS:-*}
+      
+      # Security
+      - ADMIN_API_KEY=${ADMIN_API_KEY}
+      - SECRET_KEY=${SECRET_KEY}
+      
+      # Scheduler
+      - SCHEDULER_TIMEZONE=${SCHEDULER_TIMEZONE:-Asia/Kolkata}
+      - SYNC_DAY_OF_WEEK=${SYNC_DAY_OF_WEEK:-sun}
+      - SYNC_HOUR=${SYNC_HOUR:-0}
+      - SYNC_MINUTE=${SYNC_MINUTE:-0}
+      - STATIC_REGEN_DELAY_HOURS=${STATIC_REGEN_DELAY_HOURS:-1}
+      
+      # Features
+      - ENABLE_SCHEDULER=${ENABLE_SCHEDULER:-true}
+      - ENABLE_OPENAI_RECOMMENDATIONS=${ENABLE_OPENAI_RECOMMENDATIONS:-true}
+      - ENABLE_DEMOGRAPHIC_CLUSTERING=${ENABLE_DEMOGRAPHIC_CLUSTERING:-true}
+      
+      # Performance
+      - MAX_RECOMMENDATIONS=${MAX_RECOMMENDATIONS:-10}
+      - CACHE_TTL=${CACHE_TTL:-3600}
+      
+      # Logging
+      - DEBUG=false
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    ports:
+      - "${API_PORT:-8000}:8000"
     volumes:
       - ./data:/app/data
-      - ./api:/app/api
-    environment:
-      - PYTHONUNBUFFERED=1
+      - api_logs:/var/log/bsk-ser
+    healthcheck:
+      test: ["CMD", "python", "-c", "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); exit(0 if h.getresponse().status == 200 else 1)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 60s
+      retries: 3
     restart: unless-stopped
+    networks:
+      - bsk-network
+
+# Networks
+networks:
+  bsk-network:
+    driver: bridge
+
+# Persistent volumes
+volumes:
+  postgres_data:
+    driver: local
+  api_logs:
+    driver: local

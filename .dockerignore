@@ -1,0 +1,76 @@
+# BSK-SER Docker Ignore
+# Files and directories to exclude from Docker image
+
+# Environment files (use .env in container or pass via compose)
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (optional - include if needed)
+*.md
+!DOCKER.md
+
+# Test files
+tests/
+test_*.py
+*_test.py
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Data (large files - mount as volumes instead)
+data/*.csv
+data/*.pkl
+!data/services.csv
+!data/services_eligibility.csv
+
+# Migrations (already applied)
+migrations/
+
+# Development tools
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Docker files (not needed in image)
+Dockerfile*
+docker-compose*.yml
+.dockerignore

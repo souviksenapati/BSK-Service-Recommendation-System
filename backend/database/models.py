@@ -185,3 +185,17 @@ class SyncMetadata(Base):
     last_sync_status = Column(String(50))
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+class RegenerationLog(Base):
+    """regeneration_log - for tracking static file regeneration history"""
+    __tablename__ = "regeneration_log"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    regeneration_timestamp = Column(TIMESTAMP, server_default=func.now())
+    table_name = Column(String(100))  # Which table was regenerated
+    rows_generated = Column(Integer)  # How many rows were created
+    duration_seconds = Column(Float)  # How long it took
+    status = Column(String(50))  # 'success' or 'failed'
+    error_message = Column(String(500))  # Error details if failed
+    triggered_by = Column(String(50))  # 'scheduler', 'manual', 'admin'
+    created_at = Column(TIMESTAMP, server_default=func.now())
