@@ -4,8 +4,6 @@
 # Production-ready setup with PostgreSQL database and FastAPI application
 # ==============================================================================
 
-version: '3.8'
-
 services:
   # PostgreSQL Database
   database:
