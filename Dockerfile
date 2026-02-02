@@ -1,25 +1,18 @@
 # ==============================================================================
-# BSK-SER (Government Service Recommendation System) - Production Dockerfile
-# ==============================================================================
-# Multi-stage build with embedded initialization (no external entrypoint file)
+# BSK-SER Production Dockerfile - Python Entrypoint (Cross-Platform)
 # ==============================================================================
 
 FROM python:3.10-slim as builder
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
     postgresql-client \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements
 COPY requirements.txt .
-
-# Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
@@ -28,16 +21,13 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # ==============================================================================
 FROM python:3.10-slim
 
-# Set working directory
 WORKDIR /app
 
-# Install runtime dependencies
 RUN apt-get update && apt-get install -y \
     libpq5 \
     postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy Python packages from builder
 COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 COPY --from=builder /usr/local/bin /usr/local/bin
 
@@ -46,88 +36,95 @@ COPY backend/ /app/backend/
 COPY data/ /app/data/
 COPY setup_database_complete.py /app/
 
-# Create directories for logs and data
+# Create directories
 RUN mkdir -p /var/log/bsk-ser /app/data
 
-# Create inline entrypoint script directly in Dockerfile
-RUN echo '#!/bin/bash\n\
-set -e\n\
-\n\
-echo "======================================================================"\n\
-echo "BSK-SER API Server - Starting..."\n\
-echo "======================================================================"\n\
-echo ""\n\
-echo "[1/3] Waiting for PostgreSQL..."\n\
-\n\
-max_attempts=30\n\
-attempt=0\n\
-while [ $attempt -lt $max_attempts ]; do\n\
-    if pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" > /dev/null 2>&1; then\n\
-        echo "      PostgreSQL is ready!"\n\
-        break\n\
-    fi\n\
-    attempt=$((attempt + 1))\n\
-    echo "      Waiting... (attempt $attempt/$max_attempts)"\n\
-    sleep 2\n\
-done\n\
-\n\
-if [ $attempt -eq $max_attempts ]; then\n\
-    echo "ERROR: PostgreSQL timeout"\n\
-    exit 1\n\
-fi\n\
-\n\
-echo ""\n\
-echo "[2/3] Checking database initialization..."\n\
-MARKER_FILE="/app/data/.db_initialized"\n\
-\n\
-if [ -f "$MARKER_FILE" ]; then\n\
-    echo "      Database already initialized - skipping setup"\n\
-    echo "      Last initialized: $(cat $MARKER_FILE)"\n\
-else\n\
-    echo "      First run detected - initializing database..."\n\
-    echo "      This will take 5-10 minutes (importing 117 MB data)"\n\
-    echo ""\n\
-    \n\
-    python setup_database_complete.py --skip-confirmation || {\n\
-        echo "ERROR: Database setup failed!"\n\
-        exit 1\n\
-    }\n\
-    \n\
-    date -u +"%Y-%m-%d %H:%M:%S UTC" > "$MARKER_FILE"\n\
-    echo ""\n\
-    echo "      Database setup complete!"\n\
-fi\n\
-\n\
-echo ""\n\
-echo "[3/3] Starting API Server..."\n\
-echo ""\n\
-echo "======================================================================"\n\
-echo "  BSK-SER API Server Ready"\n\
-echo "  - Server: http://0.0.0.0:8000"\n\
-echo "  - API Docs: http://0.0.0.0:8000/docs"\n\
-echo "  - Workers: 4 (Gunicorn + Uvicorn)"\n\
-echo "======================================================================"\n\
-echo ""\n\
-\n\
-exec "$@"\n\
-' > /app/entrypoint.sh && chmod +x /app/entrypoint.sh
+# Create Python-based entrypoint (no bash, no line-ending issues!)
+RUN python3 -c "import sys; sys.stdout.write('''#!/usr/bin/env python3
+import subprocess
+import sys
+import time
+import os
+from datetime import datetime
 
-# Set environment variables
+print(\"=\"*70)
+print(\"BSK-SER API Server - Starting...\")
+print(\"=\"*70)
+print()
+
+# [1/3] Wait for PostgreSQL
+print(\"[1/3] Waiting for PostgreSQL...\")
+max_attempts = 30
+for attempt in range(1, max_attempts + 1):
+    result = subprocess.run(
+        [\"pg_isready\", \"-h\", os.getenv(\"DB_HOST\"), \"-p\", os.getenv(\"DB_PORT\"), \"-U\", os.getenv(\"DB_USER\")],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+    if result.returncode == 0:
+        print(\"      PostgreSQL is ready!\")
+        break
+    print(f\"      Waiting... (attempt {attempt}/{max_attempts})\")
+    time.sleep(2)
+else:
+    print(\"ERROR: PostgreSQL timeout\")
+    sys.exit(1)
+
+print()
+
+# [2/3] Database initialization
+print(\"[2/3] Checking database initialization...\")
+marker_file = \"/app/data/.db_initialized\"
+
+if os.path.exists(marker_file):
+    print(\"      Database already initialized - skipping setup\")
+    with open(marker_file) as f:
+        print(f\"      Last initialized: {f.read().strip()}\")
+else:
+    print(\"      First run detected - initializing database...\")
+    print(\"      This will take 5-10 minutes (importing 117 MB data)\")
+    print()
+    
+    result = subprocess.run([\"python\", \"setup_database_complete.py\", \"--skip-confirmation\"])
+    if result.returncode != 0:
+        print(\"ERROR: Database setup failed!\")
+        sys.exit(1)
+    
+    with open(marker_file, \"w\") as f:
+        f.write(datetime.utcnow().strftime(\"%Y-%m-%d %H:%M:%S UTC\"))
+    
+    print()
+    print(\"      Database setup complete!\")
+
+print()
+
+# [3/3] Start API Server
+print(\"[3/3] Starting API Server...\")
+print()
+print(\"=\"*70)
+print(\"  BSK-SER API Server Ready\")
+print(\"  - Server: http://0.0.0.0:8000\")
+print(\"  - API Docs: http://0.0.0.0:8000/docs\")
+print(\"  - Workers: 4 (Gunicorn + Uvicorn)\")
+print(\"=\"*70)
+print()
+
+# Execute the command passed to the entrypoint
+os.execvp(sys.argv[1], sys.argv[1:])
+''')" > /app/entrypoint.py && chmod +x /app/entrypoint.py
+
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app
 
-# Expose port
 EXPOSE 8000
 
-# Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
     CMD python -c "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); r = h.getresponse(); exit(0 if r.status == 200 else 1)"
 
-# Set entrypoint (now created inline, always exists)
-ENTRYPOINT ["/app/entrypoint.sh"]
+# Use Python entrypoint (works on all platforms!)
+ENTRYPOINT ["python3", "/app/entrypoint.py"]
 
-# Run application with Gunicorn for production
 CMD ["gunicorn", "backend.main_api:app", \
      "--workers", "4", \
      "--worker-class", "uvicorn.workers.UvicornWorker", \
