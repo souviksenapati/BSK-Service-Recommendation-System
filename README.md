@@ -372,31 +372,101 @@ curl -X POST "http://localhost:8000/api/sync" \
 
 ---
 
-### Static File Generation API
+### Regeneration APIs
 
-#### **POST /api/generate-static-files**
-Regenerate derived tables for recommendation engines.
+#### **5.1 Overview**
 
-**Request Body:**
+**Purpose:** Regenerate pre-computed recommendation files from database
+
+**When to Use:**
+- After syncing new data from external server
+- After manual database updates
+- To refresh recommendation caches
+
+---
+
+#### **5.2 Regenerate Specific Types**
+
+**Endpoint:** `POST /api/regenerate/{type}`
+
+**Path Parameters:**
+- `district` - Regenerate district-based recommendations only
+- `block` - Regenerate block-wise recommendations only
+- `demographic` - Regenerate demographic clustering files only
+- `all` - Regenerate all recommendation files
+
+**Request:**
+```bash
+# Regenerate all files
+curl -X POST "http://localhost:8000/api/regenerate/all"
+
+# Regenerate only district recommendations
+curl -X POST "http://localhost:8000/api/regenerate/district"
+
+# Regenerate only block recommendations
+curl -X POST "http://localhost:8000/api/regenerate/block"
+
+# Regenerate only demographic clustering
+curl -X POST "http://localhost:8000/api/regenerate/demographic"
+```
+
+**Response (type=all):**
 ```json
 {
-  "table_name": "all"
+  "status": "success",
+  "message": "All files regenerated successfully",
+  "district_files": ["district_top_services"],
+  "block_files": ["block_top_services"],
+  "demographic_files": [
+    "grouped_df",
+    "final_df",
+    "cluster_service_map.pkl"
+  ],
+  "timestamp": "2026-02-04T10:30:00+05:30"
 }
 ```
 
-**Supported Tables:**
-- `all` - Regenerate all tables
-- `grouped_df`
-- `district_top_services`
-- `block_wise_top_services`
-- `cluster_service_map`
-
-**cURL Example:**
-```bash
-curl -X POST "http://localhost:8000/api/generate-static-files" \
-  -H "Content-Type: application/json" \
-  -d '{"table_name": "all"}'
+**Response (type=district):**
+```json
+{
+  "status": "success",
+  "message": "District files regenerated successfully",
+  "district_files": ["district_top_services"],
+  "timestamp": "2026-02-04T10:30:00+05:30"
+}
 ```
+
+**Response (type=block):**
+```json
+{
+  "status": "success",
+  "message": "Block files regenerated successfully",
+  "block_files": ["block_top_services"],
+  "timestamp": "2026-02-04T10:30:00+05:30"
+}
+```
+
+**Response (type=demographic):**
+```json
+{
+  "status": "success",
+  "message": "Demographic files regenerated successfully",
+  "demographic_files": [
+    "grouped_df",
+    "final_df",
+    "cluster_service_map.pkl"
+  ],
+  "timestamp": "2026-02-04T10:30:00+05:30"
+}
+```
+
+**Generated Files:**
+
+| Type | Files | Purpose |
+|------|-------|---------|
+| **District** | `district_top_services` | Top services by district |
+| **Block** | `block_top_services` | Top services by block |
+| **Demographic** | `grouped_df`<br>`final_df`<br>`cluster_service_map.pkl` | Demographic clustering<br>Final clustered data<br>Cluster-to-service mapping |
 
 ---
 
@@ -431,12 +501,7 @@ Manually trigger data synchronization.
 curl -X POST http://localhost:8000/api/admin/trigger-sync
 ```
 
-#### **POST /api/admin/trigger-static-generation**
-Manually trigger static file regeneration.
-
-```bash
-curl -X POST http://localhost:8000/api/admin/trigger-static-generation
-```
+> **Note:** For manual static file regeneration, use the `/api/regenerate/{type}` endpoint instead (see [Regeneration APIs](#regeneration-apis) section above).
 
 ---
 

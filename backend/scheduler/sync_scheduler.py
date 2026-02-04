@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 
 from ..database.connection import SessionLocal
 from ..api.sync import SyncRequest, sync_data as sync_endpoint
-from ..api.generate import GenerateRequest, generate_static_files as generate_endpoint
+from ..api.generate import regenerate_files, RegenerationType
 
 # Load environment variables
 load_dotenv()
@@ -151,22 +151,20 @@ def regenerate_static_files():
     db: Session = SessionLocal()
     
     try:
-        # Create generate request
-        request = GenerateRequest(
-            generate_all=True,
-            files=None
-        )
-        
-        # Call generate endpoint function directly
+        # Call new regenerate endpoint with type="all"
         import asyncio
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
-        result = loop.run_until_complete(generate_endpoint(request, db))
+        result = loop.run_until_complete(regenerate_files(RegenerationType.ALL, db))
         loop.close()
         
         logger.info("\n📊 Generated Files:")
-        for file_name in result.get('generated_files', []):
-            logger.info(f"  ✅ {file_name}")
+        if result.get('district_files'):
+            logger.info(f"  ✅ District: {', '.join(result['district_files'])}")
+        if result.get('block_files'):
+            logger.info(f"  ✅ Block: {', '.join(result['block_files'])}")
+        if result.get('demographic_files'):
+            logger.info(f"  ✅ Demographic: {', '.join(result['demographic_files'])}")
         
         logger.info("\n✅ Static file regeneration completed successfully")
         logger.info("="*70)
@@ -234,9 +232,3 @@ def trigger_sync_now():
     """Manually trigger sync job immediately"""
     logger.info("🔧 Manual sync trigger requested")
     sync_all_tables()
-
-
-def trigger_static_generation_now():
-    """Manually trigger static file generation immediately"""
-    logger.info("🔧 Manual static generation trigger requested")
-    regenerate_static_files()

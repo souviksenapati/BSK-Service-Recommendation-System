@@ -8,7 +8,6 @@ from pydantic import BaseModel
 
 from ..scheduler.sync_scheduler import (
     trigger_sync_now,
-    trigger_static_generation_now,
     scheduler
 )
 
@@ -35,23 +34,6 @@ async def manual_trigger_sync():
         )
     except Exception as e:
         logger.error(f"Failed to trigger sync: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@router.post("/trigger-static-generation", response_model=TriggerResponse)
-async def manual_trigger_static():
-    """
-    Manually trigger static file generation immediately (admin use).
-    """
-    try:
-        logger.info("📞 Manual static generation trigger requested via API")
-        trigger_static_generation_now()
-        return TriggerResponse(
-            status="triggered",
-            message="Static file generation started. Check logs for progress."
-        )
-    except Exception as e:
-        logger.error(f"Failed to trigger static generation: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
