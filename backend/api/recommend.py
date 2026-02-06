@@ -261,10 +261,14 @@ async def recommend(req: RecommendRequest, db: Session = Depends(get_db)):
     history_ids = []
     service_history = []
     if citizen_exists:
+        logging.info(f"Querying provisions for citizen_id: {citizen_id}")
         provisions = db.query(Provision).filter(Provision.customer_id == citizen_id).order_by(desc(Provision.prov_date)).limit(10).all()
+        logging.info(f"Found {len(provisions)} provisions for citizen {citizen_id}")
         for p in provisions:
             history_ids.append(p.service_id)
             service_history.append({"service": p.service_name, "date": str(p.prov_date)})
+        if len(provisions) == 0:
+            logging.warning(f"No provisions found for citizen_id={citizen_id}, but citizen exists in citizen_master")
             
     # 3. Engines Execution
     district_recs = engine_district(db, district_id, req.caste)

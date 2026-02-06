@@ -55,11 +55,14 @@ tmp/
 temp/
 *.tmp
 
-# Data (large files - mount as volumes instead)
-data/*.csv
-data/*.pkl
-!data/services.csv
-!data/services_eligibility.csv
+# Data (large files - included for database setup)
+# data/*.csv
+# data/*.pkl
+# !data/services.csv
+# !data/services_eligibility.csv
+
+# Avoid copying initialization state
+data/.db_initialized
 
 # Migrations (already applied)
 migrations/

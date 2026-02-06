@@ -1,117 +1,187 @@
-# ==============================================================================
-# BSK-SER Docker Compose - One-Command Deployment
-# ==============================================================================
-# Just run: docker-compose up -d
-# First run: Auto-initializes database (5-10 mins)
-# Subsequent runs: Instant start
-# ==============================================================================
+# ============================================================================
+# BSK-SER Docker Compose - Production VPS Configuration
+# ============================================================================
+# Government Service Recommendation System
+# One-command deployment for production VPS environment
+# ============================================================================
+
+version: '3.8'
 
 services:
+  # ==========================================================================
   # PostgreSQL Database
-  database:
+  # ==========================================================================
+  postgres:
     image: postgres:15-alpine
     container_name: bsk-postgres
+    restart: unless-stopped
     environment:
       POSTGRES_USER: ${DB_USER:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME:-bsk}
       POSTGRES_INITDB_ARGS: "-E UTF8"
-    ports:
-      - "${DB_PORT:-5432}:5432"
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-5432}:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
     networks:
       - bsk-network
 
-  # BSK-SER API Application
-  api:
+  # ==========================================================================
+  # BSK-SER Application
+  # ==========================================================================
+  app:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: bsk-api
+    restart: unless-stopped
     depends_on:
-      database:
+      postgres:
         condition: service_healthy
     environment:
-      # Database
-      - DB_HOST=database
-      - DB_PORT=5432
-      - DB_USER=${DB_USER:-postgres}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_NAME=${DB_NAME:-bsk}
-      - DB_POOL_SIZE=${DB_POOL_SIZE:-20}
-      - DB_MAX_OVERFLOW=${DB_MAX_OVERFLOW:-40}
-      - ECHO_SQL=${ECHO_SQL:-false}
+      # ======================================================================
+      # Database Configuration (Docker networking)
+      # ======================================================================
+      DATABASE_URL: postgresql+psycopg2://${DB_USER:-postgres}:${DB_PASSWORD}@postgres:5432/${DB_NAME:-bsk}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME:-bsk}
+      DB_POOL_SIZE: ${DB_POOL_SIZE:-20}
+      DB_MAX_OVERFLOW: ${DB_MAX_OVERFLOW:-40}
+      ECHO_SQL: ${ECHO_SQL:-false}
       
-      # External API
-      - EXTERNAL_SYNC_URL=${EXTERNAL_SYNC_URL}
-      - EXTERNAL_LOGIN_URL=${EXTERNAL_LOGIN_URL}
-      - JWT_USERNAME=${JWT_USERNAME}
-      - JWT_PASSWORD=${JWT_PASSWORD}
+      # ======================================================================
+      # External BSK Server API Configuration
+      # ======================================================================
+      EXTERNAL_SYNC_URL: ${EXTERNAL_SYNC_URL}
+      EXTERNAL_LOGIN_URL: ${EXTERNAL_LOGIN_URL}
+      JWT_USERNAME: ${JWT_USERNAME}
+      JWT_PASSWORD: ${JWT_PASSWORD}
       
-      # OpenAI
-      - OPENAI_API_KEY=${OPENAI_API_KEY}
-      - OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
-      - OPENAI_CHAT_MODEL=${OPENAI_CHAT_MODEL:-gpt-4}
+      # ======================================================================
+      # OpenAI API Configuration
+      # ======================================================================
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-4}
+      OPENAI_MAX_TOKENS: ${OPENAI_MAX_TOKENS:-200}
+      OPENAI_TEMPERATURE: ${OPENAI_TEMPERATURE:-0.7}
       
-      # Application
-      - API_HOST=0.0.0.0
-      - API_PORT=8000
-      - API_RELOAD=false
-      - CORS_ORIGINS=${CORS_ORIGINS:-*}
+      # ======================================================================
+      # Application Server Configuration
+      # ======================================================================
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      API_RELOAD: false
+      BASE_URL: ${BASE_URL:-http://localhost:8000}
+      CORS_ORIGINS: ${CORS_ORIGINS:-*}
       
-      # Security
-      - ADMIN_API_KEY=${ADMIN_API_KEY}
-      - SECRET_KEY=${SECRET_KEY}
+      # ======================================================================
+      # Security Configuration
+      # ======================================================================
+      ADMIN_API_KEY: ${ADMIN_API_KEY}
+      SECRET_KEY: ${SECRET_KEY}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
       
-      # Scheduler
-      - SCHEDULER_TIMEZONE=${SCHEDULER_TIMEZONE:-Asia/Kolkata}
-      - SYNC_DAY_OF_WEEK=${SYNC_DAY_OF_WEEK:-sun}
-      - SYNC_HOUR=${SYNC_HOUR:-0}
-      - SYNC_MINUTE=${SYNC_MINUTE:-0}
-      - STATIC_REGEN_DELAY_HOURS=${STATIC_REGEN_DELAY_HOURS:-1}
+      # ======================================================================
+      # Scheduler Configuration
+      # ======================================================================
+      SCHEDULER_TIMEZONE: ${SCHEDULER_TIMEZONE:-Asia/Kolkata}
+      SYNC_DAY_OF_WEEK: ${SYNC_DAY_OF_WEEK:-sun}
+      SYNC_HOUR: ${SYNC_HOUR:-0}
+      SYNC_MINUTE: ${SYNC_MINUTE:-0}
+      STATIC_REGEN_DELAY_HOURS: ${STATIC_REGEN_DELAY_HOURS:-1}
       
-      # Features
-      - ENABLE_SCHEDULER=${ENABLE_SCHEDULER:-true}
-      - ENABLE_OPENAI_RECOMMENDATIONS=${ENABLE_OPENAI_RECOMMENDATIONS:-true}
-      - ENABLE_DEMOGRAPHIC_CLUSTERING=${ENABLE_DEMOGRAPHIC_CLUSTERING:-true}
+      # ======================================================================
+      # Feature Flags
+      # ======================================================================
+      ENABLE_SCHEDULER: ${ENABLE_SCHEDULER:-true}
+      ENABLE_OPENAI_RECOMMENDATIONS: ${ENABLE_OPENAI_RECOMMENDATIONS:-true}
+      ENABLE_DEMOGRAPHIC_CLUSTERING: ${ENABLE_DEMOGRAPHIC_CLUSTERING:-true}
       
-      # Performance
-      - MAX_RECOMMENDATIONS=${MAX_RECOMMENDATIONS:-10}
-      - CACHE_TTL=${CACHE_TTL:-3600}
+      # ======================================================================
+      # Performance & Optimization
+      # ======================================================================
+      MAX_RECOMMENDATIONS: ${MAX_RECOMMENDATIONS:-10}
+      CACHE_TTL: ${CACHE_TTL:-3600}
+      DEFAULT_PAGE_SIZE: ${DEFAULT_PAGE_SIZE:-100}
+      MAX_PAGE_SIZE: ${MAX_PAGE_SIZE:-1000}
       
-      # Logging
-      - DEBUG=false
-      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      # ======================================================================
+      # Logging Configuration
+      # ======================================================================
+      DEBUG: false
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_FILE: ${LOG_FILE:-}
+      
     ports:
       - "${API_PORT:-8000}:8000"
+    
     volumes:
-      - ./data:/app/data  # Persists .db_initialized marker
+      # Persistent storage for database initialization marker
+      - data_storage:/home/bsk_ser/data
+      
+      # Application logs
       - api_logs:/var/log/bsk-ser
-    healthcheck:
-      test: ["CMD", "python", "-c", "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); exit(0 if h.getresponse().status == 200 else 1)"]
-      interval: 30s
-      timeout: 10s
-      start_period: 120s  # Allow time for first-run database setup
-      retries: 3
-    restart: unless-stopped
+      
+      # Optional: Mount custom assets if needed
+      # - ./custom_assets:/home/bsk_ser/assets:ro
+      
     networks:
       - bsk-network
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/admin/scheduler-status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  # Allow time for first-run database setup
 
-# Networks
-networks:
-  bsk-network:
-    driver: bridge
+  # ==========================================================================
+  # Optional: PgAdmin for Database Management
+  # ==========================================================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: bsk-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@bsk.local}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - bsk-network
+    profiles:
+      - tools  # Start with: docker-compose --profile tools up
 
-# Persistent volumes
+# ============================================================================
+# Volumes - Persistent Data Storage
+# ============================================================================
 volumes:
   postgres_data:
     driver: local
+  data_storage:
+    driver: local
   api_logs:
     driver: local
+  pgadmin_data:
+    driver: local
+
+# ============================================================================
+# Networks - Container Communication
+# ============================================================================
+networks:
+  bsk-network:
+    driver: bridge

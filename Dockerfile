@@ -1,72 +1,100 @@
-# ==============================================================================
-# BSK-SER (Government Service Recommendation System) - Production Dockerfile
-# ==============================================================================
-# Multi-stage build for optimized production image
-# ==============================================================================
+# ============================================================================
+# BSK-SER - Production Dockerfile for VPS Deployment
+# ============================================================================
+# Government Service Recommendation System
+# Optimized for production VPS environment with PostgreSQL integration
+# ============================================================================
 
-FROM python:3.10-slim as builder
-
-# Set working directory
-WORKDIR /app
-
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    gcc \
-    postgresql-client \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements
-COPY requirements.txt .
-
-# Install Python dependencies
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-# ==============================================================================
-# Production stage
-# ==============================================================================
 FROM python:3.10-slim
 
-# Set working directory
-WORKDIR /app
-
-# Install runtime dependencies
+# =============================================================================
+# System dependencies
+# =============================================================================
 RUN apt-get update && apt-get install -y \
-    libpq5 \
+    gcc \
+    g++ \
+    curl \
+    wget \
     postgresql-client \
+    libpq-dev \
+    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy Python packages from builder
-COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
-COPY --from=builder /usr/local/bin /usr/local/bin
+# =============================================================================
+# Create non-root user for security
+# =============================================================================
+RUN useradd -m -u 1000 appuser
 
-# Copy application code
-COPY backend/ /app/backend/
-COPY data/ /app/data/
-COPY setup_database_complete.py /app/
-COPY docker-entrypoint.sh /app/
+# =============================================================================
+# Set project directory
+# =============================================================================
+WORKDIR /home/bsk_ser
 
-# Create directories for logs and data
-RUN mkdir -p /var/log/bsk-ser /app/data
+# =============================================================================
+# Create virtualenv INSIDE the project directory
+# =============================================================================
+ENV VENV_PATH=/home/bsk_ser/venv
 
-# Set executable permissions for entrypoint
-RUN chmod +x /app/docker-entrypoint.sh
+RUN python -m venv ${VENV_PATH}
 
-# Set environment variables
+# Always use the venv
+ENV PATH="${VENV_PATH}/bin:$PATH"
+
+# =============================================================================
+# Install Python dependencies into the venv
+# =============================================================================
+COPY requirements.txt .
+
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# =============================================================================
+# Copy application source
+# =============================================================================
+COPY backend/ /home/bsk_ser/backend/
+COPY data/ /home/bsk_ser/data/
+COPY setup_database_complete.py /home/bsk_ser/
+COPY docker-entrypoint.sh /home/bsk_ser/
+
+# =============================================================================
+# Create required directories & permissions
+# =============================================================================
+RUN mkdir -p \
+    /var/log/bsk-ser \
+    /home/bsk_ser/data \
+    && chmod +x /home/bsk_ser/docker-entrypoint.sh \
+    && chown -R appuser:appuser /home/bsk_ser \
+    && chown -R appuser:appuser /var/log/bsk-ser
+
+# Switch to non-root user
+USER appuser
+
+# =============================================================================
+# Environment variables
+# =============================================================================
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONPATH=/app
+    PYTHONPATH=/home/bsk_ser \
+    PORT=8000
 
-# Expose port
+# =============================================================================
+# Volumes for persistent data
+# =============================================================================
+VOLUME ["/home/bsk_ser/data", "/var/log/bsk-ser"]
+
+# =============================================================================
+# Healthcheck
+# =============================================================================
+HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
+    CMD curl -f http://localhost:${PORT}/api/admin/scheduler-status || exit 1
+
+# =============================================================================
+# Expose & run
+# =============================================================================
 EXPOSE 8000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
-    CMD python -c "import http.client; h = http.client.HTTPConnection('localhost:8000'); h.request('GET', '/api/admin/scheduler-status'); r = h.getresponse(); exit(0 if r.status == 200 else 1)"
-
-# Set entrypoint
-ENTRYPOINT ["/app/docker-entrypoint.sh"]
+# Set entrypoint for database initialization
+ENTRYPOINT ["/home/bsk_ser/docker-entrypoint.sh"]
 
 # Run application with Gunicorn for production
 CMD ["gunicorn", "backend.main_api:app", \

@@ -38,7 +38,6 @@ class Provision(Base):
     customer_phone = Column(BigInteger)
     service_name = Column(String)
     docket_no = Column(BigInteger)
-    bsk_type = Column(String)
 
 class BSKMaster(Base):
     """ml_bsk_master - 24 columns"""

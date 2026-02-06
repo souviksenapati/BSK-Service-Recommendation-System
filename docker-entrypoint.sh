@@ -51,7 +51,7 @@ echo ""
 echo -e "${BLUE}[2/3] Checking database initialization status...${NC}"
 
 # Use a marker file in a persistent volume to track initialization
-MARKER_FILE="/app/data/.db_initialized"
+MARKER_FILE="/home/bsk_ser/data/.db_initialized"
 
 if [ -f "$MARKER_FILE" ]; then
     echo -e "${GREEN}      Database already initialized - skipping setup${NC}"
