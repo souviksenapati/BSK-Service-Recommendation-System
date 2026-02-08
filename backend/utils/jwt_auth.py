@@ -1,6 +1,10 @@
 import os
 import requests
 import jwt
+import ssl
+import urllib3
+from requests.adapters import HTTPAdapter
+from urllib3.poolmanager import PoolManager
 from datetime import datetime, timedelta
 from typing import Optional
 from dotenv import load_dotenv
@@ -9,6 +13,26 @@ import logging
 load_dotenv()
 logger = logging.getLogger(__name__)
 
+# Suppress InsecureRequestWarning only if needed (though we use create_default_context which is safer)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+class LegacyHttpAdapter(HTTPAdapter):
+    """
+    Custom HTTP adapter to allow legacy SSL/TLS renegotiation.
+    Required for servers running older OpenSSL versions (like BSK).
+    """
+    def init_poolmanager(self, connections, maxsize, block=False):
+        ctx = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
+        # OP_LEGACY_SERVER_CONNECT = 0x4 (Allows connecting to legacy servers)
+        ctx.options |= 0x4 
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        self.poolmanager = PoolManager(
+            num_pools=connections,
+            maxsize=maxsize,
+            block=block,
+            ssl_context=ctx)
+
 class JWTAuthManager:
     """
     Manages JWT token authentication for external BSK server API.
@@ -16,11 +40,15 @@ class JWTAuthManager:
     """
     
     def __init__(self):
-        self.login_url = os.getenv('EXTERNAL_LOGIN_URL', 'https://bsk-server.gov.in/api/auth/login')
-        self.username = os.getenv('JWT_USERNAME', 'StateCouncil')
-        self.password = os.getenv('JWT_PASSWORD', 'Council@2531')
+        self.login_url = os.getenv('EXTERNAL_LOGIN_URL', 'https://bsk.wb.gov.in/aiapi/generate_token')
+        self.username = os.getenv('JWT_USERNAME', 'admin')
+        self.password = os.getenv('JWT_PASSWORD', '123456')
         self.token = None
         self.token_expiry = None
+        
+        # Initialize session with legacy adapter
+        self.session = requests.Session()
+        self.session.mount('https://', LegacyHttpAdapter())
     
     def get_token(self) -> str:
         """
@@ -32,7 +60,7 @@ class JWTAuthManager:
         """
         # Check if cached token is still valid
         if self.token and self.token_expiry and datetime.now() < self.token_expiry:
-            logger.debug("Using cached JWT token")
+            # logger.debug("Using cached JWT token")
             return self.token
         
         # Token expired or not present, get new one
@@ -56,19 +84,24 @@ class JWTAuthManager:
         
         try:
             logger.info(f"Logging in to {self.login_url}...")
-            response = requests.post(self.login_url, json=payload, timeout=30)
+            # Use self.session (with legacy adapter) instead of requests
+            response = self.session.post(self.login_url, json=payload, timeout=30)
             response.raise_for_status()
             
             data = response.json()
             
-            # Extract token (handle different response formats)
-            self.token = data.get('token') or data.get('access_token') or data.get('jwt')
+            # New Response Format: {"status": 1, "token": "...", "expiresIn": "24h"}
+            if data.get("status") != 1:
+                raise ValueError(f"Login failed: Status is not 1. Response: {data}")
+
+            self.token = data.get('token')
             
             if not self.token:
                 raise ValueError("No token found in login response")
             
-            # Decode token to get expiry (optional, for caching)
-            self._parse_token_expiry()
+            # Parse expiry from response (e.g., "24h")
+            expires_in_str = data.get("expiresIn", "24h")
+            self._calculate_expiry(expires_in_str)
             
             logger.info(f"✓ Successfully obtained JWT token (expires: {self.token_expiry})")
             return self.token
@@ -77,24 +110,22 @@ class JWTAuthManager:
             logger.error(f"Login failed: {e}")
             raise
     
-    def _parse_token_expiry(self):
-        """Parse JWT token to extract expiry time"""
+    def _calculate_expiry(self, expires_in_str: str):
+        """Calculate exact expiry datetime from '24h' format"""
         try:
-            # Decode without verification to read claims
-            decoded = jwt.decode(self.token, options={"verify_signature": False})
-            exp_timestamp = decoded.get('exp')
-            
-            if exp_timestamp:
-                self.token_expiry = datetime.fromtimestamp(exp_timestamp)
-                logger.debug(f"Token expires at: {self.token_expiry}")
+            # Simple parser for "24h"
+            if isinstance(expires_in_str, str) and expires_in_str.endswith('h'):
+                hours = int(expires_in_str[:-1])
+                self.token_expiry = datetime.now() + timedelta(hours=hours)
             else:
-                # Default 1 hour expiry if not in token
+                # Fallback default
                 self.token_expiry = datetime.now() + timedelta(hours=1)
-                logger.debug("Token expiry not found, using 1 hour default")
+                logger.warning(f"Unknown expiry format: {expires_in_str}. Using 1 hour default.")
                 
+            logger.debug(f"Token expires at: {self.token_expiry}")
+
         except Exception as e:
-            # If decode fails, use safe default
-            logger.warning(f"Could not decode token expiry: {e}")
+            logger.warning(f"Error calculating token expiry: {e}")
             self.token_expiry = datetime.now() + timedelta(hours=1)
     
     def refresh_token(self) -> str:
@@ -119,6 +150,10 @@ class JWTAuthManager:
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json"
         }
+    
+    def get_session(self) -> requests.Session:
+        """Returns the configured session with Legacy SSL Adapter"""
+        return self.session
 
 
 # Global singleton instance

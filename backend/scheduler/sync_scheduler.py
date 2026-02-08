@@ -32,11 +32,15 @@ STATIC_REGEN_DELAY_HOURS = int(os.getenv('STATIC_REGEN_DELAY_HOURS', '1'))
 scheduler = BackgroundScheduler(timezone=SCHEDULER_TIMEZONE)
 
 # Tables to sync in order
+# Tables to sync in order
 TABLES_TO_SYNC = [
-    'ml_citizen_master',
-    'ml_provision',
-    'ml_district',
-    'ml_bsk_master'
+    'bsk_master',
+    'service_master',
+    'deo_master',
+    'provision',
+    'district',
+    'block-municipality',
+    'citizen_master'
 ]
 
 
