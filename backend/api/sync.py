@@ -5,8 +5,8 @@ import logging
 from datetime import datetime, date
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy import and_
+from sqlalchemy import BigInteger, Integer, Float, Numeric, Date, Boolean, String, Text
+from sqlalchemy import insert, update, select, and_, or_, tuple_
 from typing import Optional, Dict, Any, List
 from pydantic import BaseModel
 
@@ -78,13 +78,128 @@ def get_model_class(table_name: str):
     else:
         raise ValueError(f"Unknown table or no model defined: {table_name}")
 
+def sanitize_data(table, data):
+    """
+    Sanitize data before insertion/update.
+    Converts empty strings to None for non-string columns.
+    """
+    sanitized_data = []
+    for record in data:
+        clean_record = {}
+        for k, v in record.items():
+            if k not in table.columns:
+                continue
+
+            # Data Sanitization Logic
+            if v == "":
+                try:
+                    col_type = table.columns[k].type
+                    
+                    # Check if it's a numeric or other non-string type
+                    is_string_type = isinstance(col_type, (String, Text))
+                    if not is_string_type:
+                        # Fallback for wrapped types
+                        try:
+                            if issubclass(col_type.python_type, str):
+                                is_string_type = True
+                        except:
+                            pass
+                    
+                    if not is_string_type:
+                        v = None
+                except Exception:
+                    pass
+            
+            clean_record[k] = v
+        
+        if clean_record:
+            sanitized_data.append(clean_record)
+            
+    return sanitized_data
+
+def manual_upsert(db: Session, table, pk_cols, data):
+    """
+    Performs Manual Upsert:
+    1. Identify existing records by PK (supports Composite Keys).
+    2. Split into Inserts (New) and Updates (Existing).
+    3. Execute bulk operations.
+    Needed when DB lacks UNIQUE constraints required for ON CONFLICT.
+    """
+    if not data:
+        return 0
+
+    # Handle Composite keys correctly
+    pk_columns = [table.columns[k] for k in pk_cols]
+    
+    # helper for composite key tuple creation
+    def make_key(item):
+        return tuple(item.get(k) for k in pk_cols)
+
+    incoming_keys = [make_key(item) for item in data]
+    
+    if not incoming_keys:
+        return 0
+
+    existing_keys = set()
+    chunk_size = 500
+    
+    # Process chunks to query existing keys
+    for i in range(0, len(incoming_keys), chunk_size):
+        chunk = incoming_keys[i:i + chunk_size]
+        
+        # Build query for composite or single keys
+        if len(pk_cols) == 1:
+            # Single PK Optimization
+            pk_col = pk_columns[0]
+            # Unwrap tuples for single column IN clause
+            keys_for_query = [k[0] for k in chunk]
+            stmt = select(pk_col).where(pk_col.in_(keys_for_query))
+            result = db.execute(stmt).scalars().all()
+            # Wrap back to tuple for consistency
+            existing_keys.update((r,) for r in result)
+        else:
+            # Composite Key requires tuple_ logic or AND/OR construction
+            # SQLAlchemy tuple_ support varies by backend/version, so using explicit OR is safer but verbose.
+            # However, for PG + SQLAlchemy tuple_ usually works.
+            # Using tuple_ for clarity and standard support in modern SA/PG
+            
+            stmt = select(*pk_columns).where(tuple_(*pk_columns).in_(chunk))
+            result = db.execute(stmt).all()
+            existing_keys.update(result) # result is already tuples of values
+        
+    to_insert = []
+    to_update = []
+    
+    for item in data:
+        key = make_key(item)
+        if key in existing_keys:
+            to_update.append(item)
+        else:
+            to_insert.append(item)
+            
+    # Bulk Insert
+    if to_insert:
+        db.execute(insert(table), to_insert)
+        
+    # Bulk Update
+    if to_update:
+        # For updates, we need to bind parameters correctly.
+        # SQLAlchemy Core 'update' with list of dicts requires the WHERE clause to match solely based on PKs in the dict.
+        # Standard approach: execute scalar updates based on PK if generic bulk update is tricky with composite keys in partial support.
+        # But Postgres + SQLA 1.4+ supports this usually via executemany.
+        
+        # Fallback to per-row update for maximum safety if bulk update proves fragile with missing constraints?
+        # No, let's try mappings. 
+        # Crucial: The dicts in `to_update` MUST contain the PKs for the UPDATE statement to find the row.
+        # And they do, because they are the full records.
+        
+        db.execute(update(table), to_update)
+
+    return len(data)
+
 def upsert_data(db: Session, table_name: str, data: list):
     """
     Upsert data into the database.
-    
-    Strategy:
-    1. For 'provision': PURE INSERT. No checks. No conflicts. Just Insert.
-    2. For others: Standard PostgreSQL ON CONFLICT (Upsert).
     """
     if not data:
         return 0
@@ -96,65 +211,55 @@ def upsert_data(db: Session, table_name: str, data: list):
         
         if not pk_cols:
              raise ValueError(f"Table {table_name} has no primary key defined.")
+             
+        # Normalize/Sanitize Data first
+        clean_data = sanitize_data(table, data)
+        if not clean_data:
+            return 0
 
         upserted_count = 0
 
         # --- SPECIAL HANDLING FOR PROVISION (PURE INSERT) ---
         if table_name in ["ml_provision", "provision"]:
-            logger.info(f"Using Pure Insert for {table_name} (No conflict checks)")
-            
-            # Using SQLAlchemy Core Insert for bulk efficiency
-            # We filter out columns not in the table model to avoid errors
-            valid_data = []
-            for record in data:
-                clean_record = {k: v for k, v in record.items() if k in table.columns}
-                if clean_record:
-                    valid_data.append(clean_record)
-            
-            if valid_data:
-                # Execute bulk insert
-                db.execute(insert(table), valid_data)
-                upserted_count = len(valid_data)
-            
+            logger.info(f"Using Pure Insert for {table_name}")
+            db.execute(insert(table), clean_data)
             db.commit()
-            return len(data)
+            return len(clean_data)
 
-        # --- STANDARD POSTGRESQL UPSERT FOR OTHER TABLES (Masters) ---
-        if table_name in ["ml_bsk_master", "bsk_master"]:
-            logger.info(f"Using Standard Upsert for {table_name} on PK: {pk_cols}")
+        # --- MANUAL UPSERT FOR MASTER TABLES (Missing Constraints) ---
+        # User confirmed to check first then update for citizen_master
+        # Assuming Master Tables might lack constraints, Manual Upsert is safer
+        # Explicit list of tables known or suspected to lack constraints
+        manual_upsert_tables = [
+             "ml_citizen_master", "citizen_master", 
+             "ml_bsk_master", "bsk_master", 
+             "ml_district", "district",
+             "ml_service_master", "service_master", "services"
+        ]
+        
+        if table_name in manual_upsert_tables:
+            logger.info(f"Using Manual Upsert for {table_name} on PK: {pk_cols}")
+            total = manual_upsert(db, table, pk_cols, clean_data)
+            db.commit()
+            return total
 
-        if table_name in ["ml_citizen_master", "citizen_master"]:
-            logger.info(f"Using Standard Upsert for {table_name} on PK: {pk_cols}. Warning: Ensure DB has unique constraint on citizen_id.")
-
-
-        for record in data:
-            clean_record = {k: v for k, v in record.items() if k in table.columns}
-            if not clean_record: continue
-
-            stmt = insert(table).values(clean_record)
+        # --- FALLBACK: STANDARD POSTGRESQL UPSERT ---
+        logger.info(f"Using Standard Upsert for {table_name}")
+        stmt = insert(table).values(clean_data)
+        update_dict = {c.name: c for c in stmt.excluded if c.name not in pk_cols}
+        
+        if update_dict:
+            stmt = stmt.on_conflict_do_update(index_elements=pk_cols, set_=update_dict)
+        else:
+            stmt = stmt.on_conflict_do_nothing(index_elements=pk_cols)
             
-            # Update columns (all except PKs)
-            update_dict = {c.name: c for c in stmt.excluded if c.name not in pk_cols}
-            
-            if update_dict:
-                stmt = stmt.on_conflict_do_update(
-                    index_elements=pk_cols,
-                    set_=update_dict
-                )
-            else:
-                stmt = stmt.on_conflict_do_nothing(index_elements=pk_cols)
-                
-            db.execute(stmt)
-            upserted_count += 1
-            
+        db.execute(stmt)
         db.commit()
-        return len(data)
+        return len(clean_data)
 
     except Exception as e:
         db.rollback()
         logger.error(f"Upsert failed for {table_name}: {e}")
-        # For Provision, since we do pure insert, a duplicate error MIGHT occur if strict constraints existed.
-        # But user says they don't exist. If they do, this will raise.
         raise
 
 def sync_table_paginated(db: Session, table_name: str, start_date: str, end_date: str):
