@@ -6,7 +6,7 @@ from datetime import datetime, date
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import BigInteger, Integer, Float, Numeric, Date, Boolean, String, Text
-from sqlalchemy import insert, update, select, and_, or_, tuple_
+from sqlalchemy import insert, update, select, and_, or_, tuple_, text
 from typing import Optional, Dict, Any, List
 from pydantic import BaseModel
 
@@ -81,7 +81,8 @@ def get_model_class(table_name: str):
 def sanitize_data(table, data):
     """
     Sanitize data before insertion/update.
-    Converts empty strings to None for non-string columns.
+    - Converts empty strings to None for non-string columns
+    - Attempts type coercion for string numbers
     """
     sanitized_data = []
     for record in data:
@@ -90,24 +91,39 @@ def sanitize_data(table, data):
             if k not in table.columns:
                 continue
 
+            col_type = table.columns[k].type
+            
+            # Check if column is string type
+            is_string_type = isinstance(col_type, (String, Text))
+            if not is_string_type:
+                try:
+                    if issubclass(col_type.python_type, str):
+                        is_string_type = True
+                except:
+                    pass
+            
             # Data Sanitization Logic
             if v == "":
+                # Empty string handling
+                if not is_string_type:
+                    v = None
+            elif isinstance(v, str) and not is_string_type:
+                # Type coercion for string numbers
                 try:
-                    col_type = table.columns[k].type
-                    
-                    # Check if it's a numeric or other non-string type
-                    is_string_type = isinstance(col_type, (String, Text))
-                    if not is_string_type:
-                        # Fallback for wrapped types
-                        try:
-                            if issubclass(col_type.python_type, str):
-                                is_string_type = True
-                        except:
-                            pass
-                    
-                    if not is_string_type:
-                        v = None
-                except Exception:
+                    if isinstance(col_type, (BigInteger, Integer)):
+                        v = int(v)
+                    elif isinstance(col_type, Float):
+                        v = float(v)
+                    elif isinstance(col_type, Boolean):
+                        # Handle boolean strings
+                        if v.lower() in ('true', '1', 'yes'):
+                            v = True
+                        elif v.lower() in ('false', '0', 'no'):
+                            v = False
+                        else:
+                            v = None
+                except (ValueError, AttributeError):
+                    # Let database handle invalid values
                     pass
             
             clean_record[k] = v
@@ -117,13 +133,41 @@ def sanitize_data(table, data):
             
     return sanitized_data
 
-def manual_upsert(db: Session, table, pk_cols, data):
+def insert_only(db: Session, table, data):
     """
-    Performs Manual Upsert:
+    INSERT ONLY (no TRUNCATE) - for paginated data streaming.
+    Used after table has already been truncated.
+    """
+    if not data:
+        return 0
+    
+    insert_success = 0
+    insert_failed = 0
+    
+    for record in data:
+        savepoint = db.begin_nested()
+        try:
+            db.execute(insert(table).values(record))
+            db.flush()
+            savepoint.commit()
+            insert_success += 1
+        except Exception as e:
+            savepoint.rollback()
+            insert_failed += 1
+            logger.error(f"Failed to insert record: {str(e)[:200]}")
+    
+    if insert_failed > 0:
+        logger.warning(f"⚠️  {insert_failed}/{len(data)} inserts failed")
+    
+    return insert_success
+
+def manual_upsert(db: Session, model, table, pk_cols, data):
+    """
+    Performs Manual Upsert with ROW-LEVEL FAULT TOLERANCE:
     1. Identify existing records by PK (supports Composite Keys).
     2. Split into Inserts (New) and Updates (Existing).
-    3. Execute bulk operations.
-    Needed when DB lacks UNIQUE constraints required for ON CONFLICT.
+    3. Execute operations with per-record error handling using SAVEPOINTS.
+    If one record fails, others continue processing.
     """
     if not data:
         return 0
@@ -131,11 +175,27 @@ def manual_upsert(db: Session, table, pk_cols, data):
     # Handle Composite keys correctly
     pk_columns = [table.columns[k] for k in pk_cols]
     
-    # helper for composite key tuple creation
+    # helper for composite key tuple creation with NULL validation
     def make_key(item):
-        return tuple(item.get(k) for k in pk_cols)
+        key = tuple(item.get(k) for k in pk_cols)
+        # CRITICAL: Reject records with NULL in primary key
+        if None in key:
+            key_dict = dict(zip(pk_cols, key))
+            raise ValueError(f"NULL value in primary key: {key_dict}")
+        return key
 
-    incoming_keys = [make_key(item) for item in data]
+    incoming_keys = []
+    invalid_records = 0
+    
+    for item in data:
+        try:
+            incoming_keys.append(make_key(item))
+        except ValueError as e:
+            invalid_records += 1
+            logger.warning(f"Skipping invalid record: {e}")
+    
+    if invalid_records > 0:
+        logger.warning(f"Skipped {invalid_records} records with invalid/NULL primary keys")
     
     if not incoming_keys:
         return 0
@@ -155,51 +215,112 @@ def manual_upsert(db: Session, table, pk_cols, data):
             keys_for_query = [k[0] for k in chunk]
             stmt = select(pk_col).where(pk_col.in_(keys_for_query))
             result = db.execute(stmt).scalars().all()
-            # Wrap back to tuple for consistency
             existing_keys.update((r,) for r in result)
         else:
-            # Composite Key requires tuple_ logic or AND/OR construction
-            # SQLAlchemy tuple_ support varies by backend/version, so using explicit OR is safer but verbose.
-            # However, for PG + SQLAlchemy tuple_ usually works.
-            # Using tuple_ for clarity and standard support in modern SA/PG
-            
             stmt = select(*pk_columns).where(tuple_(*pk_columns).in_(chunk))
             result = db.execute(stmt).all()
-            existing_keys.update(result) # result is already tuples of values
+            existing_keys.update(result)
         
     to_insert = []
     to_update = []
     
+    # Filter data to only valid records (those with valid keys)
     for item in data:
-        key = make_key(item)
-        if key in existing_keys:
-            to_update.append(item)
-        else:
-            to_insert.append(item)
-            
-    # Bulk Insert
+        try:
+            key = make_key(item)
+            if key in existing_keys:
+                to_update.append(item)
+            else:
+                to_insert.append(item)
+        except ValueError:
+            # Already logged above, skip
+            pass
+    
+    # Track success/failure counts
+    insert_success = 0
+    insert_failed = 0
+    update_success = 0
+    update_failed = 0
+    
+    # ROW-LEVEL FAULT TOLERANCE: Insert with SAVEPOINTS
     if to_insert:
-        db.execute(insert(table), to_insert)
+        logger.info(f"   - Inserting {len(to_insert)} new records...")
+        for record in to_insert:
+            # Create savepoint for this record
+            savepoint = db.begin_nested()
+            try:
+                db.execute(insert(table).values(record))
+                db.flush()  # Flush to detect errors immediately
+                savepoint.commit()  # Commit savepoint (keeps this record)
+                insert_success += 1
+            except Exception as e:
+                savepoint.rollback()  # Rollback ONLY this savepoint
+                insert_failed += 1
+                pk_val = {k: record.get(k) for k in pk_cols}
+                logger.error(f"Failed to insert record {pk_val}: {str(e)[:200]}")
         
-    # Bulk Update
+        if insert_failed > 0:
+            logger.warning(f"⚠️ {insert_failed}/{len(to_insert)} inserts failed")
+    
+    # ROW-LEVEL FAULT TOLERANCE: Update with SAVEPOINTS
     if to_update:
-        # For updates, we need to bind parameters correctly.
-        # SQLAlchemy Core 'update' with list of dicts requires the WHERE clause to match solely based on PKs in the dict.
-        # Standard approach: execute scalar updates based on PK if generic bulk update is tricky with composite keys in partial support.
-        # But Postgres + SQLA 1.4+ supports this usually via executemany.
+        logger.info(f"   - Updating {len(to_update)} existing records...")
+        for record in to_update:
+            # Create savepoint for this record
+            savepoint = db.begin_nested()
+            try:
+                # CRITICAL: Validate complete PK exists (prevent partial key updates)
+                pk_filter = {}
+                for k in pk_cols:
+                    if k not in record:
+                        raise ValueError(f"Missing primary key column '{k}' in update record")
+                    pk_filter[k] = record[k]
+                
+                update_data = {k: v for k, v in record.items() if k not in pk_cols}
+                
+                if not update_data:
+                    # Record has only PK columns, nothing to update
+                    # This is valid - commit as successful no-op
+                    savepoint.commit()
+                    update_success += 1
+                else:
+                    # Perform actual update
+                    stmt = update(table).where(
+                        *[table.columns[k] == pk_filter[k] for k in pk_cols]
+                    ).values(**update_data)
+                    db.execute(stmt)
+                    db.flush()
+                    savepoint.commit()  # Commit savepoint (keeps this record)
+                    update_success += 1
+            except Exception as e:
+                savepoint.rollback()  # Rollback ONLY this savepoint
+                update_failed += 1
+                pk_val = {k: record.get(k) for k in pk_cols}
+                logger.error(f"Failed to update record {pk_val}: {str(e)[:200]}")
         
-        # Fallback to per-row update for maximum safety if bulk update proves fragile with missing constraints?
-        # No, let's try mappings. 
-        # Crucial: The dicts in `to_update` MUST contain the PKs for the UPDATE statement to find the row.
-        # And they do, because they are the full records.
-        
-        db.execute(update(table), to_update)
+        if update_failed > 0:
+            logger.warning(f"⚠️ {update_failed}/{len(to_update)} updates failed")
+    
+    # Log final summary
+    total_success = insert_success + update_success
+    total_failed = insert_failed + update_failed
+    
+    if total_failed > 0:
+        logger.warning(f"📊 Sync Summary: {total_success} succeeded, {total_failed} failed")
+    
+    return total_success
 
-    return len(data)
-
-def upsert_data(db: Session, table_name: str, data: list):
+def upsert_data(db: Session, table_name: str, data: list, skip_commit: bool = False):
     """
     Upsert data into the database.
+    Strategy varies by table type:
+    - citizen_master: Manual UPSERT (check + insert/update)
+    - bsk_master, district, service_master: INSERT ONLY (used after TRUNCATE)
+    - provision: Pure INSERT (no checking, preserve historical data)
+    - Other tables: Pure INSERT
+    
+    Args:
+        skip_commit: If True, don't commit (caller manages transaction)
     """
     if not data:
         return 0
@@ -215,47 +336,55 @@ def upsert_data(db: Session, table_name: str, data: list):
         # Normalize/Sanitize Data first
         clean_data = sanitize_data(table, data)
         if not clean_data:
+            if len(data) > 0:
+                logger.warning(f"🚨 All {len(data)} records filtered out during sanitization for {table_name}")
             return 0
 
-        upserted_count = 0
-
-        # --- SPECIAL HANDLING FOR PROVISION (PURE INSERT) ---
-        if table_name in ["ml_provision", "provision"]:
-            logger.info(f"Using Pure Insert for {table_name}")
-            db.execute(insert(table), clean_data)
-            db.commit()
-            return len(clean_data)
-
-        # --- MANUAL UPSERT FOR MASTER TABLES (Missing Constraints) ---
-        # User confirmed to check first then update for citizen_master
-        # Assuming Master Tables might lack constraints, Manual Upsert is safer
-        # Explicit list of tables known or suspected to lack constraints
-        manual_upsert_tables = [
-             "ml_citizen_master", "citizen_master", 
-             "ml_bsk_master", "bsk_master", 
-             "ml_district", "district",
-             "ml_service_master", "service_master", "services"
-        ]
-        
-        if table_name in manual_upsert_tables:
+        # --- STRATEGY 1: MANUAL UPSERT (citizen_master only) ---
+        if table_name in ["ml_citizen_master", "citizen_master"]:
             logger.info(f"Using Manual Upsert for {table_name} on PK: {pk_cols}")
-            total = manual_upsert(db, table, pk_cols, clean_data)
-            db.commit()
+            total = manual_upsert(db, model, table, pk_cols, clean_data)
+            if not skip_commit:
+                db.commit()
             return total
 
-        # --- FALLBACK: STANDARD POSTGRESQL UPSERT ---
-        logger.info(f"Using Standard Upsert for {table_name}")
-        stmt = insert(table).values(clean_data)
-        update_dict = {c.name: c for c in stmt.excluded if c.name not in pk_cols}
+        # --- STRATEGY 2: INSERT ONLY (for master tables after TRUNCATE) ---
+        if table_name in ["bsk_master", "ml_bsk_master", "district", "ml_district", 
+                          "service_master", "services"]:
+            # TRUNCATE is done in sync_table_paginated, this just INSERTs
+            total = insert_only(db, table, clean_data)
+            if not skip_commit:
+                db.commit()
+            return total
+
+        # --- STRATEGY 3: PURE INSERT (all other tables) ---
+        logger.info(f"Using Pure Insert for {table_name}")
         
-        if update_dict:
-            stmt = stmt.on_conflict_do_update(index_elements=pk_cols, set_=update_dict)
-        else:
-            stmt = stmt.on_conflict_do_nothing(index_elements=pk_cols)
-            
-        db.execute(stmt)
-        db.commit()
-        return len(clean_data)
+        # Use row-level fault tolerance with pure inserts
+        insert_success = 0
+        insert_failed = 0
+        
+        for record in clean_data:
+            savepoint = db.begin_nested()
+            try:
+                db.execute(insert(table).values(record))
+                db.flush()
+                savepoint.commit()
+                insert_success += 1
+            except Exception as e:
+                savepoint.rollback()
+                insert_failed += 1
+                # Log PK values for debugging
+                pk_vals = {k: record.get(k) for k in pk_cols}
+                logger.error(f"Failed to insert {table_name} record {pk_vals}: {str(e)[:200]}")
+        
+        if insert_failed > 0:
+            logger.warning(f"⚠️  {insert_failed}/{len(clean_data)} inserts failed for {table_name}")
+        
+        # FIX #4: Respect skip_commit parameter
+        if not skip_commit:
+            db.commit()
+        return insert_success
 
     except Exception as e:
         db.rollback()
@@ -264,44 +393,126 @@ def upsert_data(db: Session, table_name: str, data: list):
 
 def sync_table_paginated(db: Session, table_name: str, start_date: str, end_date: str):
     """
-    Standard Sync Strategy: Meta Check -> Pagination Loop
-    Applies to ALL tables.
+    Sync Strategy with Pagination:
+    
+    For TRUNCATE + INSERT tables (bsk_master, district, service_master):
+      1. Acquire table lock to prevent concurrent syncs
+      2. TRUNCATE once (before pagination loop)
+      3. Stream INSERT each page incrementally
+      4. All wrapped in savepoint (rollback if any page fails)
+    
+    For other tables (provision, citizen_master, etc.):
+      - Process each page individually with UPSERT/INSERT (no TRUNCATE)
     """
     logger.info(f"🔄 Syncing Table: {table_name} ({start_date} to {end_date})")
     
     meta_payload = {"start_date": start_date, "end_date": end_date}
     meta_response = call_sync_api(table_name, meta_payload)
     
-    total_records = meta_response.get("total_no_of_records", 0)
+    # FIX #8: Validate API response
+    total_records = meta_response.get("total_no_of_records") or meta_response.get("total_records", 0)
+    if not isinstance(total_records, int) or total_records < 0:
+        logger.warning(f"Invalid total_records: {total_records}, defaulting to 0")
+        total_records = 0
+    
     logger.info(f"📊 Meta Check [{table_name}]: Found {total_records} records.")
     
     if total_records == 0:
         return 0
     
-    total_upserted = 0
     page_size = SYNC_PAGE_SIZE
     max_pages = math.ceil(total_records / page_size)
-    
     logger.info(f"   Splitting into {max_pages} pages of size {page_size}")
     
-    for page in range(1, max_pages + 1):
-        logger.info(f"   Downloading page {page}/{max_pages}...")
+    # Check if this table uses TRUNCATE + INSERT strategy
+    uses_truncate_insert = table_name in [
+        "bsk_master", "ml_bsk_master",
+        "district", "ml_district",
+        "service_master", "services"
+    ]
+    
+    if uses_truncate_insert:
+        # OPTION 2: TRUNCATE FIRST, then stream INSERT pages
+        logger.info(f"🔄 TRUNCATE + INSERT mode: Truncating table before streaming pages...")
         
-        page_payload = {
-            "start_date": start_date,
-            "end_date": end_date,
-            "Page": page,
-            "Pagesize": page_size
-        }
+        model = get_model_class(table_name)
+        table = model.__table__
         
-        page_response = call_sync_api(table_name, page_payload)
-        records = page_response.get("records", [])
+        # FIX #6: Acquire advisory lock to prevent concurrent syncs
+        lock_id = hash(table.name) % 2147483647  # Postgres advisory lock range
+        logger.info(f"   🔒 Acquiring lock for table {table.name} (lock_id: {lock_id})...")
+        db.execute(text(f"SELECT pg_advisory_lock({lock_id})"))
         
-        if records:
-            upsert_data(db, table_name, records)
-            total_upserted += len(records)
+        try:
+            # FIX #1 & #2: Wrap TRUNCATE + INSERT in explicit savepoint for rollback safety
+            logger.info(f"   💾 Creating savepoint for atomic TRUNCATE + INSERT...")
+            truncate_savepoint = db.begin_nested()
             
-    return total_upserted
+            try:
+                # STEP 1: TRUNCATE once (before pagination)
+                logger.info(f"   🗑️  TRUNCATE: Deleting all existing records from {table.name}...")
+                db.execute(table.delete())
+                db.flush()
+                logger.info(f"   ✅ Table {table.name} truncated successfully")
+                
+                # STEP 2: Stream INSERT each page
+                total_inserted = 0
+                for page in range(1, max_pages + 1):
+                    logger.info(f"   📥 Processing page {page}/{max_pages}...")
+                    
+                    page_payload = {
+                        "start_date": start_date,
+                        "end_date": end_date,
+                        "Page": page,
+                        "Pagesize": page_size
+                    }
+                    
+                    page_response = call_sync_api(table_name, page_payload)
+                    records = page_response.get("records", [])
+                    
+                    if records:
+                        # INSERT without commit (transaction managed by savepoint)
+                        inserted = upsert_data(db, table_name, records, skip_commit=True)
+                        total_inserted += inserted
+                        logger.info(f"      ✅ Inserted {inserted} records (Total: {total_inserted}/{total_records})")
+                
+                # Commit the savepoint (TRUNCATE + all INSERTs succeed)
+                truncate_savepoint.commit()
+                logger.info(f"   ✅ TRUNCATE + INSERT complete: {total_inserted} total records")
+                return total_inserted
+                
+            except Exception as e:
+                # FIX #1 & #2: Rollback TRUNCATE + all INSERTs on any failure
+                truncate_savepoint.rollback()
+                logger.error(f"   ❌ TRUNCATE + INSERT failed, rolling back all changes: {e}")
+                raise  # Re-raise to propagate to endpoint
+        finally:
+            # FIX #6: Always release the lock
+            db.execute(text(f"SELECT pg_advisory_unlock({lock_id})"))
+            logger.info(f"   🔓 Released lock for table {table.name}")
+    
+    else:
+        # Standard incremental processing for other tables
+        total_upserted = 0
+        for page in range(1, max_pages + 1):
+            logger.info(f"   Processing page {page}/{max_pages}...")
+            
+            page_payload = {
+                "start_date": start_date,
+                "end_date": end_date,
+                "Page": page,
+                "Pagesize": page_size
+            }
+            
+            page_response = call_sync_api(table_name, page_payload)
+            records = page_response.get("records", [])
+            
+            if records:
+                # FIX #3: Use actual return value, not len(records)
+                inserted_count = upsert_data(db, table_name, records)
+                total_upserted += inserted_count
+                
+        return total_upserted
 
 # ------------------------------------------------------------------------------
 # Endpoints
@@ -350,6 +561,15 @@ async def sync_data(request: SyncRequest, db: Session = Depends(get_db)):
         }
 
     except Exception as e:
+        # FIX #7: Update metadata to track failure
+        if metadata:
+            metadata.last_sync_status = "FAILED"
+            metadata.last_sync_timestamp = datetime.now()
+            try:
+                db.commit()
+            except:
+                db.rollback()  # If metadata update fails, rollback
+        
         logger.error(f"Sync failed for {target_table}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
