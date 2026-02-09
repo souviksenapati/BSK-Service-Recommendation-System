@@ -11,6 +11,10 @@ from apscheduler.triggers.cron import CronTrigger
 from apscheduler.triggers.date import DateTrigger
 from sqlalchemy.orm import Session
 from dotenv import load_dotenv
+import nest_asyncio
+
+# Apply nest_asyncio to allow nested event loops
+nest_asyncio.apply()
 
 from ..database.connection import SessionLocal
 from ..api.sync import SyncRequest, sync_data as sync_endpoint
@@ -31,16 +35,14 @@ STATIC_REGEN_DELAY_HOURS = int(os.getenv('STATIC_REGEN_DELAY_HOURS', '1'))
 # Initialize APScheduler with configured timezone
 scheduler = BackgroundScheduler(timezone=SCHEDULER_TIMEZONE)
 
-# Tables to sync in order
-# Tables to sync in order
+# Tables to sync from external BSK API (in order of dependency)
+# These map to database tables: ml_bsk_master, ml_district, ml_provision, ml_citizen_master, services
 TABLES_TO_SYNC = [
-    'bsk_master',
-    'service_master',
-    'deo_master',
-    'provision',
-    'district',
-    'block-municipality',
-    'citizen_master'
+    'bsk_master',           # → ml_bsk_master (BSK centers)
+    'district',             # → ml_district (Districts)  
+    'service_master',       # → services (Service catalog)
+    'provision',            # → ml_provision (Historical transactions)
+    'citizen_master'        # → ml_citizen_master (Citizen data)
 ]
 
 
@@ -70,12 +72,24 @@ def sync_all_tables():
                 )
                 
                 # Call sync endpoint function directly (not HTTP)
-                # We need to make it work without async/await since scheduler is sync
+                # Use synchronous database operations to avoid async issues
                 import asyncio
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-                result = loop.run_until_complete(sync_endpoint(request, db))
-                loop.close()
+                try:
+                    # Try to get existing loop
+                    loop = asyncio.get_event_loop()
+                    if loop.is_running():
+                        # If loop is already running, use run_in_executor
+                        import concurrent.futures
+                        with concurrent.futures.ThreadPoolExecutor() as pool:
+                            result = pool.submit(
+                                asyncio.run,
+                                sync_endpoint(request, db)
+                            ).result()
+                    else:
+                        result = loop.run_until_complete(sync_endpoint(request, db))
+                except RuntimeError:
+                    # No event loop in current thread, create one
+                    result = asyncio.run(sync_endpoint(request, db))
                 
                 results.append({
                     'table': table,
@@ -121,12 +135,10 @@ def sync_all_tables():
         
         # Schedule static file generation after configured delay
         if success_count > 0:  # Only if at least one table synced successfully
-            run_time = datetime.now().replace(microsecond=0)
-            # Add configured delay (in hours)
-            hours_to_add = STATIC_REGEN_DELAY_HOURS
-            run_time = run_time.replace(hour=(run_time.hour + hours_to_add) % 24)
+            from datetime import timedelta
+            run_time = datetime.now() + timedelta(hours=STATIC_REGEN_DELAY_HOURS)
             
-            logger.info(f"\n⏱️  Scheduling static file regeneration at {run_time} (in {hours_to_add} hour(s))")
+            logger.info(f"\n⏱️  Scheduling static file regeneration at {run_time} (in {STATIC_REGEN_DELAY_HOURS} hour(s))")
             
             scheduler.add_job(
                 regenerate_static_files,
@@ -157,10 +169,19 @@ def regenerate_static_files():
     try:
         # Call new regenerate endpoint with type="all"
         import asyncio
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        result = loop.run_until_complete(regenerate_files(RegenerationType.ALL, db))
-        loop.close()
+        import concurrent.futures
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                with concurrent.futures.ThreadPoolExecutor() as pool:
+                    result = pool.submit(
+                        asyncio.run,
+                        regenerate_files(RegenerationType.ALL, db)
+                    ).result()
+            else:
+                result = loop.run_until_complete(regenerate_files(RegenerationType.ALL, db))
+        except RuntimeError:
+            result = asyncio.run(regenerate_files(RegenerationType.ALL, db))
         
         logger.info("\n📊 Generated Files:")
         if result.get('district_files'):
