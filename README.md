@@ -730,7 +730,11 @@ psql -U postgres -d bsk -c "SELECT count(*) FROM pg_stat_activity WHERE datname=
 
 ## 👥 Contributors
 
-[Your Team/Contributors Here]
+<a href="https://github.com/DSMLCoEWB/SysRecoBatch4/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DSMLCoEWB/SysRecoBatch4" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
 
 ---
 
@@ -738,9 +742,8 @@ psql -U postgres -d bsk -c "SELECT count(*) FROM pg_stat_activity WHERE datname=
 
 For issues and questions:
 - Create an issue in the repository
-- Contact: [your-email@example.com]
 
 ---
 
-**Last Updated:** February 2, 2026
+**Last Updated:** February 12, 2026
 **Version:** 2.0.0
