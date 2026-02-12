@@ -734,8 +734,6 @@ psql -U postgres -d bsk -c "SELECT count(*) FROM pg_stat_activity WHERE datname=
   <img src="https://contrib.rocks/image?repo=DSMLCoEWB/SysRecoBatch4" />
 </a>
 
-Made with [contrib.rocks](https://contrib.rocks).
-
 ---
 
 ## 📧 Support
