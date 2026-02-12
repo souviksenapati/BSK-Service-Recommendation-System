@@ -42,6 +42,7 @@ services:
       dockerfile: Dockerfile
     container_name: bsk-api
     restart: unless-stopped
+    stop_grace_period: 300s  # 5 minutes for sync jobs to complete gracefully
     depends_on:
       postgres:
         condition: service_healthy

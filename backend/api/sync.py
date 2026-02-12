@@ -22,6 +22,29 @@ logger = logging.getLogger(__name__)
 EXTERNAL_SYNC_BASE_URL = os.getenv("EXTERNAL_SYNC_URL", "https://bsk.wb.gov.in/aiapi/api/sync")
 SYNC_PAGE_SIZE = int(os.getenv("SYNC_PAGE_SIZE", "1000"))
 
+# ──────────────────────────────────────────────────────────────────────────────
+# API PATTERN CLASSIFICATION (verified via exhaustive endpoint testing)
+#
+# PATTERN A – "Dump-All" tables:
+#   API returns ALL records in a single call regardless of parameters.
+#   Dates, Page, Pagesize are ALL IGNORED by the external API.
+#   Response: {success, table_name, total_records, records: [...]}
+#   Strategy: TRUNCATE existing data + INSERT all records atomically.
+#
+# PATTERN B – "Paginated" tables:
+#   Step 1 (Meta):  POST {start_date, end_date}
+#       → {success, flow:"meta", table_name, total_no_of_records, date_range}
+#   Step 2 (Pages): POST {start_date, end_date, Page:N, Pagesize:M}
+#       → {success, flow:"pagination", table_name, Page, Pagesize, records:[...]}
+#   End condition: len(records) == 0  (citizen_master has no "fetched" field)
+#   Strategy: UPSERT (citizen_master) or INSERT (provision) per page.
+# ──────────────────────────────────────────────────────────────────────────────
+DIRECT_TABLES = {"bsk_master", "service_master", "district"}
+PAGINATED_TABLES = {"provision", "citizen_master"}
+# Also available from API but NOT synced (no DB models yet):
+# "deo_master" (7,047 records), "block-municipality" (482 records)
+ALL_SYNCABLE_TABLES = DIRECT_TABLES | PAGINATED_TABLES
+
 # Request Model
 class SyncRequest(BaseModel):
     target_table: str
@@ -393,109 +416,103 @@ def upsert_data(db: Session, table_name: str, data: list, skip_commit: bool = Fa
 
 def sync_table_paginated(db: Session, table_name: str, start_date: str, end_date: str):
     """
-    Sync Strategy with Pagination:
+    Sync data from external BSK API. Handles TWO verified API response patterns:
     
-    For TRUNCATE + INSERT tables (bsk_master, district, service_master):
-      1. Acquire table lock to prevent concurrent syncs
-      2. TRUNCATE once (before pagination loop)
-      3. Stream INSERT each page incrementally
-      4. All wrapped in savepoint (rollback if any page fails)
+    PATTERN A - Direct "Dump-All" (bsk_master, district, service_master, deo_master, block-municipality):
+      - API ignores ALL parameters (dates, Page, Pagesize).
+      - Always returns ALL records in a single response.
+      - Response: {success, table_name, total_records, records: [...]}
+      - Strategy: TRUNCATE + INSERT atomically.
     
-    For other tables (provision, citizen_master, etc.):
-      - Process each page individually with UPSERT/INSERT (no TRUNCATE)
+    PATTERN B - Paginated (provision, citizen_master):
+      - Requires start_date & end_date (400 error without them).
+      - Meta call (dates only)  → {flow:"meta", total_no_of_records: N}
+      - Page call (dates+Page+Pagesize) → {flow:"pagination", records: [...]}
+      - End condition: len(records) == 0
+      - Strategy: INSERT (provision) or UPSERT (citizen_master) per page.
     """
-    logger.info(f"🔄 Syncing Table: {table_name} ({start_date} to {end_date})")
     
-    meta_payload = {"start_date": start_date, "end_date": end_date}
-    meta_response = call_sync_api(table_name, meta_payload)
-    
-    # FIX #8: Validate API response
-    total_records = meta_response.get("total_no_of_records") or meta_response.get("total_records", 0)
-    if not isinstance(total_records, int) or total_records < 0:
-        logger.warning(f"Invalid total_records: {total_records}, defaulting to 0")
-        total_records = 0
-    
-    logger.info(f"📊 Meta Check [{table_name}]: Found {total_records} records.")
-    
-    if total_records == 0:
-        return 0
-    
-    page_size = SYNC_PAGE_SIZE
-    max_pages = math.ceil(total_records / page_size)
-    logger.info(f"   Splitting into {max_pages} pages of size {page_size}")
-    
-    # Check if this table uses TRUNCATE + INSERT strategy
-    uses_truncate_insert = table_name in [
-        "bsk_master", "ml_bsk_master",
-        "district", "ml_district",
-        "service_master", "services"
-    ]
-    
-    if uses_truncate_insert:
-        # OPTION 2: TRUNCATE FIRST, then stream INSERT pages
-        logger.info(f"🔄 TRUNCATE + INSERT mode: Truncating table before streaming pages...")
+    # =========================================================================
+    # PATTERN A: Direct "Dump-All" tables
+    # =========================================================================
+    if table_name in DIRECT_TABLES:
+        logger.info(f"🔄 Syncing Direct Table: {table_name} (Pattern A — all records in one call)")
         
+        # Send empty payload — API ignores all parameters anyway
+        response = call_sync_api(table_name, {})
+        records = response.get("records", [])
+        
+        if not records:
+            logger.warning(f"⚠️  {table_name}: API returned 0 records!")
+            return 0
+        
+        logger.info(f"📦 {table_name}: received {len(records)} records")
+        
+        # Atomic TRUNCATE + INSERT with advisory lock
         model = get_model_class(table_name)
         table = model.__table__
+        lock_id = hash(table.name) % 2147483647
         
-        # FIX #6: Acquire advisory lock to prevent concurrent syncs
-        lock_id = hash(table.name) % 2147483647  # Postgres advisory lock range
-        logger.info(f"   🔒 Acquiring lock for table {table.name} (lock_id: {lock_id})...")
+        logger.info(f"   🔒 Acquiring advisory lock for {table.name}...")
         db.execute(text(f"SELECT pg_advisory_lock({lock_id})"))
         
         try:
-            # FIX #1 & #2: Wrap TRUNCATE + INSERT in explicit savepoint for rollback safety
-            logger.info(f"   💾 Creating savepoint for atomic TRUNCATE + INSERT...")
             truncate_savepoint = db.begin_nested()
-            
             try:
-                # STEP 1: TRUNCATE once (before pagination)
-                logger.info(f"   🗑️  TRUNCATE: Deleting all existing records from {table.name}...")
+                logger.info(f"   🗑️  TRUNCATE {table.name}...")
                 db.execute(table.delete())
                 db.flush()
-                logger.info(f"   ✅ Table {table.name} truncated successfully")
                 
-                # STEP 2: Stream INSERT each page
-                total_inserted = 0
-                for page in range(1, max_pages + 1):
-                    logger.info(f"   📥 Processing page {page}/{max_pages}...")
-                    
-                    page_payload = {
-                        "start_date": start_date,
-                        "end_date": end_date,
-                        "Page": page,
-                        "Pagesize": page_size
-                    }
-                    
-                    page_response = call_sync_api(table_name, page_payload)
-                    records = page_response.get("records", [])
-                    
-                    if records:
-                        # INSERT without commit (transaction managed by savepoint)
-                        inserted = upsert_data(db, table_name, records, skip_commit=True)
-                        total_inserted += inserted
-                        logger.info(f"      ✅ Inserted {inserted} records (Total: {total_inserted}/{total_records})")
-                
-                # Commit the savepoint (TRUNCATE + all INSERTs succeed)
+                total_inserted = upsert_data(db, table_name, records, skip_commit=True)
                 truncate_savepoint.commit()
-                logger.info(f"   ✅ TRUNCATE + INSERT complete: {total_inserted} total records")
-                return total_inserted
                 
+                logger.info(f"   ✅ {table.name}: {total_inserted}/{len(records)} records replaced")
+                return total_inserted
             except Exception as e:
-                # FIX #1 & #2: Rollback TRUNCATE + all INSERTs on any failure
                 truncate_savepoint.rollback()
-                logger.error(f"   ❌ TRUNCATE + INSERT failed, rolling back all changes: {e}")
-                raise  # Re-raise to propagate to endpoint
+                logger.error(f"   ❌ TRUNCATE + INSERT failed for {table.name}: {e}")
+                raise
         finally:
-            # FIX #6: Always release the lock
             db.execute(text(f"SELECT pg_advisory_unlock({lock_id})"))
-            logger.info(f"   🔓 Released lock for table {table.name}")
+            logger.info(f"   🔓 Released lock for {table.name}")
     
-    else:
-        # Standard incremental processing for other tables
+    # =========================================================================
+    # PATTERN B: Paginated tables (provision, citizen_master)
+    # =========================================================================
+    elif table_name in PAGINATED_TABLES:
+        logger.info(f"🔄 Syncing Paginated Table: {table_name} ({start_date} → {end_date})")
+        
+        # Step 1: Meta call — get total record count
+        meta_payload = {"start_date": start_date, "end_date": end_date}
+        meta_response = call_sync_api(table_name, meta_payload)
+        
+        flow = meta_response.get("flow", "")
+        if flow != "meta":
+            logger.error(f"❌ Expected 'meta' flow for {table_name}, got '{flow}'. Response: {list(meta_response.keys())}")
+            raise ValueError(f"Unexpected API response for {table_name}: flow={flow}")
+        
+        total_records = meta_response.get("total_no_of_records", 0)
+        if not isinstance(total_records, int) or total_records < 0:
+            logger.warning(f"Invalid total_no_of_records: {total_records}, defaulting to 0")
+            total_records = 0
+        
+        logger.info(f"📊 {table_name} meta: {total_records} records in [{start_date} → {end_date}]")
+        
+        if total_records == 0:
+            logger.info(f"   ℹ️  No records for {table_name} in this date range")
+            return 0
+        
+        # Step 2: Paginate through all records
+        page_size = SYNC_PAGE_SIZE
+        max_pages = math.ceil(total_records / page_size)
+        logger.info(f"   📄 Paginating: ~{max_pages} pages × {page_size} per page")
+        
         total_upserted = 0
-        for page in range(1, max_pages + 1):
-            logger.info(f"   Processing page {page}/{max_pages}...")
+        consecutive_empty = 0
+        MAX_CONSECUTIVE_EMPTY = 3  # Safety: stop after 3 consecutive empty pages
+        
+        for page in range(1, max_pages + 2):  # +2 for safety margin
+            logger.info(f"   📥 Page {page}/{max_pages}...")
             
             page_payload = {
                 "start_date": start_date,
@@ -507,12 +524,33 @@ def sync_table_paginated(db: Session, table_name: str, start_date: str, end_date
             page_response = call_sync_api(table_name, page_payload)
             records = page_response.get("records", [])
             
-            if records:
-                # FIX #3: Use actual return value, not len(records)
-                inserted_count = upsert_data(db, table_name, records)
-                total_upserted += inserted_count
-                
+            if not records or len(records) == 0:
+                consecutive_empty += 1
+                logger.info(f"      ⚠️  Empty page {page} ({consecutive_empty}/{MAX_CONSECUTIVE_EMPTY})")
+                if consecutive_empty >= MAX_CONSECUTIVE_EMPTY:
+                    logger.info(f"   🏁 {MAX_CONSECUTIVE_EMPTY} consecutive empty pages — pagination complete")
+                    break
+                continue
+            
+            consecutive_empty = 0  # Reset on non-empty page
+            inserted_count = upsert_data(db, table_name, records)
+            total_upserted += inserted_count
+            logger.info(f"      ✅ {inserted_count} records (Total: {total_upserted}/{total_records})")
+            
+            # Natural end: got fewer records than page size
+            if len(records) < page_size:
+                logger.info(f"   🏁 Last page (got {len(records)} < {page_size}) — pagination complete")
+                break
+        
+        logger.info(f"📊 {table_name} DONE: {total_upserted}/{total_records} records synced")
         return total_upserted
+    
+    # =========================================================================
+    # UNKNOWN TABLE
+    # =========================================================================
+    else:
+        logger.error(f"❌ Unknown table '{table_name}' — not in DIRECT_TABLES or PAGINATED_TABLES")
+        raise ValueError(f"Unknown sync table: {table_name}. Valid tables: {ALL_SYNCABLE_TABLES}")
 
 # ------------------------------------------------------------------------------
 # Endpoints
@@ -522,53 +560,83 @@ def sync_table_paginated(db: Session, table_name: str, start_date: str, end_date
 async def sync_data(request: SyncRequest, db: Session = Depends(get_db)):
     """
     Sync data from external server to local PostgreSQL.
+    
+    Pattern A tables (bsk_master, district, service_master):
+      Dates are irrelevant — API always returns all records.
+      TRUNCATE + INSERT atomically.
+    
+    Pattern B tables (provision, citizen_master):
+      Require valid start_date and end_date.
+      Uses meta call → paginated fetch → UPSERT/INSERT per page.
     """
     target_table = request.target_table
     external_table_name = target_table.replace("ml_", "") if target_table.startswith("ml_") else target_table
     if target_table == "services": external_table_name = "service_master"
 
+    # Validate table name
+    if external_table_name not in ALL_SYNCABLE_TABLES:
+        raise HTTPException(status_code=400, detail=f"Unknown table: {external_table_name}. Valid: {sorted(ALL_SYNCABLE_TABLES)}")
+
     today_str = datetime.now().strftime("%Y-%m-%d")
-    end_date = request.end_date if request.end_date else today_str
-    from_date = request.start_date
     
-    metadata = db.query(SyncMetadata).filter(SyncMetadata.table_name == target_table).first()
-    
-    if not from_date and metadata and not request.force_full:
-        from_date = str(metadata.last_sync_from_date)
-    
-    if not from_date:
-        from_date = "2024-01-01" 
+    # ── Date logic depends on API pattern ──
+    if external_table_name in DIRECT_TABLES:
+        # Pattern A: Dates are irrelevant (API ignores them)
+        from_date = "N/A"
+        end_date = "N/A"
+        logger.info(f"📋 Direct table ({external_table_name}) — dates ignored, fetching all records")
+    else:
+        # Pattern B: Dates are REQUIRED
+        end_date = request.end_date if request.end_date else today_str
+        from_date = request.start_date
+        
+        metadata = db.query(SyncMetadata).filter(SyncMetadata.table_name == target_table).first()
+        
+        if not from_date and metadata and not request.force_full:
+            from_date = str(metadata.last_sync_from_date)
+        
+        if not from_date:
+            from_date = "2024-01-01"
+        
+        logger.info(f"📋 Paginated table ({external_table_name}) — date range: {from_date} → {end_date}")
     
     try:
         total_processed = sync_table_paginated(db, external_table_name, from_date, end_date)
-            
+        
+        metadata = db.query(SyncMetadata).filter(SyncMetadata.table_name == target_table).first()
         if not metadata:
             metadata = SyncMetadata(table_name=target_table)
             db.add(metadata)
         
         metadata.last_sync_timestamp = datetime.now()
-        metadata.last_sync_from_date = datetime.strptime(end_date, "%Y-%m-%d").date()
         metadata.total_records = total_processed
         metadata.last_sync_status = "SUCCESS"
+        
+        # Only update last_sync_from_date for paginated tables
+        if external_table_name in PAGINATED_TABLES:
+            metadata.last_sync_from_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+        
         db.commit()
         
         return {
             "status": "success", 
             "table": target_table,
             "external_table": external_table_name,
+            "pattern": "A-direct" if external_table_name in DIRECT_TABLES else "B-paginated",
             "total_records_processed": total_processed,
             "date_range": {"start": from_date, "end": end_date}
         }
 
     except Exception as e:
-        # FIX #7: Update metadata to track failure
-        if metadata:
-            metadata.last_sync_status = "FAILED"
-            metadata.last_sync_timestamp = datetime.now()
-            try:
+        # Update metadata to track failure
+        try:
+            metadata = db.query(SyncMetadata).filter(SyncMetadata.table_name == target_table).first()
+            if metadata:
+                metadata.last_sync_status = "FAILED"
+                metadata.last_sync_timestamp = datetime.now()
                 db.commit()
-            except:
-                db.rollback()  # If metadata update fails, rollback
+        except:
+            db.rollback()
         
         logger.error(f"Sync failed for {target_table}: {e}")
         raise HTTPException(status_code=500, detail=str(e))

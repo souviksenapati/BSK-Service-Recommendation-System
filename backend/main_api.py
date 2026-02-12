@@ -6,6 +6,7 @@ from .scheduler import start_scheduler, shutdown_scheduler
 from sqlalchemy import text, inspect
 import uvicorn
 import os
+import fcntl
 import logging
 
 # Setup logging
@@ -30,7 +31,29 @@ app.add_middleware(
 # Startup Event - Database Verification
 @app.on_event("startup")
 async def verify_database():
-    """Verify database connection and tables on every startup/reload"""
+    """Verify database connection and tables on every startup/reload (runs once across all workers)"""
+    
+    # ── Single-instance guard (same pattern as scheduler) ──
+    lock_file = "/tmp/bsk_db_verify.lock"
+    try:
+        # Use O_CREAT | O_RDWR to avoid truncation race condition
+        _fd = os.open(lock_file, os.O_CREAT | os.O_RDWR, 0o644)
+        _verify_lock = os.fdopen(_fd, 'r+')
+        fcntl.flock(_verify_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        _verify_lock.seek(0)
+        _verify_lock.truncate()
+        _verify_lock.write(str(os.getpid()))
+        _verify_lock.flush()
+    except (IOError, OSError):
+        # Another worker already running verification - skip silently
+        logger.info(f"⏭️  DB verification already running on another worker - skipping (PID: {os.getpid()})")
+        # Still start scheduler (it has its own lock)
+        try:
+            start_scheduler()
+        except Exception as e:
+            logger.error(f"❌ Scheduler startup failed: {e}")
+        return
+    
     logger.info("="*70)
     logger.info("🔍 BSK-SER STARTUP VERIFICATION")
     logger.info("="*70)
@@ -97,6 +120,14 @@ async def verify_database():
         logger.warning("⚠️  Server starting anyway - Fix database issues")
     
     logger.info("="*70)
+    
+    # Release verification lock (one-time check, not persistent)
+    try:
+        fcntl.flock(_verify_lock, fcntl.LOCK_UN)
+        _verify_lock.close()
+        os.remove(lock_file)
+    except Exception:
+        pass
     
     # Start the automated sync scheduler
     try:

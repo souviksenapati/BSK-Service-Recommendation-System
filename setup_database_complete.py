@@ -186,8 +186,11 @@ def create_indexes():
             for idx_sql in indexes:
                 try:
                     conn.execute(text(idx_sql))
+                    # Extract index name and table for clear logging
+                    idx_name = idx_sql.split("EXISTS ")[1].split(" ON")[0].strip()
                     table_name = idx_sql.split("ON ")[1].split("(")[0].strip()
-                    logger.info(f"✅ Created index on {table_name}")
+                    columns = idx_sql.split("ON ")[1].split("(")[1].rstrip(")")
+                    logger.info(f"✅ Created {idx_name} on {table_name}({columns})")
                 except Exception as e:
                     logger.warning(f"⚠️  Index creation warning: {e}")
             
